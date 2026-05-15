@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Unit 1 – Chinh Phục Từ Vựng | Tiếng Anh 7 Global Success</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pu: #5C3D8F;
+  --pu-l: #EDE7F6;
+  --pu-m: #9575CD;
+  --gr: #2E7D32;
+  --gr-l: #E8F5E9;
+  --gr-d: #1B5E20;
+  --am: #E65100;
+  --am-l: #FFF3E0;
+  --te: #00695C;
+  --te-l: #E0F2F1;
+  --gl: #ECEFF1;
+  --yl: #FFF9C4;
+  --yd: #F9A825;
+  --rd: #C62828;
+  --rd-l: #FFEBEE;
+  --wh: #FFFFFF;
+  --dk: #1A1A2E;
+  --gy: #546E7A;
+  --bg: #F5F3FF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: var(--bg);
+  color: var(--dk);
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+.app-header {
+  background: var(--pu);
+  color: white;
+  padding: 14px 20px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(92,61,143,0.3);
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.header-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #D1C4E9;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.word-counter {
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFD54F;
+  background: rgba(255,255,255,0.12);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.progress-bar {
+  height: 5px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #FFD54F;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ── MAIN SCROLL AREA ── */
+.main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 16px 120px;
+}
+
+/* ── WORD CARD ── */
+.word-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(92,61,143,0.1);
+  margin-bottom: 14px;
+  display: none;
+}
+.word-card.active { display: block; }
+
+.card-header {
+  padding: 18px 20px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.card-header.is-example { background: linear-gradient(135deg, #1B5E20, #2E7D32); }
+.card-header.is-normal { background: linear-gradient(135deg, #4527A0, #5C3D8F); }
+
+.word-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.word-main {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.word-ipa {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  font-style: italic;
+  margin-bottom: 4px;
+}
+.word-src {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.9);
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+}
+.word-src.conv { background: rgba(255,213,79,0.25); color: #FFD54F; }
+.word-src.read { background: rgba(129,212,250,0.25); color: #B3E5FC; }
+.word-src.extra { background: rgba(255,171,64,0.25); color: #FFD180; }
+
+.example-badge {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: auto;
+  white-space: nowrap;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.card-body {
+  padding: 16px 20px 20px;
+}
+
+/* ── SENTENCE ── */
+.sentence-box {
+  background: #F8FAFF;
+  border-left: 4px solid var(--pu-m);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-style: italic;
+  font-size: 15px;
+  color: #37474F;
+  line-height: 1.6;
+}
+.sentence-box p + p { margin-top: 6px; }
+.sentence-box mark {
+  background: none;
+  font-weight: 700;
+  color: var(--pu);
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: rgba(92,61,143,0.3);
+}
+
+/* ── STEPS ── */
+.step-block {
+  margin-bottom: 14px;
+}
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: white;
+}
+.step-1 .step-num { background: var(--gr); }
+.step-2 .step-num { background: var(--pu); }
+.step-3 .step-num { background: var(--am); }
+.nghia-step .step-num { background: var(--yd); color: #333; }
+
+.step-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gy);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.step-1 .step-label { color: var(--gr); }
+.step-2 .step-label { color: var(--pu); }
+.step-3 .step-label { color: var(--am); }
+.nghia-step .step-label { color: var(--yd); }
+
+/* Step 1 radio */
+.recognition-row {
+  display: flex;
+  gap: 8px;
+}
+.recog-btn {
+  flex: 1;
+  padding: 10px 6px;
+  border: 2px solid #E0E0E0;
+  border-radius: 10px;
+  background: white;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  color: var(--gy);
+}
+.recog-btn:hover { border-color: var(--pu-m); color: var(--pu); }
+.recog-btn.selected-yes { border-color: var(--gr); background: var(--gr-l); color: var(--gr); }
+.recog-btn.selected-maybe { border-color: var(--yd); background: var(--yl); color: #7B5E00; }
+.recog-btn.selected-no { border-color: var(--rd); background: var(--rd-l); color: var(--rd); }
+
+/* QA pairs */
+.qa-item { margin-bottom: 12px; }
+.qa-question {
+  font-size: 15px;
+  color: #37474F;
+  margin-bottom: 6px;
+  padding-left: 4px;
+  line-height: 1.5;
+}
+.reveal-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.answer-text {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  display: none;
+}
+.reveal-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.step-2 .reveal-btn { background: var(--pu-l); color: var(--pu); }
+.step-2 .reveal-btn:hover { background: var(--pu); color: white; }
+.step-3 .reveal-btn { background: var(--am-l); color: var(--am); }
+.step-3 .reveal-btn:hover { background: var(--am); color: white; }
+.nghia-step .reveal-btn { background: var(--yl); color: #7B5E00; }
+.nghia-step .reveal-btn:hover { background: var(--yd); color: white; }
+
+.answer-text.revealed {
+  display: block;
+  background: var(--gr-l);
+  color: var(--gr-d);
+  font-weight: 600;
+  border: 1.5px solid #C8E6C9;
+  animation: fadeIn 0.25s ease;
+}
+
+.example-answer {
+  background: var(--gr-l);
+  color: var(--gr-d);
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin-top: 4px;
+  border: 1.5px solid #C8E6C9;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Doan boxes */
+.doan-box {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.step-2 .doan-box { background: var(--pu-l); color: var(--pu); }
+.step-3 .doan-box { background: var(--am-l); color: var(--am); }
+
+.doan-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.doan-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 15px;
+  color: var(--dk);
+  background: white;
+  resize: none;
+  min-height: 44px;
+  transition: border-color 0.15s;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+.step-2 .doan-input:focus { border-color: var(--pu); }
+.step-3 .doan-input:focus { border-color: var(--am); }
+.nghia-step .doan-input:focus { border-color: var(--yd); }
+
+.doan-example {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gr-d);
+  background: var(--gr-l);
+  border: 1.5px solid #C8E6C9;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+/* Nghia box */
+.nghia-box {
+  background: var(--yl);
+  border: 2px solid var(--yd);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 4px;
+}
+.nghia-reveal {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gr-d);
+  background: var(--gr-l);
+  border: 1.5px solid #C8E6C9;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+.nghia-reveal.revealed { display: block; }
+.nghia-example {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gr-d);
+}
+
+/* Divider */
+.step-divider {
+  height: 1px;
+  background: #EEE;
+  margin: 14px 0;
+}
+
+/* Note */
+.word-note {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #F3F4F6;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--gy);
+  font-style: italic;
+  border-left: 3px solid #B0BEC5;
+}
+.word-note::before { content: "💡 "; }
+
+/* ── NAV ── */
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #E8EAF6;
+  padding: 12px 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  z-index: 100;
+  max-width: 100%;
+}
+.nav-btn {
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.15s;
+  min-width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.nav-btn:disabled { opacity: 0.35; cursor: default; }
+.btn-prev { background: var(--gl); color: var(--gy); }
+.btn-prev:hover:not(:disabled) { background: #CFD8DC; }
+.btn-next { background: var(--pu); color: white; }
+.btn-next:hover:not(:disabled) { background: #4527A0; }
+.nav-dots {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 180px;
+}
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D1C4E9;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  padding: 0;
+}
+.nav-dot.done { background: var(--gr); }
+.nav-dot.active { background: var(--pu); transform: scale(1.4); }
+
+/* ── SUMMARY ── */
+.summary-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(92,61,143,0.1);
+  display: none;
+}
+.summary-card.active { display: block; }
+.summary-icon { font-size: 52px; margin-bottom: 12px; }
+.summary-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pu);
+  margin-bottom: 8px;
+}
+.summary-sub {
+  font-size: 15px;
+  color: var(--gy);
+  margin-bottom: 24px;
+}
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.vocab-table th {
+  background: var(--pu);
+  color: white;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+.vocab-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #EEE;
+}
+.vocab-table tr:nth-child(even) td { background: #FAFAFA; }
+.vocab-table .nghia-col { color: var(--gr-d); font-weight: 600; }
+.restart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pu);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-top: 8px;
+}
+.restart-btn:hover { background: #4527A0; }
+
+/* Responsive */
+@media (max-width: 400px) {
+  .word-main { font-size: 22px; }
+  .nav-btn { padding: 11px 16px; font-size: 14px; min-width: 78px; }
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-top">
+    <div class="header-title">Tiếng Anh 7 – Unit 1 • Hobbies</div>
+    <div class="word-counter" id="wordCounter">Từ 1 / 21</div>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill" style="width: 4.8%"></div>
+  </div>
+</header>
+
+<main class="main" id="mainArea">
+
+  <div class="word-card  active" data-num="1">
+    <div class="card-header is-example">
+      <div class="word-info">
+        <div class="word-num">Ví dụ</div>
+        <div class="word-main">dollhouse</div>
+        <div class="word-ipa">/'dɒlhaʊs/</div>
+        <span class="word-src conv">Hội thoại</span>
+      </div>
+      <div class="example-badge">Xem mẫu</div>
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>"I love your <mark>dollhouse</mark>. It's amazing. Did you make it yourself?"</p><p>"Yes. My hobby is building dollhouses."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="example-answer">→  ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu 2: 'building DOLLHOUSES' — từ quen gần nhất là 'building'.</div>
+          <div class="reveal-row">
+            <div class="example-answer">'building' = tạo ra, xây dựng.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu hỏi: 'building ___s' — người ta XÂY DỰNG / TẠO RA thứ gì?</div>
+          <div class="reveal-row">
+            <div class="example-answer">Đoán lần đầu: thứ gì đó được tạo ra ← còn mơ hồ, cần Bước 3.</div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">Đoán lần đầu</div>
+          <div class="doan-example">Thứ gì đó được tạo ra — còn mơ hồ.</div>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ / từ ghép trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Nhìn vào: 'DOLL  +  HOUSE'</div>
+          <div class="example-answer">'doll' = búp bê  /  'house' = ngôi nhà</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Ghép lại: búp bê + nhà = ?  Xác nhận: 'amazing, did you make it yourself?' → làm thủ công ✓</div>
+          <div class="example-answer">dollhouse = nhà búp bê — mô hình ngôi nhà nhỏ dùng để chơi búp bê. ✓</div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">Đoán tinh chỉnh</div>
+          <div class="doan-example">Nhà búp bê — mô hình ngôi nhà nhỏ dùng để chơi búp bê.</div>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>dollhouse</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <div class="nghia-example">nhà búp bê (mô hình ngôi nhà nhỏ tự làm thủ công)</div>
+        </div>
+        <div class="word-note">Từ ghép: doll + house. Kỹ năng này dùng được cho: classroom, bookshelf, sunlight...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="2">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 2</div>
+        <div class="word-main">cardboard</div>
+        <div class="word-ipa">/'kɑːdbɔːd/</div>
+        <span class="word-src conv">Hội thoại</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>"All you need is some <mark>cardboard</mark> and glue."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '2', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '2', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '2', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'cardboard AND glue' — từ quen gần nhất bên cạnh là từ nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_2_0">Từ quen: 'glue' (= keo dán / hồ)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_2_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Em biết từ đó nghĩa là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_2_1">'glue' = keo dán — chất lỏng dùng để dán các vật lại</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_2_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'AND' nối 2 thứ cùng loại → cardboard là loại gì (giống với từ quen đó)?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_2_2">Cardboard cũng là VẬT LIỆU THỦ CÔNG — dùng cùng với glue khi làm mô hình.</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_2_2', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ / từ ghép trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'CARD'  +  'BOARD'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_2_0">'card' = tấm mỏng / thẻ  /  'board' = tấm cứng / bảng</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_2_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Ghép lại: em đoán 'cardboard' là thứ gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_2_1">cardboard = TẤM BÌA CỨNG / bìa các-tông (giấy dày và cứng)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_2_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>cardboard</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_2', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_2">bìa các-tông / bìa cứng (tấm giấy dày và cứng, dùng trong thủ công)</div>
+        </div>
+        <div class="word-note">Từ ghép: card + board. Vật liệu rẻ, dễ tìm, dùng để làm hộp, mô hình, nhà búp bê.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="3">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 3</div>
+        <div class="word-main">glue</div>
+        <div class="word-ipa">/ɡluː/</div>
+        <span class="word-src conv">Hội thoại</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>"All you need is some cardboard and <mark>glue</mark>."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '3', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '3', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '3', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'cardboard AND glue' — từ quen gần nhất bên cạnh là từ nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_3_0">Từ quen: 'cardboard' (= bìa các-tông)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_3_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Cardboard và glue đều là thứ gì (vật liệu hay thực phẩm)?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_3_1">Cả hai đều là VẬT LIỆU THỦ CÔNG — dùng để làm mô hình, nhà búp bê</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_3_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Ngữ cảnh: 'to build dollhouses' — người ta dùng glue để làm gì với cardboard?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_3_2">Dùng glue để DÁN / DÍNH các mảnh cardboard lại với nhau</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_3_2', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu trước / câu sau</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Trước đó: 'just use a bit of CREATIVITY' — glue dùng trong hoạt động gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_3_0">Hoạt động LÀM THỦ CÔNG / tạo ra sản phẩm bằng tay</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_3_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Vậy glue là thứ dùng để ___ các mảnh cardboard lại?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_3_1">Glue dùng để DÁN DÍNH — chất lỏng khi khô giữ các vật dính vào nhau</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_3_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>glue</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_3', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_3">keo dán / hồ (chất lỏng dùng để dán các vật lại với nhau)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="4">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 4</div>
+        <div class="word-main">horse riding</div>
+        <div class="word-ipa">/'hɔːs ˌraɪdɪŋ/</div>
+        <span class="word-src conv">Hội thoại</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>"I like <mark>horse riding</mark>."</p><p>"That's rather unusual. Not many people do that."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '4', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '4', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '4', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Gốc từ / từ ghép</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách từ ghép: 'HORSE'  +  'RIDING'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_4_0">Tách thành 2 phần riêng: HORSE và RIDING</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_4_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'horse' có nghĩa là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_4_1">'horse' = con ngựa</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_4_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'riding' xuất phát từ 'ride' — 'ride' có nghĩa là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_4_2">'ride' = cưỡi (lên lưng vật gì đó hoặc xe gì đó)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_4_2', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu trước / câu sau xác nhận</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'Not many people do that' → đây là sở thích thông thường hay đặc biệt?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_4_0">Sở thích ĐẶC BIỆT — ít người làm</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_4_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'There are some horse riding CLUBS in Ha Noi' → xác nhận đây là hoạt động gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_4_1">Có câu lạc bộ horse riding → đây là MÔN THỂ THAO / SỞ THÍCH rõ ràng</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_4_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>horse riding</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_4', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_4">cưỡi ngựa (môn thể thao / sở thích đi trên lưng ngựa)</div>
+        </div>
+        <div class="word-note">Từ ghép: horse + riding. Tương tự: swimming, jogging, cycling...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="5">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 5</div>
+        <div class="word-main">unusual</div>
+        <div class="word-ipa">/ʌnˈjuːʒuəl/</div>
+        <span class="word-src conv">Hội thoại</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>"That's rather <mark>unusual</mark>. Not many people do that."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '5', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '5', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '5', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu sau: 'Not many people DO THAT' — điều này nói lên horse riding là sở thích như thế nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_5_0">Sở thích KHÁC THƯỜNG — ít người làm</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_5_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Vậy 'unusual' nghĩa là thông thường hay KHÔNG thông thường?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_5_1">'unusual' = KHÔNG THÔNG THƯỜNG / khác với số đông</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_5_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ / tiền tố trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'UN-'  +  'USUAL'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_5_0">'un-' = tiền tố phủ định  /  'usual' = thông thường</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_5_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'un-' là tiền tố phủ định (vd: unhappy = không vui). 'usual' liên quan đến 'usually' = thường thường. Vậy 'unusual' = ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_5_1">'unusual' = KHÔNG THÔNG THƯỜNG — un- + usual</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_5_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>unusual</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_5', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_5">khác thường (không giống những gì thường xảy ra, ít phổ biến)</div>
+        </div>
+        <div class="word-note">Tiền tố 'un-': unusual, unhappy, unfriendly, uncommon → thêm 'không' vào trước nghĩa gốc.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="6">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 6</div>
+        <div class="word-main">gardening</div>
+        <div class="word-ipa">/'ɡɑːdənɪŋ/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p><mark>Gardening</mark> is one of the oldest outdoor activities.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '6', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '6', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '6', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Từ quen gần nhất: 'outdoor ACTIVITIES' — nghĩa là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_6_0">'outdoor activities' = HOẠT ĐỘNG NGOÀI TRỜI</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_6_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Gardening là một loại 'outdoor activity' → hoạt động làm ở đâu (trong nhà hay ngoài trời)?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_6_1">Hoạt động làm NGOÀI TRỜI — trong vườn, sân vườn</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_6_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ / từ ghép trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'GARDEN'  +  '-ING'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_6_0">'garden' = khu vườn  /  '-ing' = hoạt động liên quan</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_6_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'garden' có nghĩa là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_6_1">'garden' = khu vườn / miền đất trồng cây</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_6_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'-ing' sau danh từ = hoạt động làm liên quan (vd: fish → fishing = câu cá). Vậy gardening = ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_6_2">'gardening' = LÀM VƯỜN — trồng cây, chăm sóc cây trong vườn</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_6_2', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>gardening</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_6', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_6">làm vườn (hoạt động trồng cây, chăm sóc cây trong vườn)</div>
+        </div>
+        <div class="word-note">'-ing' sau danh từ: garden→gardening, fish→fishing, model→modelling.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="7">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 7</div>
+        <div class="word-main">popular</div>
+        <div class="word-ipa">/'pɒpjələ/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Gardening belongs to the most <mark>popular</mark> group — doing things.</p><p>"Horse riding is becoming more popular in Viet Nam. There are now many riding clubs."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '7', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '7', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '7', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'the most POPULAR group' — 'most' đứng trước gợi ý đây là nhóm đứng số ___ (1 hay cuối)?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_7_0">'most' = nhất → đây là nhóm SỐ 1, được nhiều người chọn nhất</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_7_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'becoming MORE popular' — 'more' gợi ý số lượng người tham gia đang tăng hay giảm?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_7_1">'more' = thêm → số lượng người tham gia đang TĂNG DẦN</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_7_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu trước / câu sau xác nhận</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'There are now MANY riding clubs' — nhiều câu lạc bộ = nhiều người tham gia.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_7_0">Nhiều câu lạc bộ = NHIỀU NGƯỜI THAM GIA = ngày càng được ưa chuộng</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_7_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Một thứ được nhiều người thích = thứ đó đang như thế nào (popular = )?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_7_1">popular = PHỔ BIẾN / được nhiều người yêu thích</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_7_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>popular</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_7', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_7">phổ biến, được nhiều người yêu thích</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="8">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 8</div>
+        <div class="word-main">insect</div>
+        <div class="word-ipa">/'ɪnsekt/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>They can also learn about <mark>insects</mark> and bugs.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '8', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '8', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '8', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'insects AND bugs' — 'and' nối 2 thứ cùng nhóm. Em có biết 'bugs' nghĩa là gì không?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_8_0">'bug' = con bọ nhỏ / côn trùng — nếu biết thì insects và bugs là cùng nhóm</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_8_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Cả 'insects' lẫn 'bugs' đều là thứ trẻ em gặp KHI LÀM VƯỜN — đây là loài sinh vật nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_8_1">Sinh vật nhỏ sống trong vườn: kiến, bọ, bướm... = CÔN TRÙNG</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_8_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu trước / câu sau xác nhận</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Trẻ em học về 'flowers, fruits, vegetables' và 'insects and bugs' — chúng đều là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_8_0">'flowers...' = thực vật. 'Insects and bugs' = ĐỘNG VẬT NHỎ sống trong vườn</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_8_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Vậy 'insect' là loài sinh vật như thế nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_8_1">insect = CÔN TRÙNG — sinh vật nhỏ có 6 chân (kiến, bướm, châu chấu...)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_8_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>insect</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_8', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_8">côn trùng (sinh vật nhỏ có 6 chân như kiến, bọ, bướm...)</div>
+        </div>
+        <div class="word-note">'insects and bugs' — 'insect' là từ khoa học hơn, 'bug' là từ thông dụng hơn.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="9">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 9</div>
+        <div class="word-main">bug</div>
+        <div class="word-ipa">/bʌɡ/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>They can also learn about insects and <mark>bugs</mark>.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '9', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '9', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '9', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Dùng kết quả từ Từ 8</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Ở Từ 8, em đã suy ra 'insects' là gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_9_0">'insects' = côn trùng (đã suy luận ở Từ 8)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_9_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'insects AND bugs' — 'AND' nối 2 thứ cùng nhóm → 'bugs' thuộc nhóm nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_9_1">bugs cũng thuộc nhóm CÔN TRÙNG / sinh vật nhỏ — cùng nhóm với insects</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_9_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ / từ ghép trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'bug' là từ ngắn, thông dụng hơn 'insect'. Cả hai đều chỉ loài sinh vật nhỏ cùng loại.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_9_0">bug = từ THÔNG DỤNG hơn, insect = từ KHOA HỌC hơn — cùng nghĩa</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_9_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Em đã biết 'insect' = côn trùng. 'Bug' có nghĩa tương tự không?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_9_1">bug = CON BỌ / côn trùng nhỏ (nghĩa tương tự insect)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_9_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>bug</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_9', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_9">con bọ / côn trùng nhỏ (từ thông dụng cho các loài côn trùng nhỏ)</div>
+        </div>
+        <div class="word-note">Bước đặc biệt: kết quả từ Từ 8 trở thành 'từ quen' cho Từ 9!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="10">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 10</div>
+        <div class="word-main">patient</div>
+        <div class="word-ipa">/'peɪʃnt/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Children learn to be <mark>patient</mark> and take on responsibility.</p><p>"They learn to WAIT for the plants to grow to maturity."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '10', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '10', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '10', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'learn to BE ___' — đây là tính từ chỉ một phẩm chất cần HỌC. Phẩm chất này tốt hay xấu?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_10_0">Phẩm chất cần HỌC → TỐT / tích cực</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_10_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'be patient AND take on responsibility' — 'AND' nối 2 thứ cùng nhóm (cùng là phẩm chất tốt).</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_10_1">Cả hai đều là PHẨM CHẤT TỐT cần rèn luyện</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_10_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu sau giải thích câu trước</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu sau: 'They learn to WAIT for the plants to grow' — trẻ em phải làm gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_10_0">Trẻ em phải CHỜ ĐỢI — chờ cây lớn, không được nóng vội</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_10_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Người biết chờ đợi mà không bực bội = người có tính cách gì? → 'patient' nghĩa là?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_10_1">patient = KIÊN NHẪN — biết chờ đợi bình tĩnh, không nóng nảy</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_10_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>patient</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_10', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_10">kiên nhẫn (biết chờ đợi bình tĩnh, không nóng nảy)</div>
+        </div>
+        <div class="word-note">Bước 3 (Câu sau) mạnh nhất ở đây: 'wait for the plants to grow' giải thích trực tiếp.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="11">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 11</div>
+        <div class="word-main">take on</div>
+        <div class="word-ipa">/teɪk ɒn/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Children learn to be patient and <mark>take on</mark> responsibility.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '11', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '11', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '11', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'take on RESPONSIBILITY' — từ quen gần nhất: 'responsibility' = trách nhiệm.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_11_0">'responsibility' = trách nhiệm — thứ người ta có thể nhận lấy hay trốn tránh</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_11_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'take on' + [trách nhiệm] — người ta làm GÌ với trách nhiệm: trốn tránh hay chủ động nhận?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_11_1">Người ta CHỦ ĐỘNG NHẬN LẤY trách nhiệm — không trốn tránh</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_11_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Từ quen thứ 2 trong cùng câu</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'be patient AND take on responsibility' — 'AND' nối 2 thứ cùng nhóm: cả hai là điều trẻ em PHẢI HỌC.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_11_0">Cả hai là HÀNH ĐỘNG TÍCH CỰC cần học</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_11_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Người 'take on responsibility' là người chủ động ___ trách nhiệm đó.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_11_1">take on = NHẬN THÊM / ĐẢM NHẬN — chủ động tiếp nhận một trách nhiệm mới</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_11_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>take on</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_11', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_11">đảm nhận / nhận thêm (chủ động chấp nhận một trách nhiệm hoặc công việc)</div>
+        </div>
+        <div class="word-note">'Take on' là phrasal verb — nghĩa khác xa 'take' đơn lẻ. Ngữ cảnh quyết định nghĩa.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="12">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 12</div>
+        <div class="word-main">responsibility</div>
+        <div class="word-ipa">/rɪˌspɒnsəˈbɪlɪti/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>"...children learn to be patient and take on <mark>responsibility</mark>."</p><p>"This teaches them valuable lessons about responsibility."</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '12', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '12', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '12', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'valuable lessons ABOUT ___' — đây là thứ đáng học, quan trọng hay không quan trọng?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_12_0">'valuable lessons' = bài học QUÝ GIÁ → 'responsibility' là thứ QUAN TRỌNG, đáng học</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_12_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'take on ___' — đây là thứ người ta chủ động nhận lấy (không phải thứ xấu).</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_12_1">responsibility là thứ TÍCH CỰC — người tốt sẽ chủ động nhận lấy</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_12_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'RESPONS-'  +  '-IBILITY'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_12_0">'respons-' từ 'responsible' = có trách nhiệm  /  '-ibility' = đuôi danh từ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_12_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Em có biết từ 'responsible' không? '-ity / -ibility' là đuôi danh từ. Vậy 'responsibility' = ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_12_1">responsibility = SỰ CHỊU TRÁCH NHIỆM / trách nhiệm</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_12_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>responsibility</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_12', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_12">trách nhiệm (nghĩa vụ phải làm, phải chịu trách nhiệm về điều gì đó)</div>
+        </div>
+        <div class="word-note">Hậu tố '-ity': possible→possibility, able→ability, responsible→responsibility.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="13">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 13</div>
+        <div class="word-main">maturity</div>
+        <div class="word-ipa">/məˈtjʊərɪti/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>They learn to wait for the plants to grow to <mark>maturity</mark>.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '13', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '13', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '13', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'grow to MATURITY' — từ quen: 'grow' = lớn lên.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_13_0">'grow' = lớn lên, phát triển → 'grow to ___' = lớn ĐẾN MỘT ĐIỂM NHẤT ĐỊNH</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_13_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'grow to ___' = lớn đến điểm nào? Cây còn non hay đã phát triển đầy đủ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_13_1">Cây 'grow to maturity' = cây ĐÃ LỚN ĐẦY ĐỦ / đã phát triển hoàn toàn</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_13_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'MATUR-'  +  '-ITY'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_13_0">'matur-' từ 'mature' = trưởng thành, chín muồi  /  '-ity' = đuôi danh từ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_13_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'-ity' là đuôi danh từ (similar→similarity). Vậy 'maturity' = ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_13_1">maturity = SỰ TRƯỞNG THÀNH / trạng thái đã phát triển đầy đủ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_13_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>maturity</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_13', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_13">sự trưởng thành / chín muồi (trạng thái phát triển đầy đủ)</div>
+        </div>
+        <div class="word-note">Cây đến 'maturity' = cây đã đủ lớn. Người đến 'maturity' = đã trưởng thành tâm lý.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="14">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 14</div>
+        <div class="word-main">valuable</div>
+        <div class="word-ipa">/'væljuəbl/</div>
+        <span class="word-src read">Bài đọc</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>This teaches them <mark>valuable</mark> lessons about responsibility.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '14', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '14', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '14', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'VALUABLE lessons' — 'lessons' = bài học. Những bài học này tốt hay vô ích?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_14_0">'teaches them' → đây là bài học ĐƯỢC TRUYỀN DẠY = TỐT, đáng ghi nhớ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_14_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'teaches them ___' — đây là thứ được truyền dạy, quan trọng hay tầm thường?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_14_1">Thứ được dạy đi = thứ CÓ GIÁ TRỊ, quan trọng</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_14_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'VALU-'  +  '-ABLE'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_14_0">'valu-' từ 'value' = giá trị  /  '-able' = có tính chất đó</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_14_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'value' = giá trị. '-able' = có tính chất đó (enjoy→enjoyable). 'valu-able' = có ___ → nghĩa là?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_14_1">valuable = CÓ GIÁ TRỊ / quý giá</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_14_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>valuable</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_14', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_14">quý giá, có giá trị (quan trọng và đáng trân trọng)</div>
+        </div>
+        <div class="word-note">Hậu tố '-able': value→valuable, enjoy→enjoyable, comfort→comfortable.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="15">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 15</div>
+        <div class="word-main">belong to</div>
+        <div class="word-ipa">/bɪˈlɒŋ tuː/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Lan <mark>belongs to</mark> a jogging club. She runs with friends every Saturday.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '15', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '15', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '15', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'Lan ___ a jogging CLUB' — 'club' = câu lạc bộ. Lan có quan hệ gì với câu lạc bộ đó?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_15_0">Lan LÀ THÀNH VIÊN / THAM GIA câu lạc bộ đó</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_15_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu sau: 'She runs with friends every Saturday' — xác nhận Lan là gì của câu lạc bộ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_15_1">Lan LÀ THÀNH VIÊN — chạy cùng bạn mỗi thứ Bảy = sinh hoạt định kỳ cùng nhóm</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_15_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu trước / câu sau xác nhận</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu đầu bài đọc: 'Gardening BELONGS TO the most popular group' — gardening là thành phần của nhóm đó.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_15_0">'belongs to a group' = LÀ THÀNH PHẦN / THUỘC VỀ nhóm đó</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_15_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Theo cùng cách dùng đó, 'Lan belongs to a club' = Lan là ___ của câu lạc bộ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_15_1">belong to = THUỘC VỀ / là thành viên của</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_15_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>belong to</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_15', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_15">thuộc về / là thành viên của (có mối quan hệ gắn bó với một nhóm, tổ chức)</div>
+        </div>
+        <div class="word-note">Cấu trúc: S + belongs to + [tổ chức/nhóm]. 'Gardening belongs to the doing things group.'</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="16">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 16</div>
+        <div class="word-main">jogging</div>
+        <div class="word-ipa">/'dʒɒɡɪŋ/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Lan belongs to a <mark>jogging</mark> club. She runs with friends every Saturday.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '16', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '16', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '16', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu sau: 'She RUNS with friends every Saturday' — loại câu lạc bộ gì thì thành viên sẽ 'run'?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_16_0">Câu lạc bộ CHẠY BỘ — thành viên sẽ 'run' = chạy</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_16_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'jogging club' = câu lạc bộ ___ → 'jogging' có nghĩa là?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_16_1">jogging club = câu lạc bộ CHẠY BỘ → 'jogging' = chạy bộ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_16_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'JOG'  +  '-GING'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_16_0">'jog' = chạy bộ nhẹ nhàng  /  '-ging' là dạng '-ing' của động từ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_16_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Vậy 'jogging' là hoạt động gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_16_1">jogging = CHẠY BỘ (chạy với tốc độ vừa phải để tập thể dục)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_16_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>jogging</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_16', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_16">chạy bộ (chạy với tốc độ vừa phải để tập thể dục)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="17">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 17</div>
+        <div class="word-main">benefit</div>
+        <div class="word-ipa">/'benɪfɪt/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Regular jogging has many <mark>benefits</mark> for your health. It helps you feel less tired and more energetic.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '17', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '17', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '17', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'has many ___' + 'for your health' — đây là thứ tốt hay xấu cho sức khỏe?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_17_0">'for your health' + 'many' → đây là nhiều thứ TỐT cho sức khỏe</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_17_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'many ___' — số nhiều. Đây là nhiều điều tốt hay nhiều vấn đề?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_17_1">'many benefits' = nhiều ĐIỀU TỐT / LỢI ÍCH — không phải vấn đề</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_17_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Câu sau giải thích câu trước</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu 2: 'It HELPS you feel less tired and more energetic' — đây là ví dụ của 'benefits'.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_17_0">Ví dụ: ít mệt hơn, năng động hơn → đây là KẾT QUẢ TỐT</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_17_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Dựa vào ví dụ đó, 'benefit' = điều mang lại ___ cho sức khỏe?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_17_1">benefit = LỢI ÍCH — điều tốt đẹp, có ích mà một hoạt động mang lại</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_17_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>benefit</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_17', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_17">lợi ích (điều tốt đẹp, có ích mà một hoạt động mang lại)</div>
+        </div>
+        <div class="word-note">Câu 2 giải thích trực tiếp 'benefits' là gì — manh mối câu sau rất hiệu quả.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="18">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 18</div>
+        <div class="word-main">making models</div>
+        <div class="word-ipa">/'meɪkɪŋ 'mɒdlz/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Tom's hobby is <mark>making models</mark> of old aeroplanes. He uses cardboard and glue to build them.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '18', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '18', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '18', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'making MODELS of old aeroplanes' — 'aeroplane' = máy bay. 'Models of aeroplanes' = gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_18_0">'models of aeroplanes' = MÔ HÌNH MÁY BAY — hình thu nhỏ của máy bay</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_18_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu sau: 'uses cardboard and glue to BUILD them' — xác nhận đây là hoạt động làm gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_18_1">'build them' = LÀM chúng bằng tay — tạo ra mô hình thủ công</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_18_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ / từ ghép</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Tách: 'MAKING'  +  'MODELS'</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_18_0">'making' = tạo ra  /  'models' = mô hình, hình thu nhỏ</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_18_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Ghép lại: 'making models' = ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_18_1">making models = LÀM MÔ HÌNH — sở thích tạo ra mô hình thu nhỏ của xe, máy bay, tàu...</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_18_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>making models</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_18', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_18">làm mô hình (sở thích tạo ra mô hình thu nhỏ của xe, máy bay, tàu...)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="19">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 19</div>
+        <div class="word-main">stress</div>
+        <div class="word-ipa">/stres/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Hobbies can help you deal with <mark>stress</mark> after a long day at school.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '19', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '19', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '19', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'help you DEAL WITH ___' — 'deal with' = giải quyết, xử lý. Đây là thứ tốt hay cần giải quyết?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_19_0">Thứ cần GIẢI QUYẾT / XỬ LÝ → đây là điều KHÓ CHỊU, tiêu cực</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_19_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'after a LONG DAY at school' — em thường cảm thấy thế nào sau một ngày học dài?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_19_1">Mệt mỏi, áp lực, muốn nghỉ ngơi → CẢM GIÁC TIÊU CỰC</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_19_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Từ quen thứ 2 trong câu</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'help you deal with stress' — hobbies GIÚP xử lý 'stress'. Điều cần được giúp xử lý = điều khó chịu hay dễ chịu?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_19_0">Điều cần được GIÚP XỬ LÝ = điều KHÓ CHỊU / tiêu cực</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_19_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Vậy 'stress' là cảm giác gì?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_19_1">stress = CĂNG THẲNG / ÁP LỰC (cảm giác lo lắng, mệt mỏi do quá nhiều áp lực)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_19_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>stress</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_19', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_19">căng thẳng, áp lực (cảm giác lo lắng và mệt mỏi do quá nhiều áp lực)</div>
+        </div>
+        <div class="word-note">Bước 2 mạnh: 'deal with stress' = giải quyết căng thẳng. 'Sau ngày học dài' xác nhận.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="20">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 20</div>
+        <div class="word-main">yoga</div>
+        <div class="word-ipa">/'jəʊɡə/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Hobbies like <mark>yoga</mark> and gardening can help you deal with stress.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '20', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '20', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '20', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'like yoga AND gardening' — 'AND' nối 2 thứ cùng nhóm. Yoga là loại gì (giống gardening)?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_20_0">Yoga và gardening đều là SỞ THÍCH / HOẠT ĐỘNG THƯ GIÃN — cùng nhóm</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_20_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Cả yoga lẫn gardening đều 'help you deal with stress' → đây là hoạt động nhẹ nhàng hay mạnh và căng thẳng?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_20_1">Cả hai giúp GIẢI TỎA căng thẳng → hoạt động NHẸ NHÀNG, thư giãn</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_20_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Gốc từ trong bản thân từ lạ</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'Yoga' là từ vay mượn từ tiếng Sanskrit (ngôn ngữ Ấn Độ cổ).</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_20_0">Từ VAY MƯỢN — giữ nguyên hình thức và âm thanh từ ngôn ngữ gốc</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_20_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Em có bao giờ nghe hoặc thấy từ 'yoga' chưa? Đây là bộ môn luyện tập như thế nào?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_20_1">yoga = BỘ MÔN LUYỆN TẬP kết hợp các tư thế cơ thể và hơi thở, giúp thư giãn tinh thần</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_20_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>yoga</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_20', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_20">yoga (bộ môn luyện tập kết hợp các tư thế cơ thể và hơi thở, giúp thư giãn)</div>
+        </div>
+        <div class="word-note">Từ vay mượn: 'yoga' giữ nguyên hình thức từ tiếng Sanskrit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="word-card" data-num="21">
+    <div class="card-header is-normal">
+      <div class="word-info">
+        <div class="word-num">Từ 21</div>
+        <div class="word-main">set (aside)</div>
+        <div class="word-ipa">/set/</div>
+        <span class="word-src extra">Câu bổ sung</span>
+      </div>
+      
+    </div>
+    <div class="card-body">
+
+      <!-- Sentence -->
+      <div class="sentence-box">
+        <p>Ann <mark>sets</mark> aside one hour every evening for her hobby. She thinks having a hobby is valuable.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-block step-1">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-label">Nhận diện</div>
+        </div>
+        <div class="qa-question">Em có biết từ này không?</div>
+        <div class="recognition-row">
+          <button class="recog-btn" onclick="selectRecog(this, '21', 'yes')" data-type="yes">✓ Biết</button>
+          <button class="recog-btn" onclick="selectRecog(this, '21', 'maybe')" data-type="maybe">? Mơ hồ</button>
+          <button class="recog-btn" onclick="selectRecog(this, '21', 'no')" data-type="no">✗ Chưa biết</button>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 2 -->
+      <div class="step-block step-2">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-label">Từ quen gần nhất</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'sets aside ONE HOUR every evening FOR her hobby' — Ann làm gì với một tiếng đó?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_21_0">Ann DÀNH RIÊNG một tiếng mỗi tối CHO SỞ THÍCH — không dùng vào việc khác</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_21_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Câu sau: 'thinks having a hobby is VALUABLE' → Ann coi trọng sở thích → cô ấy chủ động ___ thời gian cho nó.</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s2a_21_1">Ann CHỦ ĐỘNG DÀNH RIÊNG thời gian cố định cho sở thích</div>
+            <button class="reveal-btn" onclick="revealAnswer('s2a_21_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán lần đầu của em:</div>
+          <textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Step 3 -->
+      <div class="step-block step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-label">Từ quen thứ 2 trong câu</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">'sets aside' + 'one hour' + 'FOR her hobby' — ba cụm này cùng cho biết điều gì Ann làm?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_21_0">Ann GIỮ LẠI / DÀNH RIÊNG thời gian cụ thể (1 tiếng) cho mục đích cụ thể (sở thích)</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_21_0', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question">Người 'set aside time for something' = người dành riêng thời gian cho thứ đó. Vậy 'set aside' = ?</div>
+          <div class="reveal-row">
+            <div class="answer-text" id="s3a_21_1">set aside = DÀNH RIÊNG / BỎ SANG MỘT BÊN — giữ lại để dùng vào mục đích cụ thể</div>
+            <button class="reveal-btn" onclick="revealAnswer('s3a_21_1', this)">👁 Xem</button>
+          </div>
+        </div>
+        <div class="doan-box">
+          <div class="doan-label">★ Đoán tinh chỉnh của em:</div>
+          <textarea class="doan-input" placeholder="Tinh chỉnh đoán sau khi xem gợi ý..." rows="2"></textarea>
+        </div>
+      </div>
+      <div class="step-divider"></div>
+      <!-- Nghia -->
+      <div class="step-block nghia-step">
+        <div class="step-header">
+          <div class="step-num" style="background:var(--yd);color:#333">✓</div>
+          <div class="step-label" style="color:var(--am)">Nghĩa của <strong>set (aside)</strong> là:</div>
+        </div>
+        <div class="nghia-box">
+          <textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:10px"></textarea>
+          <button class="reveal-btn" style="width:100%;justify-content:center;background:var(--yl);color:#7B5E00" 
+            onclick="revealNghia('nghia_21', this)">👁&nbsp; Xem nghĩa đúng</button>
+          <div class="nghia-reveal" id="nghia_21">dành riêng thời gian / tiền (set aside = giữ lại để dùng vào mục đích cụ thể)</div>
+        </div>
+        <div class="word-note">'Set' có nhiều nghĩa: set aside = dành riêng / set a goal = đặt mục tiêu / set a record = lập kỷ lục.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="word-card summary-card" id="summaryCard">
+    <div class="summary-icon">🎉</div>
+    <div class="summary-title">Hoàn thành Unit 1!</div>
+    <div class="summary-sub">Em đã luyện suy luận 21 từ vựng.<br>Xem lại bảng tóm tắt bên dưới.</div>
+    <table class="vocab-table">
+      <tr><th>Từ / IPA</th><th>Nghĩa</th></tr>
+      <tr><td><strong>dollhouse</strong><br><span style="color:var(--gy);font-size:12px">/'dɒlhaʊs/</span></td><td class="nghia-col">nhà búp bê (mô hình ngôi nhà nhỏ tự làm thủ công)</td></tr>
+<tr><td><strong>cardboard</strong><br><span style="color:var(--gy);font-size:12px">/'kɑːdbɔːd/</span></td><td class="nghia-col">bìa các-tông / bìa cứng (tấm giấy dày và cứng, dùng trong thủ công)</td></tr>
+<tr><td><strong>glue</strong><br><span style="color:var(--gy);font-size:12px">/ɡluː/</span></td><td class="nghia-col">keo dán / hồ (chất lỏng dùng để dán các vật lại với nhau)</td></tr>
+<tr><td><strong>horse riding</strong><br><span style="color:var(--gy);font-size:12px">/'hɔːs ˌraɪdɪŋ/</span></td><td class="nghia-col">cưỡi ngựa (môn thể thao / sở thích đi trên lưng ngựa)</td></tr>
+<tr><td><strong>unusual</strong><br><span style="color:var(--gy);font-size:12px">/ʌnˈjuːʒuəl/</span></td><td class="nghia-col">khác thường (không giống những gì thường xảy ra, ít phổ biến)</td></tr>
+<tr><td><strong>gardening</strong><br><span style="color:var(--gy);font-size:12px">/'ɡɑːdənɪŋ/</span></td><td class="nghia-col">làm vườn (hoạt động trồng cây, chăm sóc cây trong vườn)</td></tr>
+<tr><td><strong>popular</strong><br><span style="color:var(--gy);font-size:12px">/'pɒpjələ/</span></td><td class="nghia-col">phổ biến, được nhiều người yêu thích</td></tr>
+<tr><td><strong>insect</strong><br><span style="color:var(--gy);font-size:12px">/'ɪnsekt/</span></td><td class="nghia-col">côn trùng (sinh vật nhỏ có 6 chân như kiến, bọ, bướm...)</td></tr>
+<tr><td><strong>bug</strong><br><span style="color:var(--gy);font-size:12px">/bʌɡ/</span></td><td class="nghia-col">con bọ / côn trùng nhỏ (từ thông dụng cho các loài côn trùng nhỏ)</td></tr>
+<tr><td><strong>patient</strong><br><span style="color:var(--gy);font-size:12px">/'peɪʃnt/</span></td><td class="nghia-col">kiên nhẫn (biết chờ đợi bình tĩnh, không nóng nảy)</td></tr>
+<tr><td><strong>take on</strong><br><span style="color:var(--gy);font-size:12px">/teɪk ɒn/</span></td><td class="nghia-col">đảm nhận / nhận thêm (chủ động chấp nhận một trách nhiệm hoặc công việc)</td></tr>
+<tr><td><strong>responsibility</strong><br><span style="color:var(--gy);font-size:12px">/rɪˌspɒnsəˈbɪlɪti/</span></td><td class="nghia-col">trách nhiệm (nghĩa vụ phải làm, phải chịu trách nhiệm về điều gì đó)</td></tr>
+<tr><td><strong>maturity</strong><br><span style="color:var(--gy);font-size:12px">/məˈtjʊərɪti/</span></td><td class="nghia-col">sự trưởng thành / chín muồi (trạng thái phát triển đầy đủ)</td></tr>
+<tr><td><strong>valuable</strong><br><span style="color:var(--gy);font-size:12px">/'væljuəbl/</span></td><td class="nghia-col">quý giá, có giá trị (quan trọng và đáng trân trọng)</td></tr>
+<tr><td><strong>belong to</strong><br><span style="color:var(--gy);font-size:12px">/bɪˈlɒŋ tuː/</span></td><td class="nghia-col">thuộc về / là thành viên của (có mối quan hệ gắn bó với một nhóm, tổ chức)</td></tr>
+<tr><td><strong>jogging</strong><br><span style="color:var(--gy);font-size:12px">/'dʒɒɡɪŋ/</span></td><td class="nghia-col">chạy bộ (chạy với tốc độ vừa phải để tập thể dục)</td></tr>
+<tr><td><strong>benefit</strong><br><span style="color:var(--gy);font-size:12px">/'benɪfɪt/</span></td><td class="nghia-col">lợi ích (điều tốt đẹp, có ích mà một hoạt động mang lại)</td></tr>
+<tr><td><strong>making models</strong><br><span style="color:var(--gy);font-size:12px">/'meɪkɪŋ 'mɒdlz/</span></td><td class="nghia-col">làm mô hình (sở thích tạo ra mô hình thu nhỏ của xe, máy bay, tàu...)</td></tr>
+<tr><td><strong>stress</strong><br><span style="color:var(--gy);font-size:12px">/stres/</span></td><td class="nghia-col">căng thẳng, áp lực (cảm giác lo lắng và mệt mỏi do quá nhiều áp lực)</td></tr>
+<tr><td><strong>yoga</strong><br><span style="color:var(--gy);font-size:12px">/'jəʊɡə/</span></td><td class="nghia-col">yoga (bộ môn luyện tập kết hợp các tư thế cơ thể và hơi thở, giúp thư giãn)</td></tr>
+<tr><td><strong>set (aside)</strong><br><span style="color:var(--gy);font-size:12px">/set/</span></td><td class="nghia-col">dành riêng thời gian / tiền (set aside = giữ lại để dùng vào mục đích cụ thể)</td></tr>
+    </table>
+    <button class="restart-btn" onclick="restart()">↺ Làm lại từ đầu</button>
+  </div>
+
+</main>
+
+<!-- Nav bar -->
+<nav class="nav-bar">
+  <button class="nav-btn btn-prev" id="btnPrev" onclick="goPrev()" disabled>← Trước</button>
+  <div class="nav-dots" id="navDots"></div>
+  <button class="nav-btn btn-next" id="btnNext" onclick="goNext()">Tiếp →</button>
+</nav>
+
+<script>
+const TOTAL = 21;
+let current = 1;
+
+function init() {
+  const dotsEl = document.getElementById('navDots');
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= TOTAL; i++) {
+    const d = document.createElement('button');
+    d.className = 'nav-dot' + (i === 1 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    d.title = 'Từ ' + i;
+    dotsEl.appendChild(d);
+  }
+}
+
+function goTo(n) {
+  // Hide current
+  const prev = document.querySelector('.word-card.active');
+  if (prev) prev.classList.remove('active');
+  
+  current = n;
+  
+  if (n > TOTAL) {
+    document.getElementById('summaryCard').classList.add('active');
+    document.getElementById('wordCounter').textContent = 'Hoàn thành!';
+    document.getElementById('progressFill').style.width = '100%';
+    document.getElementById('btnNext').disabled = true;
+    document.getElementById('btnPrev').disabled = false;
+    updateDots(n);
+    return;
+  }
+  
+  document.getElementById('summaryCard').classList.remove('active');
+  const card = document.querySelector(`[data-num="${n}"]`);
+  if (card) card.classList.add('active');
+  
+  document.getElementById('wordCounter').textContent = `Từ ${n} / ${TOTAL}`;
+  document.getElementById('progressFill').style.width = (n / TOTAL * 100) + '%';
+  document.getElementById('btnPrev').disabled = n <= 1;
+  document.getElementById('btnNext').disabled = false;
+  document.getElementById('btnNext').textContent = n === TOTAL ? 'Xem tóm tắt →' : 'Tiếp →';
+  
+  updateDots(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateDots(n) {
+  const dots = document.querySelectorAll('.nav-dot');
+  dots.forEach((d, i) => {
+    d.className = 'nav-dot';
+    if (i + 1 < n) d.classList.add('done');
+    else if (i + 1 === n) d.classList.add('active');
+  });
+}
+
+function goPrev() { if (current > 1) goTo(current - 1); }
+function goNext() { goTo(current + 1); }
+
+function selectRecog(btn, num, type) {
+  const row = btn.closest('.recognition-row');
+  row.querySelectorAll('.recog-btn').forEach(b => {
+    b.className = 'recog-btn';
+  });
+  const cls = type === 'yes' ? 'selected-yes' : type === 'maybe' ? 'selected-maybe' : 'selected-no';
+  btn.classList.add(cls);
+}
+
+function revealAnswer(id, btn) {
+  const el = document.getElementById(id);
+  el.classList.add('revealed');
+  btn.style.opacity = '0.4';
+  btn.textContent = '✓';
+  btn.disabled = true;
+}
+
+function revealNghia(id, btn) {
+  const el = document.getElementById(id);
+  el.classList.add('revealed');
+  btn.style.opacity = '0.4';
+  btn.innerHTML = '✓ Đã xem';
+  btn.disabled = true;
+}
+
+function restart() {
+  document.getElementById('summaryCard').classList.remove('active');
+  // Reset all reveals
+  document.querySelectorAll('.answer-text.revealed').forEach(el => {
+    el.classList.remove('revealed');
+  });
+  document.querySelectorAll('.nghia-reveal.revealed').forEach(el => {
+    el.classList.remove('revealed');
+  });
+  document.querySelectorAll('.reveal-btn').forEach(btn => {
+    btn.style.opacity = '1';
+    btn.innerHTML = '👁 Xem';
+    btn.disabled = false;
+  });
+  document.querySelectorAll('.doan-input').forEach(el => {
+    el.value = '';
+  });
+  document.querySelectorAll('.recog-btn').forEach(btn => {
+    btn.className = 'recog-btn';
+  });
+  goTo(1);
+}
+
+init();
+</script>
+</body>
+</html>
