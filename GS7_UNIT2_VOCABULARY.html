@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 2 – Từ Vựng Sức Khỏe | Tiếng Anh 7 Global Success</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--pu:#5C3D8F;--pul:#EDE7F6;--gr:#2E7D32;--grl:#E8F5E9;--grd:#1B5E20;--am:#E65100;--aml:#FFF3E0;--yl:#FFF9C4;--yd:#F9A825;--dk:#1A1A2E;--gy:#546E7A;--bg:#E0F2F1;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--dk);min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#00695C;color:white;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,105,92,.3);}
+.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.header-title{font-size:13px;font-weight:600;color:#B2DFDB;letter-spacing:.5px;text-transform:uppercase;}
+.word-counter{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.progress-bar{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.progress-fill{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,105,92,.12);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sentence-box{background:#F0FDF4;border-left:4px solid #00695C;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sentence-box p+p{margin-top:6px;}
+.sentence-box mark{background:none;font-weight:700;color:#00695C;font-style:normal;text-decoration:underline;text-decoration-color:rgba(0,105,92,.3);}
+.step-block{margin-bottom:14px;}
+.step-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.step-1 .step-num{background:#2E7D32;}
+.step-2 .step-num{background:#00695C;}
+.step-3 .step-num{background:#E65100;}
+.step-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.step-1 .step-label{color:#2E7D32;}
+.step-2 .step-label{color:#00695C;}
+.step-3 .step-label{color:#E65100;}
+.nghia-lbl{color:#E65100;text-transform:none;font-size:15px;}
+.recognition-row{display:flex;gap:8px;}
+.recog-btn{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;color:#546E7A;}
+.recog-btn.sel-yes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.recog-btn.sel-maybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.recog-btn.sel-no{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skip-box{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.skip-note{display:none;}
+.qa-item{margin-bottom:10px;}
+.qa-question{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.answer-text{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;line-height:1.5;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;margin-top:4px;}
+.answer-text.shown{display:block;animation:fadeIn .3s ease;}
+.example-answer{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;line-height:1.5;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.doan-box{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.step-2 .doan-box{background:#E0F2F1;}
+.step-3 .doan-box{background:#FFF3E0;}
+.doan-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.step-2 .doan-label{color:#00695C;}
+.step-3 .doan-label{color:#E65100;}
+.doan-input{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;transition:border-color .15s;outline:none;display:block;}
+.doan-input:focus{border-color:#00695C;}
+.doan-example{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.nghia-box{background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;}
+.nghia-reveal{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nghia-reveal.shown{display:block;animation:fadeIn .3s ease;}
+.nghia-example{font-size:16px;font-weight:700;color:#1B5E20;}
+.step-divider{height:1px;background:#EEE;margin:14px 0;}
+.word-note{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.word-note::before{content:"💡 ";}
+.big-reveal-wrap{margin-top:4px;}
+.big-reveal-btn{width:100%;padding:16px;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(0,105,92,.3);margin-top:10px;}
+.big-reveal-btn:hover{transform:translateY(-1px);}
+.big-reveal-btn:disabled{opacity:.6;cursor:default;transform:none;box-shadow:none;}
+.revealed-note{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #B2DFDB;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nav-btn{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;gap:6px;}
+.nav-btn:disabled{opacity:.35;cursor:default;}
+.btn-prev{background:#ECEFF1;color:#546E7A;}
+.btn-next{background:#00695C;color:white;}
+.btn-next:hover:not(:disabled){background:#004D40;}
+.nav-dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:180px;}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:#B2DFDB;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nav-dot.done{background:#2E7D32;}
+.nav-dot.curr{background:#00695C;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,105,92,.12);display:none;}
+.summary-wrap.active{display:block;}
+.summary-top{background:linear-gradient(135deg,#004D40,#00695C);padding:28px 24px;text-align:center;}
+.summary-icon{font-size:52px;margin-bottom:12px;}
+.summary-title{font-size:22px;font-weight:700;color:white;margin-bottom:8px;}
+.summary-sub{font-size:15px;color:#B2DFDB;}
+.summary-body{padding:20px 24px 28px;}
+.score-section{margin-bottom:24px;}
+.score-title{font-size:17px;font-weight:700;color:#00695C;margin-bottom:6px;}
+.score-sub{font-size:14px;color:#546E7A;margin-bottom:14px;}
+.score-legend{display:flex;gap:10px;margin-bottom:12px;font-size:13px;}
+.sc-yes-leg{color:#2E7D32;font-weight:700;}
+.sc-near-leg{color:#F57F17;font-weight:700;}
+.sc-no-leg{color:#C62828;font-weight:700;}
+.score-table{width:100%;border-collapse:collapse;font-size:14px;}
+.score-table th{background:#00695C;color:white;padding:8px 10px;font-weight:600;text-align:left;}
+.score-table td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.score-table tr:nth-child(even) td{background:#F5F5F5;}
+.sc-num{width:32px;color:#546E7A;font-size:12px;}
+.sc-word{font-weight:700;}
+.sc-nghia{color:#546E7A;font-size:13px;}
+.sc-row{display:flex;gap:4px;}
+.sc-btn{width:30px;height:30px;border-radius:8px;border:2px solid #E0E0E0;background:white;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;}
+.sc-btn.active-yes{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.sc-btn.active-near{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.sc-btn.active-no{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.score-display{margin-top:20px;background:linear-gradient(135deg,#004D40,#00695C);border-radius:16px;padding:20px 24px;text-align:center;color:white;}
+.score-big{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.score-label{font-size:16px;color:rgba(255,255,255,.8);margin-bottom:8px;}
+.score-bar-wrap{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin-bottom:8px;}
+.score-bar-fill{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s ease;}
+.score-msg{font-size:15px;font-weight:600;color:#FFD54F;}
+.submit-section{margin-top:24px;padding:20px;background:#F0FDF4;border-radius:14px;border:2px solid #B2DFDB;}
+.submit-title{font-size:17px;font-weight:700;color:#00695C;margin-bottom:4px;}
+.submit-sub{font-size:14px;color:#546E7A;margin-bottom:12px;}
+.restart-btn{display:inline-flex;align-items:center;gap:8px;background:#00695C;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nav-btn{padding:11px 16px;font-size:14px;min-width:78px;}.score-big{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="header-top">
+    <div class="header-title">Tiếng Anh 7 – Unit 2 • Health</div>
+    <div class="word-counter" id="wc">Từ 1 / 22</div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="pf" style="width:4.5%"></div></div>
+</header>
+<main class="main">
+<div class="word-card active" data-num="1">
+<div class="card-header" style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">sunburn</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'sʌnbɜːn/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;letter-spacing:.5px;margin-left:10px">Xem mẫu</span></div></div>
+<div class="card-body" style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"It's really hot and sunny at noon, so you might get <mark>sunburn</mark>."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="example-answer">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'hot and sunny at noon' — 'hot' và 'sunny' liên quan đến thời tiết gì?</div>
+<div class="example-answer">'hot and sunny' = rất nắng, nhiều ánh sáng mặt trời.</div>
+</div>
+<div class="qa-item"><div class="qa-question">'might get ___' — bạn có thể BỊ gì khi đứng ngoài trời nắng lâu?</div>
+<div class="example-answer">'might get ___' = có thể bị [tác hại của nắng] → điều xảy ra với DA khi nắng quá mạnh.</div>
+</div>
+<div class="doan-box"><div class="doan-label">Đoán lần đầu</div><div class="doan-example">Tác hại của nắng lên da — còn mơ hồ.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Gốc từ / từ ghép trong bản thân từ lạ</div></div>
+<div class="qa-item"><div class="qa-question">Tách: 'SUN'  +  'BURN'</div>
+<div class="example-answer">'sun' = mặt trời  /  'burn' = bỏng, cháy.</div>
+</div>
+<div class="qa-item"><div class="qa-question">Ghép lại: mặt trời + cháy/bỏng = ?</div>
+<div class="example-answer">sunburn = sự cháy nắng / bỏng nắng ✓</div>
+</div>
+<div class="doan-box"><div class="doan-label">Đoán tinh chỉnh</div><div class="doan-example">Sự cháy nắng — sun + burn.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>sunburn</strong> là:</div></div>
+<div class="nghia-box">
+<div class="nghia-example">sự cháy nắng (tổn thương da do tiếp xúc nắng quá lâu)</div>
+</div>
+<div class="word-note">Từ ghép: sun + burn. Tương tự: sunscreen, sunlight, sunshine...</div>
+</div>
+<br>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">health</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/helθ/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Outdoor activities are good for our <mark>health</mark>."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'good for our ___' — đây là thứ tốt cho CỦA CHÚNG TA. Tốt hay xấu?</div>
+<div class="answer-text" id="s2a_2_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Outdoor activities như cycling, exercising — có lợi cho điều gì của cơ thể?</div>
+<div class="answer-text" id="s2a_2_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước / câu sau</div></div>
+<div class="qa-item"><div class="qa-question">Câu sau: 'My family often goes cycling. It's quiet, and there's a lot of fresh air.' → mang lại gì?</div>
+<div class="answer-text" id="s3a_2_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Cycling, exercising, fresh air — liên quan đến trạng thái CƠ THỂ như thế nào?</div>
+<div class="answer-text" id="s3a_2_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>health</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_2" style="background:#00695C" onclick="revealAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_2">sức khỏe</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_2"></div>
+<div class="revealed-note" id="rnote_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">acne</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'ækni/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p><mark>Acne</mark> is a skin condition. It causes small, red spots on the face and the back.</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'Acne is a SKIN CONDITION' — từ quen: 'skin condition' = tình trạng da. Acne là loại gì?</div>
+<div class="answer-text" id="s2a_3_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'It causes small, red SPOTS on the face and back' — spots = nốt. Acne gây ra điều gì?</div>
+<div class="answer-text" id="s2a_3_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước / câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'It affects 70-80% of YOUNG PEOPLE between 12 and 30' — vấn đề phổ biến ở lứa tuổi nào?</div>
+<div class="answer-text" id="s3a_3_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'young people want to AVOID it' — người ta muốn tránh → đây là điều tốt hay xấu?</div>
+<div class="answer-text" id="s3a_3_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>acne</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_3" style="background:#00695C" onclick="revealAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_3">mụn trứng cá (tình trạng da gây nốt đỏ trên mặt và lưng)</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_3"></div>
+<div class="revealed-note" id="rnote_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">skin condition</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/skɪn kən'dɪʃn/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>Acne is a <mark>skin condition</mark>. It causes small, red spots on the face and the back.</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Gốc từ / từ ghép</div></div>
+<div class="qa-item"><div class="qa-question">Tách: 'SKIN'  +  'CONDITION'</div>
+<div class="answer-text" id="s2a_4_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'skin' = da.  'condition' = tình trạng / điều kiện. Ghép lại = ?</div>
+<div class="answer-text" id="s2a_4_1"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'It causes small, red spots on the FACE and BACK' — xảy ra ở đâu?</div>
+<div class="answer-text" id="s2a_4_2"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'acne is a skin condition' — skin condition = vấn đề xảy ra trên da cụ thể là gì?</div>
+<div class="answer-text" id="s3a_4_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Nhiều bệnh da liễu đều gọi là 'skin condition'. Vậy skin condition = ?</div>
+<div class="answer-text" id="s3a_4_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>skin condition</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_4" style="background:#00695C" onclick="revealAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_4">tình trạng da (vấn đề xảy ra trên da)</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_4"></div>
+<div class="revealed-note" id="rnote_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">affect</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ə'fekt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>It <mark>affects</mark> 70-80% of young people between 12 and 30.</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'It' = acne. 'It ___ 70-80% of young people' — acne làm GÌ với 70-80% người trẻ?</div>
+<div class="answer-text" id="s2a_5_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'70-80%' = rất nhiều người → đây là tác động tích cực (giúp đỡ) hay tiêu cực?</div>
+<div class="answer-text" id="s2a_5_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Gốc từ liên quan</div></div>
+<div class="qa-item"><div class="qa-question">'effect' (n) = tác động (kết quả). 'affect' = động từ gốc của 'effect'.</div>
+<div class="answer-text" id="s3a_5_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Acne 'affects' nhiều người trẻ → làm họ bị ảnh hưởng → affect = ?</div>
+<div class="answer-text" id="s3a_5_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>affect</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_5" style="background:#00695C" onclick="revealAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_5">tác động, ảnh hưởng đến</div>
+</div>
+<div class="word-note">'affect' (v) = tác động đến / 'effect' (n) = kết quả, tác động.</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_5"></div>
+<div class="revealed-note" id="rnote_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">disease</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dɪ'ziːz/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>It's not a serious <mark>disease</mark> but young people want to avoid it.</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'not a SERIOUS ___' — 'serious' = nghiêm trọng. Đây là thứ có thể 'nghiêm trọng' là gì?</div>
+<div class="answer-text" id="s2a_6_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'want to AVOID it' — người ta muốn tránh → đây là điều tốt hay xấu?</div>
+<div class="answer-text" id="s2a_6_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước / câu sau</div></div>
+<div class="qa-item"><div class="qa-question">'it's not a serious disease' — 'not serious' gợi ý acne chỉ là bệnh NHẸ.</div>
+<div class="answer-text" id="s3a_6_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'disease' = vấn đề/tình trạng sức khỏe mà người ta bị. Nghĩa là?</div>
+<div class="answer-text" id="s3a_6_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>disease</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_6" style="background:#00695C" onclick="revealAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_6">bệnh</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_6"></div>
+<div class="revealed-note" id="rnote_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">avoid</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ə'vɔɪd/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>It's not a serious disease but young people want to <mark>avoid</mark> it.</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'want to ___ it' — 'it' = acne (điều xấu). Người ta muốn làm GÌ với acne?</div>
+<div class="answer-text" id="s2a_7_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'want to ___' + [điều xấu] → hành động tích cực (muốn có) hay tiêu cực (muốn tránh)?</div>
+<div class="answer-text" id="s2a_7_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">Tips: 'Go to bed early', 'Eat more fruit', 'Wash your face' — đây là cách làm gì với acne?</div>
+<div class="answer-text" id="s3a_7_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Vậy 'avoid' = làm cho điều xấu KHÔNG xảy ra với mình = ?</div>
+<div class="answer-text" id="s3a_7_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>avoid</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_7" style="background:#00695C" onclick="revealAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_7">tránh, né tránh</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_7"></div>
+<div class="revealed-note" id="rnote_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">pop</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pɒp/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>Don't touch or <mark>pop</mark> spots, especially when your hands are dirty.</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'Don't touch OR ___ spots' — 'or' nối 2 hành động bị cấm. 'touch' = chạm. '___ spots' = ?</div>
+<div class="answer-text" id="s2a_8_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'especially when your HANDS are dirty' → hành động này dùng tay, làm gì với spots?</div>
+<div class="answer-text" id="s2a_8_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước / câu sau</div></div>
+<div class="qa-item"><div class="qa-question">Đây là lời khuyên CHĂM SÓC da. 'Don't ___ spots' = lời khuyên cấm.</div>
+<div class="answer-text" id="s3a_8_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'pop spots' = hành động có hại cho da bằng tay → pop = ?</div>
+<div class="answer-text" id="s3a_8_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>pop</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_8" style="background:#00695C" onclick="revealAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_8">nặn (mụn)</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_8"></div>
+<div class="revealed-note" id="rnote_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">chapped</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/tʃæpt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"In winter, many people have <mark>chapped</mark> lips because of the cold wind. They use lip balm to protect their lips."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'have CHAPPED lips' — đây là tình trạng của môi. 'have ___' = bị tình trạng gì?</div>
+<div class="answer-text" id="s2a_9_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'because of the COLD WIND' — gió lạnh gây ra điều gì với môi?</div>
+<div class="answer-text" id="s2a_9_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">Câu sau: 'use lip balm to PROTECT their lips' — phải bảo vệ môi → môi đang ở tình trạng gì?</div>
+<div class="answer-text" id="s3a_9_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Môi cần được 'protect' = bảo vệ → 'chapped lips' = môi đang bị ___?</div>
+<div class="answer-text" id="s3a_9_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>chapped</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_9" style="background:#00695C" onclick="revealAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_9">bị nứt nẻ (môi, da)</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_9"></div>
+<div class="revealed-note" id="rnote_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">lip balm</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/lɪp bɑːm/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"In winter, many people have chapped lips because of the cold wind. They use <mark>lip balm</mark> to protect their lips."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Gốc từ / từ ghép</div></div>
+<div class="qa-item"><div class="qa-question">Tách: 'LIP'  +  'BALM'</div>
+<div class="answer-text" id="s2a_10_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'lip' = môi. 'balm' = chất bôi/dưỡng. 'use ___ to PROTECT their LIPS' = ?</div>
+<div class="answer-text" id="s2a_10_1"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Ghép lại: chất bôi dành cho môi = ?</div>
+<div class="answer-text" id="s2a_10_2"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">Câu trước: 'have CHAPPED lips because of COLD WIND' → môi bị nứt do lạnh.</div>
+<div class="answer-text" id="s3a_10_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Người ta dùng lip balm để làm gì với đôi môi bị chapped đó?</div>
+<div class="answer-text" id="s3a_10_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>lip balm</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_10" style="background:#00695C" onclick="revealAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_10">kem bôi môi (chống nứt nẻ)</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_10"></div>
+<div class="revealed-note" id="rnote_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">dim</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dɪm/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Do not read in <mark>dim</mark> light. It is bad for your eyes."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'Do not read in ___ light' — đây là loại ánh sáng bị cấm đọc sách. Xấu hay tốt?</div>
+<div class="answer-text" id="s2a_11_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'It is BAD for your eyes' → dim light gây hại cho mắt → dim light = ánh sáng như thế nào?</div>
+<div class="answer-text" id="s2a_11_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Từ quen đối lập</div></div>
+<div class="qa-item"><div class="qa-question">Đọc sách cần ánh sáng TỐT. 'dim' là thứ KHÔNG tốt cho đọc sách.</div>
+<div class="answer-text" id="s3a_11_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Ngược với 'bright' (sáng rõ) → 'dim' = ánh sáng như thế nào?</div>
+<div class="answer-text" id="s3a_11_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>dim</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_11" style="background:#00695C" onclick="revealAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_11">lờ mờ, không đủ sáng</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_11"></div>
+<div class="revealed-note" id="rnote_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">eyedrops</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'aɪdrɒps/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Tom's eyes hurt after using a screen for too long. His doctor told him to use <mark>eyedrops</mark> every day."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Gốc từ / từ ghép</div></div>
+<div class="qa-item"><div class="qa-question">Tách: 'EYE'  +  'DROPS'</div>
+<div class="answer-text" id="s2a_12_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'eye' = mắt. 'drops' = giọt (rain drops = giọt mưa). Ghép lại = ?</div>
+<div class="answer-text" id="s2a_12_1"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'use ___ every day' → dùng hàng ngày để làm gì?</div>
+<div class="answer-text" id="s2a_12_2"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'Tom's EYES HURT after using a screen' → mắt bị đau.</div>
+<div class="answer-text" id="s3a_12_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Bác sĩ cho dùng 'eyedrops every day' để làm gì với đôi mắt đau?</div>
+<div class="answer-text" id="s3a_12_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>eyedrops</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_12" style="background:#00695C" onclick="revealAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_12">thuốc nhỏ mắt</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_12"></div>
+<div class="revealed-note" id="rnote_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fat</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fæt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Eating too much <mark>fat</mark> is bad for your health. It can lead to many serious diseases."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'eating too much ___' — đây là thứ ĂN được, nhiều quá thì xấu. Tốt hay xấu cho sức khỏe?</div>
+<div class="answer-text" id="s2a_13_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'bad for your health' + 'serious diseases' → thứ gì trong thức ăn gây hại?</div>
+<div class="answer-text" id="s2a_13_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'It can lead to many serious DISEASES' — gây nhiều bệnh nghiêm trọng.</div>
+<div class="answer-text" id="s3a_13_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'fat' là thứ có trong thịt mỡ, đồ chiên rán. Vậy 'fat' = ?</div>
+<div class="answer-text" id="s3a_13_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>fat</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_13" style="background:#00695C" onclick="revealAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_13">mỡ, chất béo</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_13"></div>
+<div class="revealed-note" id="rnote_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fit</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fɪt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Lan exercises every day to stay <mark>fit</mark> and healthy. She goes cycling every weekend."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'stay FIT and healthy' — 'and healthy' đứng ngay sau. 'fit' cùng nhóm với 'healthy'.</div>
+<div class="answer-text" id="s2a_14_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'stay ___' = duy trì trạng thái. Tập thể dục để duy trì trạng thái gì?</div>
+<div class="answer-text" id="s2a_14_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'exercises every day', 'goes cycling' — kết quả của tập thể dục thường xuyên là gì?</div>
+<div class="answer-text" id="s3a_14_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'stay fit' = có thân hình/sức khỏe như thế nào?</div>
+<div class="answer-text" id="s3a_14_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>fit</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_14" style="background:#00695C" onclick="revealAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_14">gọn gàng, cân đối</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_14"></div>
+<div class="revealed-note" id="rnote_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">healthy</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'helθi/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Eating more fruit and vegetables and less fast food helps you stay <mark>healthy</mark>."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'stay HEALTHY' — 'stay ___' = duy trì trạng thái. Ăn rau quả giúp duy trì trạng thái gì?</div>
+<div class="answer-text" id="s2a_15_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'fruit and vegetables' là thứ tốt. 'less fast food' = ít đồ xấu. Kết quả = trạng thái ___?</div>
+<div class="answer-text" id="s2a_15_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Gốc từ trong bản thân từ lạ</div></div>
+<div class="qa-item"><div class="qa-question">'HEALTH' + '-Y' — em đã biết 'health' = sức khỏe. '-y' là đuôi tính từ (sun → sunny).</div>
+<div class="answer-text" id="s3a_15_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'healthy' = có đặc tính của 'health' = ?</div>
+<div class="answer-text" id="s3a_15_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>healthy</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_15" style="background:#00695C" onclick="revealAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_15">khoẻ mạnh, lành mạnh</div>
+</div>
+<div class="word-note">Gốc từ: health + -y. Tương tự: sun→sunny, dirt→dirty, health→healthy.</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_15"></div>
+<div class="revealed-note" id="rnote_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">indoor</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'ɪndɔː/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"On rainy days, Mi does <mark>indoor</mark> exercises like yoga. Outdoor activities are not safe when it rains."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'INDOOR exercises' — từ quen: 'exercises' = bài tập. 'indoor ___' = bài tập như thế nào?</div>
+<div class="answer-text" id="s2a_16_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Câu 2: 'OUTDOOR activities are not safe when it rains' — 'outdoor' = ngoài trời.</div>
+<div class="answer-text" id="s2a_16_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Từ quen đối lập trong câu</div></div>
+<div class="qa-item"><div class="qa-question">'INDOOR' vs 'OUTDOOR' — 'outdoor' = ngoài trời. 'in-' ngược với 'out-'.</div>
+<div class="answer-text" id="s3a_16_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'indoor' = ngược với 'outdoor' = ?</div>
+<div class="answer-text" id="s3a_16_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>indoor</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_16" style="background:#00695C" onclick="revealAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_16">trong nhà</div>
+</div>
+<div class="word-note">Tiền tố 'in-' / 'out-': indoor/outdoor, inside/outside, inward/outward.</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_16"></div>
+<div class="revealed-note" id="rnote_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">pimple</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'pɪmpl/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Acne causes red <mark>pimples</mark> on the face. Many young people have this skin condition."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'Acne causes red PIMPLES on the face' — acne gây ra cái gì? 'red' và 'on the face' cho biết gì?</div>
+<div class="answer-text" id="s2a_17_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'red' = màu đỏ. 'on the face' = trên mặt. → pimple là thứ gì màu đỏ trên mặt?</div>
+<div class="answer-text" id="s2a_17_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu trước / câu sau</div></div>
+<div class="qa-item"><div class="qa-question">Bài đọc gốc: 'Acne causes small, red SPOTS on the face' → 'spots' = nốt.</div>
+<div class="answer-text" id="s3a_17_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'pimple' xuất hiện cùng ngữ cảnh với 'spots' → pimple = ?</div>
+<div class="answer-text" id="s3a_17_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>pimple</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_17" style="background:#00695C" onclick="revealAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_17">mụn</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_17"></div>
+<div class="revealed-note" id="rnote_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">protein</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'prəʊtiːn/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Tofu and soybeans are rich in <mark>protein</mark>. They are healthy foods that help your body stay strong."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'rich in PROTEIN' — 'rich in' = chứa nhiều ___. Tofu và soybean chứa nhiều thứ gì?</div>
+<div class="answer-text" id="s2a_18_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'help your body stay STRONG' — đây là thứ giúp cơ thể mạnh → tốt hay xấu?</div>
+<div class="answer-text" id="s2a_18_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'They are HEALTHY FOODS that help your body stay STRONG' → protein là chất dinh dưỡng quan trọng.</div>
+<div class="answer-text" id="s3a_18_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Protein là chất có trong thịt, trứng, đậu nành → protein = ?</div>
+<div class="answer-text" id="s3a_18_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>protein</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_18" style="background:#00695C" onclick="revealAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_18">chất đạm</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_18"></div>
+<div class="revealed-note" id="rnote_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="19">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 19</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">soybean</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'sɔɪbiːn/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"<mark>Soybeans</mark> are used to make tofu. Both are rich in protein and good for your health."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Gốc từ / từ ghép</div></div>
+<div class="qa-item"><div class="qa-question">Tách: 'SOY'  +  'BEAN'</div>
+<div class="answer-text" id="s2a_19_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'bean' = hạt đậu (green bean = đậu xanh). 'soy bean' = đậu loại ___?</div>
+<div class="answer-text" id="s2a_19_1"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'used to make TOFU' → soybean được dùng để làm đậu phụ.</div>
+<div class="answer-text" id="s2a_19_2"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'rich in protein and good for health' → đây là loại thực phẩm lành mạnh.</div>
+<div class="answer-text" id="s3a_19_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Soybean = đậu nành (loại đậu dùng để làm tofu, sữa đậu nành...) = ?</div>
+<div class="answer-text" id="s3a_19_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>soybean</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_19" style="background:#00695C" onclick="revealAll(19)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_19">đậu nành</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_19"></div>
+<div class="revealed-note" id="rnote_19" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="20">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 20</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">tofu</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'təʊfuː/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"<mark>Tofu</mark> and soybeans are rich in protein. They are healthy foods that help your body stay strong."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'TOFU and soybeans are rich in protein' — tofu cùng nhóm với soybeans. Soybeans là gì?</div>
+<div class="answer-text" id="s2a_20_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'healthy foods' + 'help your body stay strong' → tofu là thứ tốt hay xấu cho sức khỏe?</div>
+<div class="answer-text" id="s2a_20_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Gốc từ trong bản thân từ lạ</div></div>
+<div class="qa-item"><div class="qa-question">'Tofu' là từ vay mượn từ tiếng Nhật (豆腐 = đậu + phụ).</div>
+<div class="answer-text" id="s3a_20_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'Soybeans are used to make TOFU' → tofu được làm từ đậu nành = ?</div>
+<div class="answer-text" id="s3a_20_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>tofu</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_20" style="background:#00695C" onclick="revealAll(20)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_20">đậu phụ</div>
+</div>
+<div class="word-note">Từ vay mượn từ tiếng Nhật. Phát âm: /ˈtəʊfuː/.</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_20"></div>
+<div class="revealed-note" id="rnote_20" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="21">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 21</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">virus</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'vaɪrəs/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"A <mark>virus</mark> can spread quickly and make many people sick. Washing your hands is a good way to avoid viruses."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'can SPREAD quickly' — spread = lây lan. 'make many people SICK' = làm bệnh.</div>
+<div class="answer-text" id="s2a_21_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Đây là thứ lây lan và gây bệnh → tốt hay xấu?</div>
+<div class="answer-text" id="s2a_21_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'Washing your hands is a good way to AVOID viruses' — rửa tay để tránh viruses.</div>
+<div class="answer-text" id="s3a_21_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'avoid' = tránh [thứ xấu]. Virus là thứ cần tránh → virus = ?</div>
+<div class="answer-text" id="s3a_21_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>virus</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_21" style="background:#00695C" onclick="revealAll(21)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_21">vi rút</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_21"></div>
+<div class="revealed-note" id="rnote_21" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="22">
+<div class="card-header" style="background:#00695C;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 22</div><div class="word-main" style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">vitamin</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'vɪtəmɪn/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div class="card-body" style="background:white;padding:16px 20px 20px;">
+<div class="sentence-box"><p>"Eating fruit every day gives your body important <mark>vitamins</mark>. Vitamins help keep your skin healthy."</p></div>
+<div class="step-block step-1">
+<div class="step-header"><div class="step-num">1</div><div class="step-label">Nhận diện</div></div>
+<div class="qa-question">Em có biết từ này không?</div>
+<div class="recognition-row"><button class="recog-btn" onclick="selectRecog(this,'yes')">✓ Biết</button><button class="recog-btn" onclick="selectRecog(this,'maybe')">? Mơ hồ</button><button class="recog-btn" onclick="selectRecog(this,'no')">✗ Chưa biết</button></div>
+<div class="skip-note" style="display:none"><div class="skip-box">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-2">
+<div class="step-header"><div class="step-num">2</div><div class="step-label">Từ quen gần nhất</div></div>
+<div class="qa-item"><div class="qa-question">'gives your body important VITAMINS' — 'important' = quan trọng. Đây là thứ tốt hay xấu?</div>
+<div class="answer-text" id="s2a_22_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">'Eating FRUIT' gives vitamins → vitamins có trong trái cây → đây là chất gì?</div>
+<div class="answer-text" id="s2a_22_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán lần đầu của em:</div><textarea class="doan-input" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block step-3">
+<div class="step-header"><div class="step-num">3</div><div class="step-label">Câu sau xác nhận</div></div>
+<div class="qa-item"><div class="qa-question">'Vitamins help keep your SKIN HEALTHY' → vitamins giúp da khỏe mạnh.</div>
+<div class="answer-text" id="s3a_22_0"></div>
+</div>
+<div class="qa-item"><div class="qa-question">Vitamins là chất dinh dưỡng có trong rau quả, quan trọng cho sức khỏe = ?</div>
+<div class="answer-text" id="s3a_22_1"></div>
+</div>
+<div class="doan-box"><div class="doan-label">★ Đoán tinh chỉnh của em:</div><textarea class="doan-input" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="step-divider"></div>
+<div class="step-block nghia-step">
+<div class="step-header"><div class="step-num nghia-num" style="background:#F9A825;color:#333">✓</div><div class="step-label nghia-lbl">Nghĩa của <strong>vitamin</strong> là:</div></div>
+<div class="nghia-box">
+<textarea class="doan-input" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="big-reveal-btn" id="rbtn_22" style="background:#00695C" onclick="revealAll(22)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nghia-reveal" id="nghia_22">vitamin</div>
+</div>
+</div>
+<div class="big-reveal-wrap" id="wrap_22"></div>
+<div class="revealed-note" id="rnote_22" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="summary">
+  <div class="summary-top">
+    <div class="summary-icon">🎉</div>
+    <div class="summary-title">Hoàn thành Unit 2!</div>
+    <div class="summary-sub">Em đã luyện suy luận 22 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+  </div>
+  <div class="summary-body">
+    <div class="score-section">
+      <div class="score-title">Bảng tự chấm</div>
+      <div class="score-sub">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+      <div class="score-legend"><span class="sc-yes-leg">✓ Đúng = 1 điểm</span><span class="sc-near-leg">~ Gần đúng = 0.5</span><span class="sc-no-leg">✗ Sai = 0</span></div>
+      <table class="score-table"><tr><th>#</th><th>Từ</th><th>Nghĩa</th><th>Kết quả</th></tr><tr><td class="sc-num">1</td><td class="sc-word"><strong>sunburn</strong></td><td class="sc-nghia">sự cháy nắng</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(1,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(1,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(1,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">2</td><td class="sc-word"><strong>health</strong></td><td class="sc-nghia">sức khỏe</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(2,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(2,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(2,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">3</td><td class="sc-word"><strong>acne</strong></td><td class="sc-nghia">mụn trứng cá</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(3,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(3,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(3,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">4</td><td class="sc-word"><strong>skin condition</strong></td><td class="sc-nghia">tình trạng da</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(4,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(4,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(4,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">5</td><td class="sc-word"><strong>affect</strong></td><td class="sc-nghia">tác động, ảnh hưởng đến</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(5,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(5,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(5,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">6</td><td class="sc-word"><strong>disease</strong></td><td class="sc-nghia">bệnh</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(6,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(6,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(6,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">7</td><td class="sc-word"><strong>avoid</strong></td><td class="sc-nghia">tránh, né tránh</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(7,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(7,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(7,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">8</td><td class="sc-word"><strong>pop</strong></td><td class="sc-nghia">nặn</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(8,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(8,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(8,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">9</td><td class="sc-word"><strong>chapped</strong></td><td class="sc-nghia">bị nứt nẻ</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(9,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(9,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(9,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">10</td><td class="sc-word"><strong>lip balm</strong></td><td class="sc-nghia">kem bôi môi</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(10,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(10,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(10,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">11</td><td class="sc-word"><strong>dim</strong></td><td class="sc-nghia">lờ mờ, không đủ sáng</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(11,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(11,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(11,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">12</td><td class="sc-word"><strong>eyedrops</strong></td><td class="sc-nghia">thuốc nhỏ mắt</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(12,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(12,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(12,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">13</td><td class="sc-word"><strong>fat</strong></td><td class="sc-nghia">mỡ, chất béo</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(13,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(13,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(13,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">14</td><td class="sc-word"><strong>fit</strong></td><td class="sc-nghia">gọn gàng, cân đối</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(14,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(14,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(14,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">15</td><td class="sc-word"><strong>healthy</strong></td><td class="sc-nghia">khoẻ mạnh, lành mạnh</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(15,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(15,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(15,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">16</td><td class="sc-word"><strong>indoor</strong></td><td class="sc-nghia">trong nhà</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(16,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(16,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(16,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">17</td><td class="sc-word"><strong>pimple</strong></td><td class="sc-nghia">mụn</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(17,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(17,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(17,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">18</td><td class="sc-word"><strong>protein</strong></td><td class="sc-nghia">chất đạm</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(18,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(18,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(18,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">19</td><td class="sc-word"><strong>soybean</strong></td><td class="sc-nghia">đậu nành</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(19,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(19,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(19,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">20</td><td class="sc-word"><strong>tofu</strong></td><td class="sc-nghia">đậu phụ</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(20,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(20,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(20,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">21</td><td class="sc-word"><strong>virus</strong></td><td class="sc-nghia">vi rút</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(21,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(21,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(21,0,this)" title="Sai">✗</button></div></td></tr>
+<tr><td class="sc-num">22</td><td class="sc-word"><strong>vitamin</strong></td><td class="sc-nghia">vitamin</td><td><div class="sc-row"><button class="sc-btn" onclick="scoreWord(22,1,this)" title="Đúng">✓</button><button class="sc-btn" onclick="scoreWord(22,0.5,this)" title="Gần đúng">~</button><button class="sc-btn" onclick="scoreWord(22,0,this)" title="Sai">✗</button></div></td></tr>
+</table>
+    </div>
+    <div class="score-display">
+      <div class="score-big" id="scoreBig">0</div>
+      <div class="score-label">/ 22 từ</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="scoreBar" style="width:0%"></div></div>
+      <div class="score-msg" id="scoreMsg">Bấm ✓/~/✗ để tính điểm</div>
+    </div>
+    <div class="submit-section">
+      <div class="submit-title">📤 Gửi kết quả cho giáo viên</div>
+      <div class="submit-sub">Điểm của em: <strong id="scoreDisplay" style="color:#00695C;font-size:18px">Chưa chấm</strong></div>
+      <div id="scoreRemind"></div>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdE98x_FWlCRQ0rybmr5ev_W8_xtkGROXJ758G1QHAvxAbh3g/viewform?embedded=true" width="100%" height="520" frameborder="0" style="border-radius:12px;margin-top:12px;display:block">Đang tải...</iframe>
+    </div>
+    <div style="text-align:center"><button class="restart-btn" onclick="restart()">↺ Làm lại từ đầu</button></div>
+  </div>
+</div>
+</main>
+<nav class="nav-bar">
+  <button class="nav-btn btn-prev" id="bPrev" onclick="go(cur-1)" disabled>← Trước</button>
+  <div class="nav-dots" id="dots"></div>
+  <button class="nav-btn btn-next" id="bNext" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=22;let cur=1;const scores={};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nav-dot'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('summary').classList.remove('active');cur=n;if(n>T){document.getElementById('summary').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bNext').disabled=true;document.getElementById('bPrev').disabled=false;updateDots(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bPrev').disabled=n<=1;document.getElementById('bNext').disabled=false;document.getElementById('bNext').textContent=n===T?'Xem tóm tắt →':'Tiếp →';updateDots(n);window.scrollTo({top:0,behavior:'smooth'});}
+function updateDots(n){document.querySelectorAll('.nav-dot').forEach((d,i)=>{d.className='nav-dot';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selectRecog(btn,type){const row=btn.closest('.recognition-row');row.querySelectorAll('.recog-btn').forEach(b=>b.className='recog-btn');btn.className='recog-btn sel-'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.step-2');const s3=card.querySelector('.step-3');const divs=card.querySelectorAll('.step-divider');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i===0||i===1)d.style.display='none';});const note=card.querySelector('.skip-note');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skip-note');if(note)note.style.display='none';}}
+function revealAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.answer-text').forEach(e=>e.classList.add('shown'));const ng=document.getElementById('nghia_'+n);if(ng)ng.classList.add('shown');const btn=document.getElementById('rbtn_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rnote_'+n);if(rn)rn.style.display='block';}
+function scoreWord(num,val,btn){btn.closest('.sc-row').querySelectorAll('.sc-btn').forEach(b=>b.classList.remove('active-yes','active-near','active-no'));btn.classList.add(val===1?'active-yes':val===0.5?'active-near':'active-no');scores[num]=val;updateScore();}
+function updateScore(){const total=Object.values(scores).reduce((a,b)=>a+b,0);const pct=Math.round(total/T*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('scoreBig').textContent=ts;document.getElementById('scoreBar').style.width=pct+'%';const sd=document.getElementById('scoreDisplay');if(sd)sd.textContent=ts+' / '+T;const sr=document.getElementById('scoreRemind');if(sr)sr.innerHTML='<div style="background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 14px;font-size:14px;color:#2E7D32;font-weight:600;">💡 Điền đúng <strong>'+ts+'/22</strong> vào ô Điểm trong form</div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('scoreMsg').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.answer-text.shown,.nghia-reveal.shown').forEach(e=>e.classList.remove('shown'));document.querySelectorAll('.big-reveal-btn').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rnote_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.doan-input').forEach(e=>e.value='');document.querySelectorAll('.recog-btn').forEach(b=>b.className='recog-btn');document.querySelectorAll('.step-2,.step-3,.step-divider').forEach(e=>e.style.display='');document.querySelectorAll('.skip-note').forEach(e=>e.style.display='none');document.querySelectorAll('.sc-btn').forEach(b=>b.classList.remove('active-yes','active-near','active-no'));Object.keys(scores).forEach(k=>delete scores[k]);updateScore();document.getElementById('scoreDisplay').textContent='Chưa chấm';document.getElementById('summaryCard')?.classList.remove('active');go(1);}
+init();
+</script>
+</body></html>

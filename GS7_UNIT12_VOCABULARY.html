@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 12 – A Vacation Abroad | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:220px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+<div class="ht"><div class="htl">Tiếng Anh 7 – Unit 12 • A Vacation Abroad</div><div class="wc" id="wc">Từ 1 / 18</div></div>
+<div class="pb"><div class="pf" id="pf" style="width:5.6%"></div></div>
+</header>
+<main class="main">
+
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">amazing</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/əˈmeɪzɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span>
+</div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"Australia has <mark>amazing</mark> landscapes."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Australia has AMAZING landscapes.' — Phong vừa kể về chuyến đi tuyệt vời. 'amazing' mô tả phong cảnh như thế nào?</div><div class="ea">Phong vừa nói: 'It was fantastic!' → 'amazing' cũng là tính từ đánh giá CAO.</div></div>
+<div class="qi"><div class="qq">'amazing' mô tả 'landscapes' = phong cảnh. Phong thấy ấn tượng hay bình thường?</div><div class="ea">'amazing' = gây ngạc nhiên theo hướng RẤT TÍCH CỰC.</div></div>
+<div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Phong cảnh tuyệt vời — còn mơ hồ về từ chính xác.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'amaze' = làm kinh ngạc. '-ing' = tính từ. 'amazing' = gây ra cảm giác kinh ngạc, thú vị = ?</div><div class="ea">amazing = ngạc nhiên (một cách thích thú), tuyệt vời ✓</div></div>
+<div class="qi"><div class="qq">'amaze' (v) → 'amazement' (n) → 'amazing' (adj). Tương tự: 'interest' → 'interesting'. amazing = ?</div><div class="ea">amazing = tuyệt vời, ngạc nhiên (thích thú) ✓</div></div>
+<div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Tuyệt vời, gây kinh ngạc — amaze + -ing.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>amazing</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><div style="font-size:16px;font-weight:700;color:#1B5E20">ngạc nhiên (một cách thích thú), tuyệt vời</div></div>
+<div class="wn">'amaze' (v) → 'amazement' (n) → 'amazing' (adj). Tương tự: 'interest' → 'interesting'.</div>
+</div>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">landscape</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈlændskeɪp/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Australia has amazing <mark>landscapes</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'LAND' + 'SCAPE'. 'land' = đất, địa hình (từ quen). '-scape' = khung cảnh, toàn cảnh.</div><div class="at" id="a2_2_0"></div></div>
+<div class="qi"><div class="qq">Bài đọc: 'amazing natural LANDSCAPES: green mountains, shining beaches, high waterfalls' → landscape = ?</div><div class="at" id="a2_2_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'landscape' (n) = phong cảnh thiên nhiên nhìn bao quát. Tương tự: 'seascape' = cảnh biển.</div><div class="at" id="a3_2_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'landscape (n) = phong cảnh'. Khung cảnh thiên nhiên rộng lớn = ?</div><div class="at" id="a3_2_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>landscape</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_2">phong cảnh</div></div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">local</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈləʊkl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"talking to <mark>local</mark> people ..."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'talking to LOCAL people' — Phong nói chuyện với 'local people' ở Australia. Đây là người như thế nào?</div><div class="at" id="a2_3_0"></div></div>
+<div class="qi"><div class="qq">'local people' ở Australia = người ở đó, không phải khách du lịch. 'local' = người thuộc về ___?</div><div class="at" id="a2_3_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'location' = địa điểm. 'local' = thuộc về địa điểm đó. 'local people' = người sống ở địa phương = ?</div><div class="at" id="a3_3_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'local (adj) = thuộc về địa phương'. Người/vật ở đúng nơi đó = ?</div><div class="at" id="a3_3_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>local</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_3">thuộc về địa phương</div></div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">penguin</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈpeŋɡwɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We went <mark>penguin</mark> watching."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'We went PENGUIN watching' — đây là hoạt động đi XEM 'penguin'. Penguin = loài động vật gì?</div><div class="at" id="a2_4_0"></div></div>
+<div class="qi"><div class="qq">Phillip Island ở Australia nổi tiếng về 'penguin'. Đây là loài chim không bay sống ở vùng lạnh = ?</div><div class="at" id="a2_4_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Penguin = loài chim màu đen trắng, không biết bay, bơi giỏi, sống ở vùng lạnh = ?</div><div class="at" id="a3_4_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'penguin (n) = chim cánh cụt'. Loài chim đặc trưng ở Nam Cực = ?</div><div class="at" id="a3_4_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>penguin</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_4">chim cánh cụt</div></div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div>
+<div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">island country</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈaɪlənd ˈkʌntri/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"New Zealand is an <mark>island country</mark> in the Pacific Ocean."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'ISLAND' + 'COUNTRY'. 'island' = hòn đảo. 'country' = quốc gia. Ghép lại = ?</div><div class="at" id="a2_5_0"></div></div>
+<div class="qi"><div class="qq">'in the Pacific Ocean' — New Zealand nằm giữa đại dương. 'island country' = quốc gia như thế nào?</div><div class="at" id="a2_5_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Quốc gia bao quanh bởi nước = 'island country'. New Zealand, Nhật Bản, Úc đều là ví dụ. island country = ?</div><div class="at" id="a3_5_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'island country = đảo quốc'. Quốc gia nằm hoàn toàn trên đảo = ?</div><div class="at" id="a3_5_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>island country</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_5">đảo quốc</div></div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">shining</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈʃaɪnɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"green mountains, <mark>shining</mark> beaches, high waterfalls, and ancient forests"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'SHINING beaches' — 'beaches' = bãi biển. 'shining' mô tả bãi biển như thế nào?</div><div class="at" id="a2_6_0"></div></div>
+<div class="qi"><div class="qq">'shine' = tỏa sáng, lấp lánh. 'shining beaches' = bãi biển lấp lánh ánh sáng = đẹp như thế nào?</div><div class="at" id="a2_6_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'shine' (v) = tỏa sáng. '-ing' = tính từ. 'shining' = đang tỏa sáng, lấp lánh = ?</div><div class="at" id="a3_6_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'shining (adj) = chói chang, chan hòa ánh nắng'. Phát ra ánh sáng = ?</div><div class="at" id="a3_6_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>shining</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_6">chói chang, chan hòa ánh nắng</div></div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">ancient</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈeɪnʃənt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"green mountains, shining beaches, high waterfalls, and <mark>ancient</mark> forests"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'ANCIENT forests' — 'forests' = rừng. 'ancient' mô tả rừng đã tồn tại bao lâu?</div><div class="at" id="a2_7_0"></div></div>
+<div class="qi"><div class="qq">'green mountains, shining beaches, high waterfalls, ANCIENT forests' — rừng già = tồn tại từ lâu = ?</div><div class="at" id="a2_7_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'ancient civilization' = nền văn minh cổ đại. 'ancient forests' = rừng CỔ = tồn tại từ bao lâu?</div><div class="at" id="a3_7_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'ancient (adj) = cổ, lâu đời'. Tồn tại từ rất lâu trong lịch sử = ?</div><div class="at" id="a3_7_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>ancient</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_7">cổ, lâu đời</div></div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">historic</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/hɪˈstɒrɪk/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"You can visit the beautiful place where they filmed The Lord of the Rings, or <mark>historic</mark> Queenstown."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'HISTORIC Queenstown' — 'Queenstown' là địa danh. 'historic' mô tả Queenstown như thế nào?</div><div class="at" id="a2_8_0"></div></div>
+<div class="qi"><div class="qq">'history' = lịch sử (từ quen). '-ic' = tính từ. 'historic' = có liên quan đến lịch sử = ?</div><div class="at" id="a2_8_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'historic place' = nơi có giá trị lịch sử. Queenstown gắn với lịch sử quan trọng của New Zealand = ?</div><div class="at" id="a3_8_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'historic (adj) = thuộc về lịch sử'. Có tầm quan trọng trong lịch sử = ?</div><div class="at" id="a3_8_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>historic</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_8">thuộc về lịch sử</div></div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">culture</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkʌltʃə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"New Zealand is rich in <mark>culture</mark>. Most visitors love its unique Maori culture."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'rich in CULTURE' + 'unique Maori CULTURE' — 'rich in' = giàu về. 'culture' = thứ New Zealand có nhiều.</div><div class="at" id="a2_9_0"></div></div>
+<div class="qi"><div class="qq">'Maori culture' = văn hóa người Maori. Bao gồm tattoos và haka dance. 'culture' = ?</div><div class="at" id="a2_9_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'cultural' = thuộc về văn hóa (từ quen). 'culture' = danh từ gốc. 'culture' = ?</div><div class="at" id="a3_9_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'culture (n) = nền văn hoá'. Tập hợp phong tục, nghệ thuật, truyền thống = ?</div><div class="at" id="a3_9_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>culture</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_9">nền văn hoá</div></div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">native</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈneɪtɪv/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The Maori are the <mark>native</mark> people of this country."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The Maori are the NATIVE people of this country.' — 'of this country' = của đất nước này. Maori là người ở đây từ khi nào?</div><div class="at" id="a2_10_0"></div></div>
+<div class="qi"><div class="qq">'native people' = người sống ở đây từ NGUYÊN THỦY, trước khi có người khác đến. native = ?</div><div class="at" id="a2_10_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'native' = nguyên gốc, bản địa. 'native speaker' = người nói tiếng mẹ đẻ. 'native people' = ?</div><div class="at" id="a3_10_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'native (adj) = nguyên thủy, nguyên gốc'. Thuộc về nơi chốn từ ban đầu = ?</div><div class="at" id="a3_10_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>native</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_10">nguyên thủy, nguyên gốc</div></div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">tattoo</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/təˈtuː/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"They are famous for their unique <mark>tattoos</mark> and haka dance."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'famous for their unique TATTOOS' — đây là thứ nổi tiếng của người Maori. Nhìn thấy được trên cơ thể = ?</div><div class="at" id="a2_11_0"></div></div>
+<div class="qi"><div class="qq">'unique tattoos' = hình xăm độc đáo. 'tattoo' = hình vẽ/ký hiệu trên cơ thể người = ?</div><div class="at" id="a2_11_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Người Maori xăm hình trên mặt và người như một phần văn hóa. 'tattoo' = ?</div><div class="at" id="a3_11_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'tattoo (n) = hình xăm'. Hình vẽ vĩnh viễn trên da người = ?</div><div class="at" id="a3_11_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>tattoo</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_11">hình xăm</div></div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">amazement</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/əˈmeɪzmənt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>amazement</mark> on her face showed she had never seen anything like it."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The AMAZEMENT on her face' — 'amazement' = cảm xúc thể hiện trên mặt. Đây là cảm giác gì?</div><div class="at" id="a2_12_0"></div></div>
+<div class="qi"><div class="qq">'amazing' = tuyệt vời/gây kinh ngạc (Từ VD). '-ment' = đuôi danh từ. 'amazement' = ?</div><div class="at" id="a2_12_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'amaze' (v) → 'amazement' (n). Tương tự: 'enjoy' → 'enjoyment'. 'amazement' = ?</div><div class="at" id="a3_12_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'amazement (n) = sự ngạc nhiên, kinh ngạc'. Cảm giác ngạc nhiên thích thú = ?</div><div class="at" id="a3_12_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>amazement</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_12">sự ngạc nhiên, kinh ngạc</div></div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">castle</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkɑːsl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Edinburgh <mark>Castle</mark> is the symbol of Scotland."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Edinburgh CASTLE is the SYMBOL of Scotland' — đây là biểu tượng của Scotland. Castle = loại công trình gì?</div><div class="at" id="a2_13_0"></div></div>
+<div class="qi"><div class="qq">'castle' = tòa nhà lớn, kiên cố, thường cổ. 'Edinburgh Castle' là pháo đài lịch sử = ?</div><div class="at" id="a2_13_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'castle (n) = pháo đài'. Tòa nhà lớn, cũ, có tường dày bảo vệ = ?</div><div class="at" id="a3_13_0"></div></div>
+<div class="qi"><div class="qq">'Cinderella castle', 'Windsor Castle' đều là 'castles'. Castle = loại kiến trúc gì?</div><div class="at" id="a3_13_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>castle</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_13">pháo đài</div></div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">coastline</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkəʊstlaɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>coastline</mark> of Vietnam stretches over 3,000 kilometres."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'COAST' + 'LINE'. 'coast' = bờ biển. 'line' = đường. Ghép lại = ?</div><div class="at" id="a2_14_0"></div></div>
+<div class="qi"><div class="qq">'stretches over 3,000 km' — đây là đường dài. 'coastline' = đường bờ biển = ?</div><div class="at" id="a2_14_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'coast' = nơi đất tiếp giáp biển. 'line' = đường. 'coastline' = đường nối các điểm ven biển = ?</div><div class="at" id="a3_14_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'coastline (n) = đường bờ biển'. Đường biên giới giữa đất và biển = ?</div><div class="at" id="a3_14_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>coastline</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_14">đường bờ biển</div></div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">capital</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkæpɪtl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"London is the <mark>capital</mark> of the United Kingdom."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'London is the CAPITAL of the United Kingdom.' — London là gì của UK? Thành phố quan trọng nhất?</div><div class="at" id="a2_15_0"></div></div>
+<div class="qi"><div class="qq">'Hanoi is the capital of Vietnam' — Hanoi = thủ đô. 'capital' = thành phố nào của một quốc gia?</div><div class="at" id="a2_15_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'capital city' = thành phố thủ đô. Thành phố trung tâm chính trị của quốc gia = ?</div><div class="at" id="a3_15_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'capital (n) = thủ đô'. Thành phố trung tâm chính phủ = ?</div><div class="at" id="a3_15_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>capital</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_15">thủ đô</div></div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">sunset</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈsʌnset/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>sunset</mark> over the sea was one of the most beautiful sights we saw."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'SUN' + 'SET'. 'sun' = mặt trời. 'set' = lặn xuống. Ghép lại = ?</div><div class="at" id="a2_16_0"></div></div>
+<div class="qi"><div class="qq">'one of the most BEAUTIFUL sights' — đây là cảnh đẹp. 'sunset over the sea' = cảnh gì?</div><div class="at" id="a2_16_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Đối lập: 'sunrise' = bình minh (mặt trời mọc). 'sunset' = mặt trời ___ ở cuối ngày = ?</div><div class="at" id="a3_16_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'sunset (n) = mặt trời lặn'. Cảnh mặt trời xuống chân trời buổi tối = ?</div><div class="at" id="a3_16_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>sunset</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_16">mặt trời lặn</div></div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">kilt</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kɪlt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"A <mark>kilt</mark> is a traditional skirt worn by Scottish men at special events."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'A KILT is a traditional SKIRT worn by Scottish MEN' — đây là loại váy của đàn ông Scotland. kilt = ?</div><div class="at" id="a2_17_0"></div></div>
+<div class="qi"><div class="qq">'traditional SKIRT' = váy truyền thống. 'worn by Scottish MEN' = mặc bởi đàn ông Scotland. kilt = ?</div><div class="at" id="a2_17_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Đây là loại trang phục đặc trưng của Scotland, thường có hoa văn kẻ ca-rô = ?</div><div class="at" id="a3_17_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'kilt (n) = váy truyền thống của đàn ông Scotland'. Trang phục dân tộc Scotland = ?</div><div class="at" id="a3_17_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>kilt</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_17">váy truyền thống của đàn ông Scotland</div></div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">symbol</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈsɪmbl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The Eiffel Tower is the most famous <mark>symbol</mark> of Paris."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The Eiffel Tower is the most famous SYMBOL of Paris.' — Tháp Eiffel = đại diện cho Paris. symbol = ?</div><div class="at" id="a2_18_0"></div></div>
+<div class="qi"><div class="qq">'Edinburgh Castle is the SYMBOL of Scotland' → castle đại diện cho Scotland. symbol = ?</div><div class="at" id="a2_18_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Đã học ở Unit 9: 'symbol (n) = biểu tượng'. Vật/hình ảnh đại diện cho ý nghĩa khác = ?</div><div class="at" id="a3_18_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 12: 'symbol (n) = biểu tượng'. Thứ đại diện cho quốc gia/ý nghĩa nào đó = ?</div><div class="at" id="a3_18_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>symbol</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_18">biểu tượng</div></div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+<div class="st">
+<div style="font-size:52px;margin-bottom:12px">🎉</div>
+<div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 12!</div>
+<div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 18 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+</div>
+<div class="sb2">
+<div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+<div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+<div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px"><span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span><span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span><span style="color:#C62828;font-weight:700">✗ Sai = 0</span></div>
+<table class="sct"><tr><th>#</th><th>Từ</th><th>IPA</th><th>Nghĩa</th><th>Kết quả</th></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">1</td><td><strong>amazement (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/əˈmeɪzmənt/</td><td style="color:#546E7A;font-size:13px">sự ngạc nhiên, kinh ngạc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">2</td><td><strong>amazing (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/əˈmeɪzɪŋ/</td><td style="color:#546E7A;font-size:13px">ngạc nhiên (một cách thích thú)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">3</td><td><strong>ancient (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈeɪnʃənt/</td><td style="color:#546E7A;font-size:13px">cổ, lâu đời</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">4</td><td><strong>Australia (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ɒˈstreɪliə/</td><td style="color:#546E7A;font-size:13px">nước Úc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">5</td><td><strong>Canada (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkænədə/</td><td style="color:#546E7A;font-size:13px">nước Canada</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">6</td><td><strong>capital (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkæpɪtl/</td><td style="color:#546E7A;font-size:13px">thủ đô</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">7</td><td><strong>castle (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkɑːsl/</td><td style="color:#546E7A;font-size:13px">pháo đài</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">8</td><td><strong>coastline (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkəʊstlaɪn/</td><td style="color:#546E7A;font-size:13px">đường bờ biển</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">9</td><td><strong>culture (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkʌltʃə/</td><td style="color:#546E7A;font-size:13px">nền văn hoá</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">10</td><td><strong>historic (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/hɪˈstɒrɪk/</td><td style="color:#546E7A;font-size:13px">thuộc về lịch sử</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">11</td><td><strong>island country</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈaɪlənd ˈkʌntri/</td><td style="color:#546E7A;font-size:13px">đảo quốc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">12</td><td><strong>kilt (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/kɪlt/</td><td style="color:#546E7A;font-size:13px">váy truyền thống của đàn ông Scotland</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">13</td><td><strong>landscape (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈlændskeɪp/</td><td style="color:#546E7A;font-size:13px">phong cảnh</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">14</td><td><strong>local (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈləʊkl/</td><td style="color:#546E7A;font-size:13px">thuộc về địa phương</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">15</td><td><strong>native (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈneɪtɪv/</td><td style="color:#546E7A;font-size:13px">nguyên thủy, nguyên gốc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">16</td><td><strong>New Zealand (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌnjuː ˈziːlənd/</td><td style="color:#546E7A;font-size:13px">nước Niu Zi Lân</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">17</td><td><strong>penguin (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈpeŋɡwɪn/</td><td style="color:#546E7A;font-size:13px">chim cánh cụt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">18</td><td><strong>royal (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈrɔɪəl/</td><td style="color:#546E7A;font-size:13px">thuộc về hoàng gia</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">19</td><td><strong>shining (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈʃaɪnɪŋ/</td><td style="color:#546E7A;font-size:13px">chói chang, chan hòa ánh nắng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">20</td><td><strong>sunset (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈsʌnset/</td><td style="color:#546E7A;font-size:13px">mặt trời lặn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(20,1,this)">✓</button><button class="scb" onclick="sw(20,0.5,this)">~</button><button class="scb" onclick="sw(20,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">21</td><td><strong>symbol (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈsɪmbl/</td><td style="color:#546E7A;font-size:13px">biểu tượng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(21,1,this)">✓</button><button class="scb" onclick="sw(21,0.5,this)">~</button><button class="scb" onclick="sw(21,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">22</td><td><strong>tattoo (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/təˈtuː/</td><td style="color:#546E7A;font-size:13px">hình xăm</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(22,1,this)">✓</button><button class="scb" onclick="sw(22,0.5,this)">~</button><button class="scb" onclick="sw(22,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">23</td><td><strong>(the) UK</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/juː ˈkeɪ/</td><td style="color:#546E7A;font-size:13px">Vương quốc liên hiệp Anh</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(23,1,this)">✓</button><button class="scb" onclick="sw(23,0.5,this)">~</button><button class="scb" onclick="sw(23,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">24</td><td><strong>(the) USA</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/juː es ˈeɪ/</td><td style="color:#546E7A;font-size:13px">Hợp chủng quốc Hoa Kỳ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(24,1,this)">✓</button><button class="scb" onclick="sw(24,0.5,this)">~</button><button class="scb" onclick="sw(24,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">25</td><td><strong>tower (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈtaʊə/</td><td style="color:#546E7A;font-size:13px">tháp</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(25,1,this)">✓</button><button class="scb" onclick="sw(25,0.5,this)">~</button><button class="scb" onclick="sw(25,0,this)">✗</button></div></td></tr>
+</table>
+<div class="sdsp"><div class="sbig" id="sb">0</div><div style="font-size:16px;color:rgba(255,255,255,.8)">/ 25 từ</div><div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div><div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div></div>
+<div class="subs"><div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📋 Ghi nhớ kết quả</div><div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong> / 25</div><div id="sr"></div></div>
+<div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+</div>
+</div>
+</main>
+<nav class="nav-bar">
+<button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+<div class="dots" id="dots"></div>
+<button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=18;const TS=25;let cur=1;const sc={};
+const ANS={"a2_2_0": "'land' = đất + '-scape' = khung cảnh toàn cảnh → 'landscape' = phong cảnh đất đai.", "a2_2_1": "'green mountains, shining beaches, waterfalls' = các thành phần của 'landscape' = phong cảnh thiên nhiên.", "a3_2_0": "'landscape' = phong cảnh thiên nhiên nhìn bao quát. 'seascape' = cảnh biển.", "a3_2_1": "'landscape' = phong cảnh — khung cảnh thiên nhiên rộng lớn.", "a2_3_0": "'local people' ở Australia = người bản địa sống ở đó, không phải du khách.", "a2_3_1": "Người thuộc về địa phương đó (không phải từ nơi khác đến) = 'local'.", "a3_3_0": "'location' = địa điểm. 'local' = thuộc về địa điểm đó = người/vật của địa phương.", "a3_3_1": "'local' = thuộc về địa phương — người/vật thuộc về nơi đó.", "a2_4_0": "'penguin watching' = đi xem 'penguin'. Phillip Island nổi tiếng vì có loài chim này.", "a2_4_1": "Loài chim không bay, sống ở vùng lạnh, thường thấy ở Nam Cực = chim cánh cụt.", "a3_4_0": "Penguin = chim đen trắng, không bay, bơi giỏi, sống ở vùng lạnh = chim cánh cụt.", "a3_4_1": "'penguin' = chim cánh cụt — loài chim đặc trưng ở Nam Cực.", "a2_5_0": "'island' = đảo + 'country' = quốc gia → 'island country' = quốc gia trên đảo.", "a2_5_1": "New Zealand nằm giữa Thái Bình Dương, bao quanh bởi nước = đảo quốc.", "a3_5_0": "Quốc gia hoàn toàn trên đảo = 'island country'. Nhật Bản, New Zealand đều là ví dụ.", "a3_5_1": "'island country' = đảo quốc — quốc gia nằm hoàn toàn trên đảo.", "a2_6_0": "'SHINING beaches' = bãi biển tỏa sáng, lấp lánh ánh nắng.", "a2_6_1": "'shine' = tỏa sáng → 'shining' = đang tỏa sáng, lấp lánh trong ánh nắng.", "a3_6_0": "'shine' (v) = tỏa sáng. '-ing' → tính từ. 'shining' = lấp lánh ánh sáng.", "a3_6_1": "'shining' = chói chang, chan hòa ánh nắng — phát ra ánh sáng.", "a2_7_0": "'ancient forests' = rừng đã tồn tại từ rất lâu = rừng già cổ thụ.", "a2_7_1": "'ancient civilization' = văn minh cổ đại. 'ancient forests' = rừng cổ, lâu đời.", "a3_7_0": "'ancient' = cổ đại, lâu đời. Rừng tồn tại từ hàng nghìn năm = 'ancient forests'.", "a3_7_1": "'ancient' = cổ, lâu đời — tồn tại từ rất lâu trong lịch sử.", "a2_8_0": "'historic Queenstown' = Queenstown có giá trị lịch sử quan trọng.", "a2_8_1": "'history' = lịch sử → 'historic' = thuộc về/có giá trị lịch sử.", "a3_8_0": "'historic place' = nơi có tầm quan trọng lịch sử. 'historic' = liên quan đến lịch sử.", "a3_8_1": "'historic' = thuộc về lịch sử — có tầm quan trọng trong lịch sử.", "a2_9_0": "'rich in CULTURE' = giàu có về văn hóa. Maori culture = phong tục, nghệ thuật, truyền thống.", "a2_9_1": "'Maori culture' bao gồm tattoos và haka dance = tập hợp phong tục, truyền thống.", "a3_9_0": "'cultural' = thuộc về văn hóa. 'culture' = danh từ gốc = nền văn hóa.", "a3_9_1": "'culture' = nền văn hoá — tập hợp phong tục, nghệ thuật, truyền thống của một dân tộc.", "a2_10_0": "'native people of this country' = người sống ở đây từ thuở ban đầu, trước khi người khác đến.", "a2_10_1": "Người Maori là người bản địa đầu tiên của New Zealand = native people.", "a3_10_0": "'native speaker' = người nói tiếng mẹ đẻ. 'native people' = người bản địa từ ban đầu.", "a3_10_1": "'native' = nguyên thủy, nguyên gốc — thuộc về nơi chốn từ ban đầu.", "a2_11_0": "'famous for their unique TATTOOS' = hình xăm độc đáo trên cơ thể người Maori.", "a2_11_1": "'unique tattoos' = hình xăm đặc biệt. 'tattoo' = hình vẽ trên da người.", "a3_11_0": "Người Maori xăm hình trên mặt và người = hình xăm truyền thống = 'tattoo'.", "a3_11_1": "'tattoo' = hình xăm — hình vẽ vĩnh viễn trên da người.", "a2_12_0": "'AMAZEMENT on her face' = cảm xúc ngạc nhiên thể hiện trên nét mặt.", "a2_12_1": "'amazing' → 'amazement'. '-ment' = đuôi danh từ. 'amazement' = trạng thái kinh ngạc.", "a3_12_0": "'amaze' → 'amazement'. Tương tự 'enjoy' → 'enjoyment'. 'amazement' = sự kinh ngạc.", "a3_12_1": "'amazement' = sự ngạc nhiên, kinh ngạc — cảm giác ngạc nhiên thích thú.", "a2_13_0": "'Edinburgh CASTLE = symbol of Scotland' = biểu tượng lịch sử quan trọng. Castle = pháo đài.", "a2_13_1": "Công trình kiến trúc lớn, cổ, kiên cố = pháo đài = 'castle'.", "a3_13_0": "'castle' = pháo đài/lâu đài — tòa nhà lớn, có tường dày, thường thuộc thời trung cổ.", "a3_13_1": "'Cinderella castle', 'Windsor Castle' = pháo đài/lâu đài. 'castle' = kiến trúc cổ kiên cố.", "a2_14_0": "'coast' = bờ biển + 'line' = đường → 'coastline' = đường bờ biển.", "a2_14_1": "Đường dài 3,000 km ven biển = 'coastline' = đường bờ biển Việt Nam.", "a3_14_0": "'coast' + 'line' = đường biên giới giữa đất và biển = đường bờ biển.", "a3_14_1": "'coastline' = đường bờ biển — đường biên giới giữa đất liền và biển.", "a2_15_0": "'London is the CAPITAL of UK' = London là thành phố trung tâm chính trị của UK.", "a2_15_1": "'Hanoi is the capital of Vietnam' = Hà Nội = thủ đô. 'capital' = thủ đô.", "a3_15_0": "'capital city' = thành phố thủ đô = trung tâm chính trị của quốc gia.", "a3_15_1": "'capital' = thủ đô — thành phố trung tâm chính phủ của quốc gia.", "a2_16_0": "'sun' = mặt trời + 'set' = lặn xuống → 'sunset' = cảnh mặt trời lặn.", "a2_16_1": "'most beautiful sights' = cảnh đẹp nhất. 'sunset over the sea' = mặt trời lặn xuống biển.", "a3_16_0": "'sunrise' = bình minh (mặt trời mọc) ↔ 'sunset' = mặt trời lặn.", "a3_16_1": "'sunset' = mặt trời lặn — cảnh mặt trời xuống chân trời cuối ngày.", "a2_17_0": "'a traditional SKIRT worn by Scottish MEN' = loại váy đặc biệt của đàn ông Scotland = kilt.", "a2_17_1": "Váy truyền thống Scotland mặc bởi đàn ông = 'kilt'.", "a3_17_0": "'kilt' = trang phục dân tộc Scotland, thường có hoa văn kẻ ca-rô.", "a3_17_1": "'kilt' = váy truyền thống của đàn ông Scotland — trang phục dân tộc đặc trưng.", "a2_18_0": "Tháp Eiffel ĐẠI DIỆN cho Paris = là 'symbol'. symbol = thứ đại diện cho điều gì đó.", "a2_18_1": "'Edinburgh Castle = symbol of Scotland' → castle đại diện cho Scotland = biểu tượng.", "a3_18_0": "Đã học ở Unit 9: 'symbol' = biểu tượng đại diện cho ý nghĩa nào đó.", "a3_18_1": "'symbol' = biểu tượng — vật/hình ảnh đại diện cho quốc gia/ý nghĩa nào đó."};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(el=>{const k=el.id;if(ANS[k]){el.textContent='→ '+ANS[k];}el.classList.add('sh');});const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/TS*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điểm: <strong>'+ts+'/25</strong></div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body>
+</html>

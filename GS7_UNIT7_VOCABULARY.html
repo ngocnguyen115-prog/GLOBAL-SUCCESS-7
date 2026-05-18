@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 7 – Traffic | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:220px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+<div class="ht"><div class="htl">Tiếng Anh 7 – Unit 7 • Traffic</div><div class="wc" id="wc">Từ 1 / 18</div></div>
+<div class="pb"><div class="pf" id="pf" style="width:5.6%"></div></div>
+</header>
+<main class="main">
+
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">traffic jams</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈtræfɪk dʒæm/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span>
+</div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"Sometimes, when there are <mark>traffic jams</mark>, it takes longer."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'when there are TRAFFIC JAMS, it takes LONGER' — 'longer' = lâu hơn. traffic jams gây ra điều gì?</div><div class="ea">traffic jams làm cho việc đi lại MẤT NHIỀU THỜI GIAN HƠN.</div></div>
+<div class="qi"><div class="qq">Tách: 'TRAFFIC' + 'JAM'. 'traffic' = xe cộ. 'jam' = kẹt lại (như kẹo jam = dính đặc). Ghép lại = ?</div><div class="ea">'traffic' = xe cộ / 'jam' = kẹt lại → traffic jams = xe cộ bị kẹt = tắc đường.</div></div>
+<div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Xe cộ bị kẹt lại — còn mơ hồ về tên gọi.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Lan đi xe đạp đến trường mất 10 phút. Khi có 'traffic jams' thì mất lâu hơn → vì sao?</div><div class="ea">traffic jams = tắc đường, xe cộ bị ùn tắc ✓</div></div>
+<div class="qi"><div class="qq">'traffic light' = đèn giao thông. 'traffic jam' = giao thông bị gì?</div><div class="ea">traffic jam = tắc đường ✓</div></div>
+<div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Tắc đường — traffic (xe cộ) + jam (kẹt lại).</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>traffic jams</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><div style="font-size:16px;font-weight:700;color:#1B5E20">tắc đường</div></div>
+<div class="wn">'traffic' = xe cộ lưu thông. 'jam' = sự tắc nghẽn. Tương tự: 'traffic light' = đèn giao thông.</div>
+</div>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">obey</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/əˈbeɪ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It is important to <mark>obey</mark> these rules when you are a road user."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'important to OBEY these rules' — đây là điều QUAN TRỌNG phải làm với 'rules' (luật). Phải làm gì với luật?</div><div class="at" id="a2_2_0"></div></div>
+<div class="qi"><div class="qq">'obey traffic rules' = làm gì với luật giao thông? Tuân theo hay vi phạm?</div><div class="at" id="a2_2_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'obey rules' = hành động chấp hành. Ngược với 'break the rules' (vi phạm). 'obey' = ?</div><div class="at" id="a3_2_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'obey traffic rules = tuân theo luật giao thông'. 'obey' = ?</div><div class="at" id="a3_2_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>obey</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_2">tuân theo, chấp hành</div></div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">pavement</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈpeɪvmənt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Use the <mark>pavement</mark> or footpath."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Use the PAVEMENT or footpath.' — 'footpath' = đường đi bộ. 'pavement' đứng cùng nhóm với 'footpath'.</div><div class="at" id="a2_3_0"></div></div>
+<div class="qi"><div class="qq">Người đi bộ (pedestrians) được khuyên dùng 'pavement'. Đây là phần dành riêng cho ai đi bộ?</div><div class="at" id="a2_3_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'pave' = lát (đường gạch). '-ment' = đuôi danh từ. 'pavement' = phần đường được lát = ?</div><div class="at" id="a3_3_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'pavement (n) = vỉa hè (cho người đi bộ)'. Phần bên lề đường = ?</div><div class="at" id="a3_3_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>pavement</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_3">vỉa hè (cho người đi bộ)</div></div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div>
+<div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">zebra crossing</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌziːbrə ˈkrɒsɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Walk across the street at the <mark>zebra crossing</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'ZEBRA' + 'CROSSING'. 'crossing' = nơi băng qua đường. 'zebra' = con ngựa vằn.</div><div class="at" id="a2_4_0"></div></div>
+<div class="qi"><div class="qq">'Walk across the street AT THE ZEBRA CROSSING' — đây là nơi đặc biệt để băng qua đường. Tại sao gọi là 'zebra'?</div><div class="at" id="a2_4_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Vạch băng qua đường có sọc trắng đen xen kẽ — giống hoa văn của con ngựa vằn (zebra). zebra crossing = ?</div><div class="at" id="a3_4_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'zebra crossing = vạch kẻ cho người đi bộ sang đường'. Vạch sơn kẻ ngang đường = ?</div><div class="at" id="a3_4_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>zebra crossing</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_4">vạch kẻ cho người đi bộ sang đường</div></div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">handlebars</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈhændlbɑːz/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Always keep both hands on the <mark>handlebars</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'HANDLE' + 'BARS'. 'handle' = tay cầm. 'bars' = thanh/gióng. Ghép lại = ?</div><div class="at" id="a2_5_0"></div></div>
+<div class="qi"><div class="qq">'keep both HANDS on the handlebars' — người ta giữ tay lên thứ này khi đạp xe = ?</div><div class="at" id="a2_5_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Khi đạp xe, bạn cầm tay vào 'handlebars' để điều khiển xe. 'handlebars' là bộ phận nào của xe đạp?</div><div class="at" id="a3_5_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'handlebars (n) = tay lái, ghi đông'. Phần cầm tay trên xe đạp/xe máy = ?</div><div class="at" id="a3_5_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>handlebars</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_5">tay lái, ghi đông</div></div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">lane</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/leɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Wear helmets, and always use the cycle <mark>lane</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'always use the cycle LANE' — 'cycle' = xe đạp. 'lane' là phần đường dành riêng cho xe đạp.</div><div class="at" id="a2_6_0"></div></div>
+<div class="qi"><div class="qq">'cycle lane' = phần đường chỉ dành cho xe đạp. 'lane' = một PHẦN của con đường = ?</div><div class="at" id="a2_6_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Trên đường cao tốc có nhiều 'lanes' — mỗi lane là một làn đường riêng. 'lane' = ?</div><div class="at" id="a3_6_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'lane (n) = làn đường'. Mỗi phần hẹp của đường dành cho một chiều/loại xe = ?</div><div class="at" id="a3_6_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>lane</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_6">làn đường</div></div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">passenger</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈpæsɪndʒə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Don't carry more than one <mark>passenger</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Don't carry more than one PASSENGER' — đây là người được CHỞ (carry) trên xe. Người đó làm gì?</div><div class="at" id="a2_7_0"></div></div>
+<div class="qi"><div class="qq">'carry' = chở. 'passenger' = người được chở. Lái xe (driver) ≠ passenger. passenger = ?</div><div class="at" id="a2_7_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Lan's mum 'takes me on her motorbike' — Lan là người ngồi sau = Lan là 'passenger'. passenger = ?</div><div class="at" id="a3_7_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'passenger (n) = hành khách'. Người đi nhờ/ngồi trên xe do người khác lái = ?</div><div class="at" id="a3_7_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>passenger</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_7">hành khách</div></div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">bumpy</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈbʌmpi/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The road was <mark>bumpy</mark> after the rain, so we cycled slowly."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The road was BUMPY after the rain, so we cycled SLOWLY' — 'so' = vì vậy. 'bumpy' gây ra điều gì?</div><div class="at" id="a2_8_0"></div></div>
+<div class="qi"><div class="qq">Sau mưa, đường 'bumpy' → phải đi chậm lại. 'bumpy' mô tả đường như thế nào?</div><div class="at" id="a2_8_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'bump' = cục u, ổ gà. '-y' = tính từ (sun→sunny, bump→bumpy). 'bumpy' = có nhiều 'bump' = ?</div><div class="at" id="a3_8_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'bumpy (adj) = lồi lõm, nhiều ổ gà'. Đường không phẳng = ?</div><div class="at" id="a3_8_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>bumpy</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_8">lồi lõm, nhiều ổ gà</div></div>
+<div class="wn">'bump' (n) = cục u, ổ gà → 'bumpy' (adj) = đầy ổ gà. Tương tự: sun → sunny, rain → rainy.</div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">distance</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈdɪstəns/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"How far is it from your home to school? — It's about two kilometres."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'How FAR is it from your home to school?' → hỏi về khoảng cách. 'distance' = thứ đo bằng km = ?</div><div class="at" id="a2_9_0"></div></div>
+<div class="qi"><div class="qq">'two kilometres' = câu trả lời cho câu hỏi khoảng cách. 'distance' = ?</div><div class="at" id="a2_9_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'distance (n) = khoảng cách'. Độ dài giữa hai điểm = ?</div><div class="at" id="a3_9_0"></div></div>
+<div class="qi"><div class="qq">'long distance' = khoảng cách xa. 'short distance' = khoảng cách gần. 'distance' = ?</div><div class="at" id="a3_9_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>distance</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_9">khoảng cách</div></div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fine</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/faɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"She was <mark>fined</mark> because she crossed the road on a red light."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'She was FINED because she crossed the road on a red light' — vi phạm luật → bị 'fined'. Bị gì khi vi phạm?</div><div class="at" id="a2_10_0"></div></div>
+<div class="qi"><div class="qq">'because she crossed on a RED LIGHT' = vi phạm luật giao thông. 'fined' = hình phạt gì?</div><div class="at" id="a2_10_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'fine (v) = phạt'. Bắt người vi phạm nộp tiền phạt = ?</div><div class="at" id="a3_10_0"></div></div>
+<div class="qi"><div class="qq">'fine' (v) = phạt tiền. 'fine' (n) = tiền phạt. 'fined' = bị phạt tiền vì vi phạm luật = ?</div><div class="at" id="a3_10_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>fine</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_10">phạt (tiền)</div></div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">plane</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pleɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We took a <mark>plane</mark> to get to the island quickly."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'took a PLANE to get to the island quickly' — đây là phương tiện đi lại để đến hòn đảo NHANH.</div><div class="at" id="a2_11_0"></div></div>
+<div class="qi"><div class="qq">'took a plane' = lên/đi bằng phương tiện gì để đến đảo nhanh nhất?</div><div class="at" id="a2_11_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'plane (n) = máy bay'. Phương tiện bay trên không = ?</div><div class="at" id="a3_11_0"></div></div>
+<div class="qi"><div class="qq">'fly a plane' = lái máy bay. 'take a plane' = đi máy bay. 'plane' = ?</div><div class="at" id="a3_11_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>plane</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_11">máy bay</div></div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">road sign</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈrəʊd saɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"There is a <mark>road sign</mark> at the corner telling drivers to slow down."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'ROAD' + 'SIGN'. 'road' = đường. 'sign' = biển/dấu hiệu. Ghép lại = ?</div><div class="at" id="a2_12_0"></div></div>
+<div class="qi"><div class="qq">'telling drivers to slow down' — đây là biển BÁO cho lái xe biết điều gì cần làm. road sign = ?</div><div class="at" id="a2_12_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'road sign / traffic sign (n) = biển báo giao thông'. Biển thông tin trên đường = ?</div><div class="at" id="a3_12_0"></div></div>
+<div class="qi"><div class="qq">Stop sign, speed limit sign đều là 'road signs'. Chúng có chức năng gì?</div><div class="at" id="a3_12_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>road sign</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_12">biển báo giao thông</div></div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">safety</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈseɪfti/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"<mark>Safety</mark> is very important when you ride a bicycle on the street."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'SAFETY is very important when you ride a bicycle' — đây là điều QUAN TRỌNG khi tham gia giao thông.</div><div class="at" id="a2_13_0"></div></div>
+<div class="qi"><div class="qq">'important' = quan trọng. Khi đi xe đạp trên đường, điều gì cần đảm bảo nhất?</div><div class="at" id="a2_13_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'safe' (adj) = an toàn. '-ty' = đuôi danh từ (safe→safety). 'safety' = trạng thái gì?</div><div class="at" id="a3_13_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'safety (n) = sự an toàn'. Trạng thái không có nguy hiểm = ?</div><div class="at" id="a3_13_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>safety</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_13">sự an toàn</div></div>
+<div class="wn">'safe' (adj) → 'safety' (n). Tương tự: 'difficult' → 'difficulty'. '-ty' = đuôi danh từ.</div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">seatbelt</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈsiːtbelt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Always wear your <mark>seatbelt</mark> when you are in a car."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'SEAT' + 'BELT'. 'seat' = chỗ ngồi. 'belt' = dây đai. Ghép lại = ?</div><div class="at" id="a2_14_0"></div></div>
+<div class="qi"><div class="qq">'wear your SEATBELT when you are in a CAR' — đây là thứ bạn ĐEO khi ngồi trong xe ô tô. Để làm gì?</div><div class="at" id="a2_14_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'wear' = đeo/mang. 'seatbelt' là dây đai gắn vào ghế ngồi để bảo vệ người ngồi = ?</div><div class="at" id="a3_14_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'seatbelt (n) = đai an toàn'. Dây đai đeo trong xe để tránh chấn thương = ?</div><div class="at" id="a3_14_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>seatbelt</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_14">đai an toàn</div></div>
+<div class="wn">'seat' (chỗ ngồi) + 'belt' (dây đai) = dây đai gắn với ghế ngồi = đai an toàn.</div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">vehicle</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈviːəkl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"A <mark>vehicle</mark> like a car or motorbike needs fuel to run."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'A VEHICLE like a car or motorbike' — 'like' = ví dụ. Car và motorbike là ví dụ của 'vehicle'. Chúng là gì?</div><div class="at" id="a2_15_0"></div></div>
+<div class="qi"><div class="qq">Car = ô tô. Motorbike = xe máy. Cả hai đều là phương tiện giao thông = 'vehicle' = ?</div><div class="at" id="a2_15_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'vehicle (n) = xe cộ, phương tiện giao thông'. Máy móc dùng để di chuyển = ?</div><div class="at" id="a3_15_0"></div></div>
+<div class="qi"><div class="qq">'motor vehicle' = xe có động cơ. 'vehicle' là từ chung chỉ tất cả phương tiện giao thông = ?</div><div class="at" id="a3_15_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>vehicle</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_15">xe cộ, phương tiện giao thông</div></div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">park</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pɑːk/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"He <mark>parked</mark> his motorbike in the wrong place and got a fine."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'PARKED his motorbike in the wrong PLACE' — đây là hành động đặt xe vào một chỗ. Sai chỗ nên bị phạt.</div><div class="at" id="a2_16_0"></div></div>
+<div class="qi"><div class="qq">'got a fine' = bị phạt. Parked = để xe SAI chỗ → 'park' là hành động gì với xe?</div><div class="at" id="a2_16_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'park (v) = đỗ xe'. Dừng và để xe lại một chỗ = ?</div><div class="at" id="a3_16_0"></div></div>
+<div class="qi"><div class="qq">'parking lot' = bãi đỗ xe. 'No parking' = cấm đỗ xe. 'park' = ?</div><div class="at" id="a3_16_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>park</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_16">đỗ xe</div></div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">pedestrian</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pəˈdestriən/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>pedestrian</mark> waited at the zebra crossing before crossing the road."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The PEDESTRIAN waited at the ZEBRA CROSSING' — người này đứng ở vạch qua đường. Họ là ai?</div><div class="at" id="a2_17_0"></div></div>
+<div class="qi"><div class="qq">Người chờ băng qua đường bằng chân (không lái xe) = 'pedestrian'. Họ là loại người tham gia giao thông nào?</div><div class="at" id="a2_17_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'pedes' (Latin) = chân. 'pedestrian' = người di chuyển bằng chân = ?</div><div class="at" id="a3_17_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'pedestrian (n) = người đi bộ'. Người tham gia giao thông bằng chân = ?</div><div class="at" id="a3_17_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>pedestrian</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_17">người đi bộ</div></div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">roof</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ruːf/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>roof</mark> of the bus was damaged in the accident."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The ROOF of the bus' — 'bus' = xe buýt. 'roof' là bộ phận nào của xe buýt?</div><div class="at" id="a2_18_0"></div></div>
+<div class="qi"><div class="qq">Nhà có 'roof' (mái nhà). Xe buýt cũng có 'roof'. Đây là phần ở đâu của các vật thể?</div><div class="at" id="a2_18_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 7: 'roof (n) = nóc xe, mái nhà'. Phần phủ bên trên = ?</div><div class="at" id="a3_18_0"></div></div>
+<div class="qi"><div class="qq">'rooftop' = trên mái. 'roof of a car' = nóc ô tô. 'roof' = phần ở đâu của xe/nhà?</div><div class="at" id="a3_18_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>roof</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_18">nóc xe, mái nhà</div></div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+<div class="st">
+<div style="font-size:52px;margin-bottom:12px">🎉</div>
+<div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 7!</div>
+<div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 18 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+</div>
+<div class="sb2">
+<div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+<div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+<div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px"><span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span><span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span><span style="color:#C62828;font-weight:700">✗ Sai = 0</span></div>
+<table class="sct"><tr><th>#</th><th>Từ</th><th>IPA</th><th>Nghĩa</th><th>Kết quả</th></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">1</td><td><strong>bumpy (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈbʌmpi/</td><td style="color:#546E7A;font-size:13px">lồi lõm, nhiều ổ gà</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">2</td><td><strong>distance (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈdɪstəns/</td><td style="color:#546E7A;font-size:13px">khoảng cách</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">3</td><td><strong>fine (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/faɪn/</td><td style="color:#546E7A;font-size:13px">phạt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">4</td><td><strong>fly (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/flaɪ/</td><td style="color:#546E7A;font-size:13px">bay, lái máy bay</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">5</td><td><strong>handlebars (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈhændlbɑːz/</td><td style="color:#546E7A;font-size:13px">tay lái, ghi đông</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">6</td><td><strong>lane (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/leɪn/</td><td style="color:#546E7A;font-size:13px">làn đường</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">7</td><td><strong>obey traffic rules</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/əˈbeɪ ˈtræfɪk ruːlz/</td><td style="color:#546E7A;font-size:13px">tuân theo luật giao thông</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">8</td><td><strong>park (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/pɑːk/</td><td style="color:#546E7A;font-size:13px">đỗ xe</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">9</td><td><strong>passenger (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈpæsɪndʒə/</td><td style="color:#546E7A;font-size:13px">hành khách</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">10</td><td><strong>pavement (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈpeɪvmənt/</td><td style="color:#546E7A;font-size:13px">vỉa hè (cho người đi bộ)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">11</td><td><strong>pedestrian (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/pəˈdestriən/</td><td style="color:#546E7A;font-size:13px">người đi bộ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">12</td><td><strong>plane (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/pleɪn/</td><td style="color:#546E7A;font-size:13px">máy bay</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">13</td><td><strong>road sign (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈrəʊd saɪn/</td><td style="color:#546E7A;font-size:13px">biển báo giao thông</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">14</td><td><strong>roof (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ruːf/</td><td style="color:#546E7A;font-size:13px">nóc xe, mái nhà</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">15</td><td><strong>safety (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈseɪfti/</td><td style="color:#546E7A;font-size:13px">sự an toàn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">16</td><td><strong>seatbelt (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈsiːtbelt/</td><td style="color:#546E7A;font-size:13px">đai an toàn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">17</td><td><strong>traffic jam (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈtræfɪk dʒæm/</td><td style="color:#546E7A;font-size:13px">tắc đường</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">18</td><td><strong>traffic rule/law</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈtræfɪk ruːl/</td><td style="color:#546E7A;font-size:13px">luật giao thông</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">19</td><td><strong>vehicle (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈviːəkl/</td><td style="color:#546E7A;font-size:13px">xe cộ, phương tiện giao thông</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">20</td><td><strong>zebra crossing (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌziːbrə ˈkrɒsɪŋ/</td><td style="color:#546E7A;font-size:13px">vạch kẻ cho người đi bộ sang đường</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(20,1,this)">✓</button><button class="scb" onclick="sw(20,0.5,this)">~</button><button class="scb" onclick="sw(20,0,this)">✗</button></div></td></tr>
+</table>
+<div class="sdsp"><div class="sbig" id="sb">0</div><div style="font-size:16px;color:rgba(255,255,255,.8)">/ 20 từ</div><div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div><div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div></div>
+<div class="subs"><div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📋 Ghi nhớ kết quả</div><div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong> / 20</div><div id="sr"></div></div>
+<div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+</div>
+</div>
+</main>
+<nav class="nav-bar">
+<button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+<div class="dots" id="dots"></div>
+<button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=18;const TS=20;let cur=1;const sc={};
+const ANS={"a2_2_0": "'important to OBEY rules' = quan trọng phải LÀM THEO luật → 'obey' = tuân theo.", "a2_2_1": "'obey traffic rules' = làm theo luật giao thông = tuân thủ luật.", "a3_2_0": "'obey' = tuân theo (làm đúng theo quy định). Ngược với 'break the rules' = vi phạm.", "a3_2_1": "'obey traffic rules' = tuân theo luật giao thông.", "a2_3_0": "'footpath' = đường đi bộ. 'pavement' cùng nhóm → cũng là đường/phần dành cho người đi bộ.", "a2_3_1": "'pavement' = phần lề đường dành riêng cho người đi bộ (không phải đường xe chạy).", "a3_3_0": "'pave' = lát đường → 'pavement' = phần đường được lát (cho người đi bộ) = vỉa hè.", "a3_3_1": "'pavement' = vỉa hè — phần đường bên lề dành cho người đi bộ.", "a2_4_0": "'crossing' = nơi băng qua. 'zebra' = ngựa vằn có sọc. Ghép lại = vạch kẻ đường có sọc.", "a2_4_1": "Gọi là 'zebra' vì có sọc trắng đen như ngựa vằn. 'zebra crossing' = vạch đi bộ sang đường.", "a3_4_0": "Vạch trắng đen xen kẽ giống hoa văn ngựa vằn = 'zebra crossing' = vạch đi bộ.", "a3_4_1": "'zebra crossing' = vạch kẻ cho người đi bộ sang đường.", "a2_5_0": "'handle' = tay cầm + 'bars' = thanh → phần cầm tay dạng thanh ngang trên xe đạp.", "a2_5_1": "Giữ hai tay trên 'handlebars' khi đạp xe = cầm vào tay lái xe đạp.", "a3_5_0": "'handlebars' = phần cầm tay (dạng thanh) trên xe đạp dùng để điều khiển hướng đi.", "a3_5_1": "'handlebars' = tay lái (ghi đông) — phần cầm tay trên xe đạp/xe máy.", "a2_6_0": "'cycle lane' = làn đường dành riêng cho xe đạp → 'lane' = phần/làn của con đường.", "a2_6_1": "'lane' = một phần riêng biệt của đường (làn xe đạp, làn xe hơi...).", "a3_6_0": "Đường cao tốc có nhiều 'lanes' (làn đường). 'lane' = một làn đường.", "a3_6_1": "'lane' = làn đường — một phần hẹp của đường dành cho loại xe cụ thể.", "a2_7_0": "'carry' = chở. 'passenger' = người được chở, không phải người lái.", "a2_7_1": "Driver (người lái) ≠ passenger (người được chở). 'passenger' = hành khách.", "a3_7_0": "Lan ngồi sau xe máy của mẹ = Lan là 'passenger' = hành khách.", "a3_7_1": "'passenger' = hành khách — người ngồi trên xe do người khác lái.", "a2_8_0": "'bumpy' → phải đi chậm. Đường gây khó khăn khi đi = đường xấu, lồi lõm.", "a2_8_1": "Sau mưa, đường có ổ gà, lồi lõm → phải đi chậm. 'bumpy' = đường không bằng phẳng.", "a3_8_0": "'bump' = cục u, ổ gà. '-y' → tính từ. 'bumpy' = đầy ổ gà.", "a3_8_1": "'bumpy' = lồi lõm, nhiều ổ gà — mô tả đường xấu sau mưa.", "a2_9_0": "'How FAR' = hỏi khoảng cách. 'distance' = đại lượng đo bằng km.", "a2_9_1": "'two kilometres' = khoảng cách cụ thể. 'distance' = khoảng cách giữa hai điểm.", "a3_9_0": "'distance' = khoảng cách — độ dài giữa hai điểm.", "a3_9_1": "'long distance' = xa. 'short distance' = gần. 'distance' = khoảng cách.", "a2_10_0": "Vi phạm luật → bị 'fined' = bị xử phạt. 'fined' = hình thức phạt.", "a2_10_1": "Vượt đèn đỏ = vi phạm → 'fined' = bị phạt tiền.", "a3_10_0": "'fine' (v) = phạt tiền vì vi phạm. 'fine' (n) = tiền phạt.", "a3_10_1": "'fined' = bị phạt (tiền). Hình thức xử phạt vi phạm giao thông.", "a2_11_0": "Phương tiện đến đảo NHANH nhất = máy bay. 'took a plane' = đi bằng máy bay.", "a2_11_1": "'took a plane' = lên máy bay để di chuyển nhanh.", "a3_11_0": "'plane' = máy bay — phương tiện di chuyển trên không.", "a3_11_1": "'fly a plane' = lái máy bay. 'take a plane' = đi máy bay.", "a2_12_0": "'road' = đường + 'sign' = biển/dấu hiệu → biển trên đường.", "a2_12_1": "Biển BÁO cho lái xe biết cần làm gì = 'road sign' = biển báo giao thông.", "a3_12_0": "'road sign' = biển báo giao thông — cung cấp thông tin/hướng dẫn cho người tham gia giao thông.", "a3_12_1": "Stop sign, speed limit sign = các loại 'road signs'. Chức năng: thông báo, hướng dẫn.", "a2_13_0": "'Safety is very important' = an toàn là điều quan trọng nhất khi đi xe.", "a2_13_1": "Đảm bảo không bị tai nạn, không nguy hiểm = điều quan trọng nhất = 'safety'.", "a3_13_0": "'safe' (adj) = an toàn → 'safety' (n) = sự an toàn.", "a3_13_1": "'safety' = sự an toàn — trạng thái không có nguy hiểm.", "a2_14_0": "'seat' = chỗ ngồi + 'belt' = dây đai → dây đai gắn vào ghế ngồi trong xe.", "a2_14_1": "'wear' = đeo vào người. 'seatbelt' = dây đai đeo khi ngồi xe để bảo vệ an toàn.", "a3_14_0": "'seatbelt' = dây đai gắn với ghế ngồi (seat + belt) = đai an toàn.", "a3_14_1": "'seatbelt' = đai an toàn — dây đai đeo trong xe để tránh chấn thương khi tai nạn.", "a2_15_0": "Car, motorbike = ví dụ của 'vehicle'. Chúng đều là phương tiện giao thông có động cơ.", "a2_15_1": "Ô tô và xe máy đều là 'vehicle' = từ chung chỉ các phương tiện giao thông.", "a3_15_0": "'vehicle' = xe cộ, phương tiện giao thông — máy móc dùng để di chuyển.", "a3_15_1": "'motor vehicle' = xe có động cơ. 'vehicle' = từ chung cho mọi phương tiện.", "a2_16_0": "'parked in the wrong PLACE' = để xe SAI chỗ → bị phạt. 'park' = hành động để xe.", "a2_16_1": "'got a fine' = bị phạt vì 'parked' sai chỗ → 'park' = đỗ/để xe.", "a3_16_0": "'park' = đỗ xe — dừng và để xe lại một chỗ.", "a3_16_1": "'parking lot' = bãi đỗ xe. 'No parking' = cấm đỗ xe. 'park' = đỗ xe.", "a2_17_0": "Người đứng ở 'zebra crossing' để băng qua đường = người đi bộ.", "a2_17_1": "Chờ ở vạch để băng qua đường = không lái xe, đi bộ = 'pedestrian'.", "a3_17_0": "'pedes' (Latin) = chân → 'pedestrian' = người di chuyển bằng chân = người đi bộ.", "a3_17_1": "'pedestrian' = người đi bộ — người tham gia giao thông bằng chân.", "a2_18_0": "'roof of the bus' = bộ phận của xe buýt ở phía trên cùng.", "a2_18_1": "Nhà có mái (roof). Xe cũng có 'roof' = phần bao phủ bên trên.", "a3_18_0": "'roof' = nóc xe, mái nhà — phần phủ bên trên của các vật thể.", "a3_18_1": "'rooftop' = trên mái. 'roof of a car' = nóc ô tô. 'roof' = phần trên cùng."};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(el=>{const k=el.id;if(ANS[k]){el.textContent='→ '+ANS[k];}el.classList.add('sh');});const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/TS*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điểm: <strong>'+ts+'/20</strong></div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body>
+</html>

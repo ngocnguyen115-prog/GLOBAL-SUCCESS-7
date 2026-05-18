@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 9 – Festivals Around the World | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:220px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+<div class="ht"><div class="htl">Tiếng Anh 7 – Unit 9 • Festivals Around the World</div><div class="wc" id="wc">Từ 1 / 19</div></div>
+<div class="pb"><div class="pf" id="pf" style="width:5.3%"></div></div>
+</header>
+<main class="main">
+
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">performance</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pəˈfɔːməns/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email của Mark]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span>
+</div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"I loved the <mark>performance</mark> by the twins from Korea the most."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'I loved the PERFORMANCE by the twins from Korea the most' — đây là thứ Mark YÊU THÍCH. 'by the twins from Korea' = ai thực hiện?</div><div class="ea">Những người sinh đôi từ Hàn Quốc đã thực hiện điều gì đó trước khán giả.</div></div>
+<div class="qi"><div class="qq">'featured singing, dancing, comedy' — đây là Talent Show. 'performance' = hành động gì trước khán giả?</div><div class="ea">'performance' = buổi/tiết mục biểu diễn trước khán giả.</div></div>
+<div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Tiết mục biểu diễn — còn mơ hồ về từ chính xác.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'perform' (v) = biểu diễn (Unit 4). '-ance' = đuôi danh từ. 'performance' = ?</div><div class="ea">performance = sự trình diễn, tiết mục biểu diễn ✓</div></div>
+<div class="qi"><div class="qq">'perform' (v) → 'performance' (n). Tương tự: 'perform' → 'performer' (người biểu diễn).</div><div class="ea">performance = tiết mục biểu diễn, buổi trình diễn ✓</div></div>
+<div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Tiết mục biểu diễn — perform + -ance.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>performance</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><div style="font-size:16px;font-weight:700;color:#1B5E20">tiết mục biểu diễn, buổi trình diễn</div></div>
+<div class="wn">'perform' (v) → 'performance' (n). Tương tự: 'perform' → 'performer' (người biểu diễn).</div>
+</div>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">parade</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pəˈreɪd/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We joined the Double Take <mark>Parade</mark>, a parade of twins."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'joined the Double Take PARADE, a PARADE of twins' — câu giải thích ngay: đây là cuộc diễu hành của những người sinh đôi.</div><div class="at" id="a2_2_0"></div></div>
+<div class="qi"><div class="qq">Mark 'wore uniforms and walked together' trong parade → đây là sự kiện gì?</div><div class="at" id="a2_2_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Mark also 'saw beautiful tulip FLOATS at a PARADE.' → parade = nơi có floats và người diễu hành = ?</div><div class="at" id="a3_2_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'parade (n) = cuộc diễu hành'. Đoàn người/xe diễu hành trên đường = ?</div><div class="at" id="a3_2_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>parade</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_2">cuộc diễu hành</div></div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">float</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fləʊt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"I also saw beautiful tulip <mark>floats</mark> at a parade."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'beautiful tulip FLOATS at a parade' — đây là thứ được nhìn thấy tại PARADE (cuộc diễu hành). Đẹp và có hoa tulip.</div><div class="at" id="a2_3_0"></div></div>
+<div class="qi"><div class="qq">'float' = trôi nổi. Trong lễ diễu hành, 'floats' là xe trang trí lớn chở theo người và hoa. float = ?</div><div class="at" id="a2_3_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'tulip floats' = xe diễu hành trang trí bằng hoa tulip. 'float' ở đây = loại xe gì trong lễ hội?</div><div class="at" id="a3_3_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'float (n) = xe diễu hành'. Xe lớn được trang trí để diễu hành = ?</div><div class="at" id="a3_3_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>float</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_3">xe diễu hành</div></div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">folk dance</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfəʊk dɑːns/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"I watched Dutch <mark>folk dances</mark>. The dancers wore traditional costumes."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'FOLK' + 'DANCE'. 'dance' = điệu múa (từ quen). 'folk' = dân gian (đã học ở 'folk music'). Ghép lại = ?</div><div class="at" id="a2_4_0"></div></div>
+<div class="qi"><div class="qq">'Dutch FOLK DANCES' — đây là điệu múa truyền thống của người Hà Lan. 'folk dance' = loại múa gì?</div><div class="at" id="a2_4_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'folk music' = nhạc dân gian (Unit 4). Tương tự, 'folk dance' = múa của tầng lớp dân gian = ?</div><div class="at" id="a3_4_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'folk dance (n) = điệu nhảy / múa dân gian'. Múa truyền thống của một dân tộc = ?</div><div class="at" id="a3_4_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>folk dance</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_4">điệu nhảy / múa dân gian</div></div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">costume</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkɒstjuːm/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The dancers wore traditional <mark>costumes</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The dancers WORE traditional COSTUMES.' — 'wore' = mặc/đeo. 'traditional costumes' = trang phục gì?</div><div class="at" id="a2_5_0"></div></div>
+<div class="qi"><div class="qq">'traditional' = truyền thống. 'costumes' = trang phục đặc biệt. Mặc trang phục để làm gì?</div><div class="at" id="a2_5_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Trong các lễ hội, người ta mặc 'costumes' đặc trưng. 'costume' khác áo thường ở điểm nào?</div><div class="at" id="a3_5_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'costume (n) = trang phục'. Quần áo đặc biệt cho lễ hội/biểu diễn = ?</div><div class="at" id="a3_5_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>costume</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_5">trang phục</div></div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">twin</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/twɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Yesterday morning my <mark>twin</mark> sister and I joined the Double Take Parade."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'my TWIN sister and I' — Mark và chị gái của anh ấy có điểm gì đặc biệt? 'twin' mô tả mối quan hệ gì?</div><div class="at" id="a2_6_0"></div></div>
+<div class="qi"><div class="qq">'Twins Day Festival' = lễ hội dành cho 'twins'. 'Thousands of twins come' → twins là những người như thế nào?</div><div class="at" id="a2_6_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Mark và 'twin sister' = hai người sinh cùng lúc từ một mẹ. 'twin' = ?</div><div class="at" id="a3_6_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'twin (n) = đứa trẻ sinh đôi'. Hai người sinh cùng lúc = ?</div><div class="at" id="a3_6_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>twin</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_6">đứa trẻ sinh đôi</div></div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">feature</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfiːtʃə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It <mark>featured</mark> singing, dancing, comedy, and other things."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'It FEATURED singing, dancing, comedy, and other things.' — 'It' = Talent Show. 'featured' = Talent Show CÓ/BAO GỒM những gì?</div><div class="at" id="a2_7_0"></div></div>
+<div class="qi"><div class="qq">'featured singing, dancing, comedy' → 'feature' = bao gồm/trình diễn điều gì đó đặc biệt = ?</div><div class="at" id="a2_7_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'feature' (n) = đặc điểm nổi bật. 'feature' (v) = trình diễn đặc biệt, có sự xuất hiện của = ?</div><div class="at" id="a3_7_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'feature (v) = trình diễn đặc biệt'. Bao gồm/có sự tham gia của = ?</div><div class="at" id="a3_7_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>feature</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_7">trình diễn đặc biệt, bao gồm</div></div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">Dutch</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dʌtʃ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It was the <mark>Dutch</mark> Tulip Festival." / "I watched <mark>Dutch</mark> folk dances."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'It was the DUTCH Tulip Festival' — 'the Netherlands' = Hà Lan. 'Dutch' mô tả lễ hội của nước nào?</div><div class="at" id="a2_8_0"></div></div>
+<div class="qi"><div class="qq">'Dutch food and drinks' + 'Dutch folk dances' → 'Dutch' = thuộc về quốc gia nào?</div><div class="at" id="a2_8_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'Holland' = Hà Lan (tên thông dụng). 'Dutch' = tính từ chỉ người/vật đến từ Hà Lan = ?</div><div class="at" id="a3_8_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'Dutch (adj, n) = thuộc về Hà Lan, người Hà Lan'. Liên quan đến Netherlands = ?</div><div class="at" id="a3_8_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>Dutch</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_8">thuộc về Hà Lan, người Hà Lan</div></div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">celebrate</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈselɪbreɪt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Easter is a Christian festival <mark>celebrated</mark> in spring."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Easter is a festival CELEBRATED in spring' — 'celebrated' = được tổ chức/kỷ niệm. 'celebrate' = làm gì?</div><div class="at" id="a2_9_0"></div></div>
+<div class="qi"><div class="qq">'They hold the festival every year' = giữ/tổ chức. 'celebrate' cùng nhóm với 'hold'. 'celebrate' = ?</div><div class="at" id="a2_9_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'celebration' = buổi lễ kỷ niệm. 'celebrate' = động từ. Tổ chức sự kiện đặc biệt để đánh dấu dịp gì = ?</div><div class="at" id="a3_9_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'celebrate (v) = kỷ niệm, tổ chức'. Tổ chức sự kiện vui mừng = ?</div><div class="at" id="a3_9_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>celebrate</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_9">kỷ niệm, tổ chức</div></div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">decoration</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌdekəˈreɪʃn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>decorations</mark> at the Mid-Autumn Festival are very colourful."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The DECORATIONS at the Mid-Autumn Festival are very COLOURFUL.' — đây là những thứ sặc sỡ tại lễ hội.</div><div class="at" id="a2_10_0"></div></div>
+<div class="qi"><div class="qq">'colourful' = nhiều màu sắc. Đây là những vật trang trí cho lễ hội = ?</div><div class="at" id="a2_10_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'decorate' (v) = trang trí. '-ion' = đuôi danh từ. 'decoration' = ?</div><div class="at" id="a3_10_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'decoration (n) = đồ trang trí'. Vật dùng để trang hoàng nơi chốn = ?</div><div class="at" id="a3_10_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>decoration</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_10">đồ trang trí</div></div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div>
+<div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">disappointing</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌdɪsəˈpɔɪntɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The result was <mark>disappointing</mark> — our team came last."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The result was DISAPPOINTING — our team came LAST.' — 'came last' = xếp cuối. Kết quả này gây ra cảm giác gì?</div><div class="at" id="a2_11_0"></div></div>
+<div class="qi"><div class="qq">'came last' → kết quả xấu → cảm giác thất vọng. 'disappointing' = gây ra cảm giác gì?</div><div class="at" id="a2_11_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'disappoint' = làm thất vọng. '-ing' = tính từ. 'disappointing' = làm người ta cảm thấy ___?</div><div class="at" id="a3_11_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'disappointing (adj) = đáng thất vọng'. Không đạt như mong đợi = ?</div><div class="at" id="a3_11_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>disappointing</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_11">đáng thất vọng</div></div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">feast</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fiːst/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The Thanksgiving <mark>feast</mark> includes turkey, potatoes, and pumpkin pie."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The Thanksgiving FEAST includes turkey, potatoes, and pumpkin pie' — đây là bữa ăn đặc biệt với nhiều món. feast = ?</div><div class="at" id="a2_12_0"></div></div>
+<div class="qi"><div class="qq">'turkey, potatoes, pumpkin pie' = rất nhiều món ăn ngon. Đây là bữa ăn bình thường hay bữa tiệc lớn?</div><div class="at" id="a2_12_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Thanksgiving = lễ tạ ơn. Mọi người cùng ăn uống linh đình. 'feast' = bữa ăn như thế nào?</div><div class="at" id="a3_12_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'feast (n) = bữa tiệc'. Bữa ăn lớn, nhiều món ngon nhân dịp đặc biệt = ?</div><div class="at" id="a3_12_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>feast</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_12">bữa tiệc</div></div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div>
+<div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fireworks display</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfaɪəwɜːks dɪˈspleɪ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>fireworks display</mark> at New Year lit up the whole sky."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'FIREWORKS' + 'DISPLAY'. 'fire' = lửa. 'works' = tác phẩm. 'display' = trưng bày/trình diễn.</div><div class="at" id="a2_13_0"></div></div>
+<div class="qi"><div class="qq">'lit up the whole SKY' — đây là thứ chiếu sáng bầu trời vào đêm giao thừa = ?</div><div class="at" id="a2_13_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'fireworks' = pháo hoa (lửa + nghệ thuật). 'display' = trình diễn. 'fireworks display' = ?</div><div class="at" id="a3_13_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'fireworks display (n) = bắn pháo hoa'. Màn trình diễn pháo hoa = ?</div><div class="at" id="a3_13_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>fireworks display</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_13">bắn pháo hoa</div></div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">symbol</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈsɪmbl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The dove is a <mark>symbol</mark> of peace in many cultures."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The dove is a SYMBOL of peace' — 'dove' = chim bồ câu. 'symbol of peace' = đại diện cho điều hòa bình.</div><div class="at" id="a2_14_0"></div></div>
+<div class="qi"><div class="qq">'symbol of ___' = đại diện cho ___. 'dove' là BIỂU TƯỢNG cho hòa bình. symbol = ?</div><div class="at" id="a2_14_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'sym-' = cùng nhau, '-bol' = ném (Greek). Symbol = thứ được 'ném ra' để đại diện cho ý nghĩa khác = ?</div><div class="at" id="a3_14_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'symbol (n) = biểu tượng'. Vật/hình ảnh đại diện cho ý nghĩa nào đó = ?</div><div class="at" id="a3_14_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>symbol</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_14">biểu tượng</div></div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">take part in</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/teɪk pɑːt ɪn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"She <mark>takes part in</mark> the school drama club every year."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'TAKES PART IN the school drama club' — đây là hành động gì với drama club? 'takes part' = gì?</div><div class="at" id="a2_15_0"></div></div>
+<div class="qi"><div class="qq">Mark 'joined the Double Take Parade' = tham gia. 'take part in' = cùng nghĩa với 'join' = ?</div><div class="at" id="a2_15_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'take part' = lấy phần của mình trong một hoạt động. 'take part in' = tham gia vào = ?</div><div class="at" id="a3_15_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'take part in = tham gia'. Tham gia vào một hoạt động/sự kiện = ?</div><div class="at" id="a3_15_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>take part in</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_15">tham gia</div></div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">Easter</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈiːstə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"<mark>Easter</mark> is a Christian festival celebrated in spring."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'EASTER is a Christian festival celebrated in spring' — đây là lễ hội tôn giáo vào mùa xuân.</div><div class="at" id="a2_16_0"></div></div>
+<div class="qi"><div class="qq">Cùng nhóm với 'Thanksgiving', 'Mid-Autumn Festival' = các lễ hội nổi tiếng. Easter = lễ hội gì?</div><div class="at" id="a2_16_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'Lễ Phục sinh' = tên tiếng Việt. Lễ hội Kitô giáo kỷ niệm sự phục sinh của Chúa Giêsu = ?</div><div class="at" id="a3_16_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'Easter (n) = Lễ Phục sinh'. Lễ hội Kitô giáo vào mùa xuân = ?</div><div class="at" id="a3_16_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>Easter</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_16">Lễ Phục sinh</div></div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">candy</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkændi/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Children love to eat <mark>candy</mark> during Halloween."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Children love to EAT CANDY during Halloween' — đây là thứ TRẺ EM ĂN trong lễ Halloween.</div><div class="at" id="a2_17_0"></div></div>
+<div class="qi"><div class="qq">'love to eat' + 'children' → đây là thứ ngọt ngào mà trẻ em thích. candy = ?</div><div class="at" id="a2_17_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Halloween: trẻ em đi 'trick-or-treat' và nhận được 'candy'. 'candy' = loại thức ăn gì?</div><div class="at" id="a3_17_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'candy (n) = kẹo'. Thứ ngọt ngào trẻ em thích ăn = ?</div><div class="at" id="a3_17_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>candy</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_17">kẹo</div></div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">carve</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kɑːv/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"She <mark>carved</mark> a pumpkin into a scary face for Halloween."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'CARVED a pumpkin INTO a scary face' — 'into a scary face' = thành hình khuôn mặt đáng sợ. 'carved' = làm gì với quả bí?</div><div class="at" id="a2_18_0"></div></div>
+<div class="qi"><div class="qq">'into a scary face' → đây là hành động tạo hình trên vật liệu cứng. 'carved' = ?</div><div class="at" id="a2_18_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'carve wood/stone' = đục/chạm khắc gỗ/đá. 'carve a pumpkin' = khắc tạo hình trên bí = ?</div><div class="at" id="a3_18_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'carve (v) = chạm, khắc'. Tạo hình bằng cách cắt/đục vào vật liệu = ?</div><div class="at" id="a3_18_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>carve</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_18">chạm, khắc</div></div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="19">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 19</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">decorate</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈdekəreɪt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We <mark>decorated</mark> the classroom with flowers and paper lanterns for the festival."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'DECORATED the classroom WITH flowers and paper lanterns' — đây là hành động làm cho phòng học trở nên như thế nào?</div><div class="at" id="a2_19_0"></div></div>
+<div class="qi"><div class="qq">'with flowers and paper lanterns' = dùng hoa và đèn lồng. 'decorated' = làm gì với lớp học?</div><div class="at" id="a2_19_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'decoration' (n) = đồ trang trí. 'decorate' = động từ gốc. 'decorate' = ?</div><div class="at" id="a3_19_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 9: 'decorate (v) = trang trí'. Làm cho nơi chốn trở nên đẹp hơn = ?</div><div class="at" id="a3_19_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>decorate</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_19" onclick="revAll(19)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_19">trang trí</div></div>
+</div>
+<div class="rn" id="rn_19" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+<div class="st">
+<div style="font-size:52px;margin-bottom:12px">🎉</div>
+<div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 9!</div>
+<div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 19 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+</div>
+<div class="sb2">
+<div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+<div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+<div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px"><span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span><span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span><span style="color:#C62828;font-weight:700">✗ Sai = 0</span></div>
+<table class="sct"><tr><th>#</th><th>Từ</th><th>IPA</th><th>Nghĩa</th><th>Kết quả</th></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">1</td><td><strong>candy (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkændi/</td><td style="color:#546E7A;font-size:13px">kẹo</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">2</td><td><strong>Cannes Film Festival</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/kæn fɪlm ˈfestɪvl/</td><td style="color:#546E7A;font-size:13px">Liên hoan phim Cannes</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">3</td><td><strong>carve (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/kɑːv/</td><td style="color:#546E7A;font-size:13px">chạm, khắc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">4</td><td><strong>celebrate (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈselɪbreɪt/</td><td style="color:#546E7A;font-size:13px">kỷ niệm, tổ chức</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">5</td><td><strong>costume (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkɒstjuːm/</td><td style="color:#546E7A;font-size:13px">trang phục</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">6</td><td><strong>decorate (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈdekəreɪt/</td><td style="color:#546E7A;font-size:13px">trang trí</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">7</td><td><strong>decoration (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌdekəˈreɪʃn/</td><td style="color:#546E7A;font-size:13px">đồ trang trí</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">8</td><td><strong>disappointing (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌdɪsəˈpɔɪntɪŋ/</td><td style="color:#546E7A;font-size:13px">đáng thất vọng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">9</td><td><strong>Dutch (adj, n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/dʌtʃ/</td><td style="color:#546E7A;font-size:13px">thuộc về Hà Lan, người Hà Lan</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">10</td><td><strong>Easter (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈiːstə/</td><td style="color:#546E7A;font-size:13px">Lễ Phục sinh</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">11</td><td><strong>feast (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/fiːst/</td><td style="color:#546E7A;font-size:13px">bữa tiệc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">12</td><td><strong>feature (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈfiːtʃə/</td><td style="color:#546E7A;font-size:13px">trình diễn đặc biệt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">13</td><td><strong>fireworks display</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈfaɪəwɜːks dɪˈspleɪ/</td><td style="color:#546E7A;font-size:13px">bắn pháo hoa</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">14</td><td><strong>float (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/fləʊt/</td><td style="color:#546E7A;font-size:13px">xe diễu hành</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">15</td><td><strong>folk dance (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈfəʊk dɑːns/</td><td style="color:#546E7A;font-size:13px">điệu nhảy / múa dân gian</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">16</td><td><strong>Mid-Autumn Festival</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌmɪd ˈɔːtəm ˈfestɪvl/</td><td style="color:#546E7A;font-size:13px">Tết Trung thu</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">17</td><td><strong>parade (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/pəˈreɪd/</td><td style="color:#546E7A;font-size:13px">cuộc diễu hành</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">18</td><td><strong>performance (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/pəˈfɔːməns/</td><td style="color:#546E7A;font-size:13px">tiết mục biểu diễn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">19</td><td><strong>symbol (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈsɪmbl/</td><td style="color:#546E7A;font-size:13px">biểu tượng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">20</td><td><strong>take part in</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/teɪk pɑːt ɪn/</td><td style="color:#546E7A;font-size:13px">tham gia</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(20,1,this)">✓</button><button class="scb" onclick="sw(20,0.5,this)">~</button><button class="scb" onclick="sw(20,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">21</td><td><strong>Thanksgiving (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌθæŋksˈɡɪvɪŋ/</td><td style="color:#546E7A;font-size:13px">Lễ Tạ ơn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(21,1,this)">✓</button><button class="scb" onclick="sw(21,0.5,this)">~</button><button class="scb" onclick="sw(21,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">22</td><td><strong>twin (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/twɪn/</td><td style="color:#546E7A;font-size:13px">đứa trẻ sinh đôi</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(22,1,this)">✓</button><button class="scb" onclick="sw(22,0.5,this)">~</button><button class="scb" onclick="sw(22,0,this)">✗</button></div></td></tr>
+</table>
+<div class="sdsp"><div class="sbig" id="sb">0</div><div style="font-size:16px;color:rgba(255,255,255,.8)">/ 22 từ</div><div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div><div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div></div>
+<div class="subs"><div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📋 Ghi nhớ kết quả</div><div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong> / 22</div><div id="sr"></div></div>
+<div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+</div>
+</div>
+</main>
+<nav class="nav-bar">
+<button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+<div class="dots" id="dots"></div>
+<button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=19;const TS=22;let cur=1;const sc={};
+const ANS={"a2_2_0": "'a PARADE of twins' = câu giải thích ngay. Đây là cuộc diễu hành của những người sinh đôi.", "a2_2_1": "Mặc đồng phục + đi cùng nhau trong parade = diễu hành theo hàng ngũ.", "a3_2_0": "Parade = nơi có floats và đoàn người diễu hành trên đường phố.", "a3_2_1": "'parade' = cuộc diễu hành — đoàn người/xe diễu hành qua đường phố.", "a2_3_0": "'tulip FLOATS at a parade' = thứ được nhìn thấy tại cuộc diễu hành, đẹp và có hoa tulip.", "a2_3_1": "'float' = trôi nổi → xe lớn trang trí như thể đang trôi qua đường = xe diễu hành.", "a3_3_0": "'tulip floats' = xe diễu hành trang trí bằng hoa tulip. 'float' = xe lớn trang trí trong lễ hội.", "a3_3_1": "'float' = xe diễu hành — xe lớn được trang trí để diễu hành trong lễ hội.", "a2_4_0": "'folk' = dân gian (đã học 'folk music'). 'dance' = múa/nhảy. 'folk dance' = múa dân gian.", "a2_4_1": "'Dutch folk dances' = điệu múa truyền thống của người Hà Lan = múa dân gian.", "a3_4_0": "'folk music' = nhạc dân gian → 'folk dance' = múa dân gian. Cùng cấu trúc 'folk + ___'.", "a3_4_1": "'folk dance' = điệu nhảy/múa dân gian — múa truyền thống của một dân tộc.", "a2_5_0": "'wore traditional COSTUMES' = mặc trang phục truyền thống đặc biệt cho lễ hội.", "a2_5_1": "Mặc trang phục đặc biệt khi biểu diễn/dự lễ hội → costume = trang phục lễ hội.", "a3_5_0": "'costume' khác áo thường: đây là trang phục đặc biệt dùng cho lễ hội/biểu diễn.", "a3_5_1": "'costume' = trang phục — quần áo đặc biệt cho lễ hội hoặc biểu diễn.", "a2_6_0": "'my twin sister and I' = Mark và chị gái sinh đôi. 'twin' = mô tả hai người sinh cùng lúc.", "a2_6_1": "'Twins Day Festival' = lễ hội cho người sinh đôi. 'Thousands of twins' = hàng nghìn cặp sinh đôi.", "a3_6_0": "Mark và chị gái sinh cùng lúc từ một mẹ = cặp sinh đôi = 'twin'.", "a3_6_1": "'twin' = đứa trẻ sinh đôi — hai người được sinh cùng một lúc.", "a2_7_0": "'featured singing, dancing, comedy' = Talent Show BAO GỒM những hoạt động đó.", "a2_7_1": "'feature' = bao gồm/trình diễn đặc biệt những thứ nổi bật.", "a3_7_0": "'feature' (v) = có sự tham gia/trình diễn của điều gì đó đặc biệt.", "a3_7_1": "'feature' = trình diễn đặc biệt, bao gồm — có sự xuất hiện/tham gia của.", "a2_8_0": "'Netherlands' = Hà Lan → 'Dutch Tulip Festival' = lễ hội của nước Hà Lan.", "a2_8_1": "'Dutch food', 'Dutch folk dances' = đồ ăn và điệu múa của Hà Lan → 'Dutch' = thuộc về Hà Lan.", "a3_8_0": "'Holland' = Hà Lan. 'Dutch' = tính từ chỉ người/vật đến từ Hà Lan/Netherlands.", "a3_8_1": "'Dutch' = thuộc về Hà Lan, người Hà Lan — liên quan đến Netherlands.", "a2_9_0": "'festival CELEBRATED in spring' = lễ hội được tổ chức vào mùa xuân. 'celebrate' = tổ chức.", "a2_9_1": "'hold the festival' = tổ chức lễ hội. 'celebrate' = cùng nghĩa = tổ chức/kỷ niệm.", "a3_9_0": "'celebration' = buổi lễ kỷ niệm. 'celebrate' = tổ chức lễ kỷ niệm.", "a3_9_1": "'celebrate' = kỷ niệm, tổ chức — tổ chức sự kiện vui mừng nhân dịp đặc biệt.", "a2_10_0": "'DECORATIONS are very COLOURFUL' = những thứ sặc sỡ tại lễ hội = đồ trang trí.", "a2_10_1": "'colourful decorations' = đồ trang trí nhiều màu sắc cho lễ hội.", "a3_10_0": "'decorate' (v) = trang trí → 'decoration' (n) = đồ trang trí.", "a3_10_1": "'decoration' = đồ trang trí — vật dùng để trang hoàng nơi chốn.", "a2_11_0": "'came LAST' = xếp cuối → kết quả tồi → gây thất vọng. 'disappointing' = đáng thất vọng.", "a2_11_1": "Kết quả xấu (cuối bảng) = không đạt mong đợi = 'disappointing'.", "a3_11_0": "'disappoint' = làm thất vọng. '-ing' → tính từ. 'disappointing' = làm người ta thất vọng.", "a3_11_1": "'disappointing' = đáng thất vọng — không đạt như mong đợi.", "a2_12_0": "Bữa ăn Thanksgiving có turkey, potatoes, pie = rất nhiều món ngon → bữa tiệc lớn.", "a2_12_1": "Nhiều món ngon, ăn uống linh đình trong dịp lễ = 'feast' = bữa tiệc.", "a3_12_0": "Thanksgiving = lễ tạ ơn với bữa ăn linh đình. 'feast' = bữa tiệc lớn ngày lễ.", "a3_12_1": "'feast' = bữa tiệc — bữa ăn lớn với nhiều món ngon nhân dịp đặc biệt.", "a2_13_0": "'fire' = lửa + 'works' = nghệ thuật + 'display' = trình diễn → trình diễn pháo hoa.", "a2_13_1": "'lit up the whole sky' = chiếu sáng bầu trời = pháo hoa bắn lên trời.", "a3_13_0": "'fireworks' = pháo hoa. 'display' = màn trình diễn. 'fireworks display' = bắn pháo hoa.", "a3_13_1": "'fireworks display' = bắn pháo hoa — màn trình diễn pháo hoa.", "a2_14_0": "'dove is a SYMBOL of peace' = chim bồ câu ĐẠI DIỆN cho hòa bình. symbol = đại diện.", "a2_14_1": "'symbol of ___' = thứ đại diện cho ___ (hòa bình, tình yêu...). symbol = biểu tượng.", "a3_14_0": "Symbol = thứ mang ý nghĩa đặc biệt đại diện cho điều gì đó khác.", "a3_14_1": "'symbol' = biểu tượng — vật/hình ảnh đại diện cho ý nghĩa nào đó.", "a2_15_0": "'takes part IN the drama club' = tham gia vào câu lạc bộ kịch.", "a2_15_1": "'joined the Parade' = tham gia. 'take part in' = cùng nghĩa với 'join' = tham gia.", "a3_15_0": "'take part' = lấy phần của mình trong hoạt động = tham gia.", "a3_15_1": "'take part in' = tham gia — tham gia vào một hoạt động/sự kiện.", "a2_16_0": "'Easter is a Christian festival' = lễ hội Kitô giáo vào mùa xuân.", "a2_16_1": "Cùng nhóm Thanksgiving, Mid-Autumn Festival = các lễ hội nổi tiếng. Easter = lễ hội đặc trưng.", "a3_16_0": "'Lễ Phục sinh' = Easter = lễ hội Kitô giáo kỷ niệm sự phục sinh.", "a3_16_1": "'Easter' = Lễ Phục sinh — lễ hội Kitô giáo quan trọng vào mùa xuân.", "a2_17_0": "Trẻ em ăn 'candy' trong Halloween = thứ ngọt ngào trẻ em thích.", "a2_17_1": "Trẻ em 'love to eat candy' = thứ ăn ngọt ngào = kẹo.", "a3_17_0": "Halloween: trẻ em đi trick-or-treat nhận 'candy' = kẹo ngọt.", "a3_17_1": "'candy' = kẹo — thứ ngọt ngào trẻ em thích ăn.", "a2_18_0": "'carved a pumpkin INTO a scary face' = tạo hình khuôn mặt từ quả bí = chạm khắc.", "a2_18_1": "Tạo hình khuôn mặt trên quả bí = đục/khắc vào vật liệu = 'carve'.", "a3_18_0": "'carve wood/stone' = đục/chạm khắc. 'carve a pumpkin' = khắc tạo hình trên bí.", "a3_18_1": "'carve' = chạm, khắc — tạo hình bằng cách cắt/đục vào vật liệu.", "a2_19_0": "'decorated WITH flowers and paper lanterns' = dùng hoa và đèn lồng để làm đẹp lớp học.", "a2_19_1": "Dùng hoa và đèn lồng làm lớp học đẹp hơn = 'decorate' = trang trí.", "a3_19_0": "'decoration' = đồ trang trí. 'decorate' = động từ = hành động trang trí.", "a3_19_1": "'decorate' = trang trí — làm cho nơi chốn trở nên đẹp hơn."};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(el=>{const k=el.id;if(ANS[k]){el.textContent='→ '+ANS[k];}el.classList.add('sh');});const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/TS*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điểm: <strong>'+ts+'/22</strong></div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body>
+</html>

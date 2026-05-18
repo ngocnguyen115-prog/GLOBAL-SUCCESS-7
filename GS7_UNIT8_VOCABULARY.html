@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 8 – Films | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:220px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+<div class="ht"><div class="htl">Tiếng Anh 7 – Unit 8 • Films</div><div class="wc" id="wc">Từ 1 / 20</div></div>
+<div class="pb"><div class="pf" id="pf" style="width:5.0%"></div></div>
+</header>
+<main class="main">
+
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">gripping</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈɡrɪpɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span>
+</div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"I agree because the story is <mark>gripping</mark> and the acting is excellent."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'the story is GRIPPING and the acting is excellent' — 'excellent' = xuất sắc (từ quen). 'gripping' đứng cùng nhóm tốt với 'excellent'.</div><div class="ea">'gripping' và 'excellent' đều mô tả phim theo hướng TÍCH CỰC.</div></div>
+<div class="qi"><div class="qq">'the STORY is gripping' — đây là tính chất của câu chuyện khiến người xem phim cảm thấy thế nào?</div><div class="ea">Một câu chuyện 'gripping' khiến bạn không thể rời mắt khỏi màn hình.</div></div>
+<div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Mô tả tích cực về phim — còn mơ hồ về nghĩa chính xác.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'grip' = nắm chặt, bám chặt. '-ing' = tính từ. 'gripping' = câu chuyện 'nắm chặt' sự chú ý của bạn = ?</div><div class="ea">gripping = hấp dẫn, thu hút (khó rời mắt) ✓</div></div>
+<div class="qi"><div class="qq">'a gripping novel', 'a gripping film' — điều gì đặc biệt khiến bạn không bỏ được?</div><div class="ea">gripping = hấp dẫn, thú vị ✓</div></div>
+<div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Hấp dẫn, thú vị — grip (bám chặt) + -ing.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>gripping</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><div style="font-size:16px;font-weight:700;color:#1B5E20">hấp dẫn, thú vị</div></div>
+<div class="wn">Tương tự: 'gripping novel' = cuốn tiểu thuyết hấp dẫn. 'grip' = bám, nắm chặt.</div>
+</div>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">horror film</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈhɒrə fɪlm/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"No, it's a <mark>horror film</mark>."</p><p>"That's too scary for me."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">Mi hỏi: 'Is it a FANTASY?' — Mark trả lời: 'No, it's a HORROR FILM.' Đây là thể loại phim.</div><div class="at" id="a2_2_0"></div></div>
+<div class="qi"><div class="qq">'That's too SCARY for me' — Mi cảm thấy SỢ khi nghe về thể loại này. 'horror film' = phim gì?</div><div class="at" id="a2_2_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'horror' liên quan đến 'horrible' (kinh khủng). 'horror film' = phim về những thứ kinh dị = ?</div><div class="at" id="a3_2_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'horror film = phim kinh dị'. Phim làm người xem sợ hãi = ?</div><div class="at" id="a3_2_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>horror film</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_2">phim kinh dị</div></div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">documentary</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌdɒkjəˈmentri/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It's a <mark>documentary</mark>." / "I don't really like documentaries. They're often boring."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'An Old Pier is a DOCUMENTARY.' 'I don't like documentaries. They're often BORING.' — đây là thể loại phim.</div><div class="at" id="a2_3_0"></div></div>
+<div class="qi"><div class="qq">'boring' = nhàm chán. Mark không thích loại phim này. Documentary = thể loại phim như thế nào?</div><div class="at" id="a2_3_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'document' = tài liệu, hồ sơ. '-ary' = tính từ/danh từ. 'documentary' = phim dựa trên tài liệu thực = ?</div><div class="at" id="a3_3_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'documentary (n) = phim tài liệu'. Phim về sự kiện/con người thật = ?</div><div class="at" id="a3_3_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>documentary</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_3">phim tài liệu</div></div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">comedy</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkɒmədi/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"What kind of film is it? — It's a <mark>comedy</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'most say it's FUNNY and interesting' — Mark tả phim 'Our Holiday'. 'funny' = buồn cười.</div><div class="at" id="a2_4_0"></div></div>
+<div class="qi"><div class="qq">'comedy' là thể loại phim. 'funny and interesting' là tính chất của phim comedy = ?</div><div class="at" id="a2_4_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'comedian' = người hài hước. 'comedy' = thể loại phim/chương trình về sự hài hước = ?</div><div class="at" id="a3_4_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'comedy (n) = phim hài'. Phim làm người xem cười = ?</div><div class="at" id="a3_4_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>comedy</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_4">phim hài</div></div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">star</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/stɑː/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"And who <mark>stars</mark> in it? — Kate Harrison and Lily Collins."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Who STARS in it?' — Mi hỏi về người nào đó trong phim. 'Kate Harrison' là câu trả lời = 'star' là gì?</div><div class="at" id="a2_5_0"></div></div>
+<div class="qi"><div class="qq">'Daniel Radcliffe is one of the STARS in the film' — stars = những người nổi tiếng trong phim = ?</div><div class="at" id="a2_5_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'star' (n) = ngôi sao, diễn viên nổi tiếng. 'star' (v) = đóng vai chính. 'who stars in it' = ai ___?</div><div class="at" id="a3_5_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'star (v) = đóng vai chính'. 'stars' = những diễn viên chính = ?</div><div class="at" id="a3_5_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>star</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_5">đóng vai chính</div></div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">review</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/rɪˈvjuː/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"What are the <mark>reviews</mark> like?"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'What are the REVIEWS like?' — Mi hỏi về reviews của phim. 'like' = như thế nào. reviews = thứ gì về phim?</div><div class="at" id="a2_6_0"></div></div>
+<div class="qi"><div class="qq">'The film received a lot of GOOD reviews' — reviews đánh giá phim là TỐT. reviews = loại văn bản gì?</div><div class="at" id="a2_6_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'review' = xem lại + đánh giá. 'film review' = bài viết đánh giá phim. review = ?</div><div class="at" id="a3_6_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'review (n) = bài phê bình (về một bộ phim)'. Bài nhận xét, đánh giá = ?</div><div class="at" id="a3_6_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>review</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_6">bài phê bình (về một bộ phim)</div></div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fantasy</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfæntəsi/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Harry Potter and the Sorcerer's Stone is a <mark>fantasy</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Harry Potter is a FANTASY' — đây là thể loại phim. Harry Potter có phép thuật, phù thủy = thể loại gì?</div><div class="at" id="a2_7_0"></div></div>
+<div class="qi"><div class="qq">'Mi: Is it a fantasy?' — Mi dùng từ này khi đoán thể loại phim. fantasy = loại phim có gì?</div><div class="at" id="a2_7_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'fantasy' = tưởng tượng, không có thật. 'fantasy film' = phim về thế giới tưởng tượng = ?</div><div class="at" id="a3_7_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'fantasy (n) = phim giả tưởng'. Phim có yếu tố ma thuật, thần thoại = ?</div><div class="at" id="a3_7_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>fantasy</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_7">phim giả tưởng</div></div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">series</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈsɪəriːz/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It is the first of the Harry Potter film <mark>series</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'the first of the Harry Potter film SERIES' — 'the first' = phần đầu tiên. 'series' có nhiều phần = ?</div><div class="at" id="a2_8_0"></div></div>
+<div class="qi"><div class="qq">Harry Potter có nhiều phần phim (Part 1, 2, 3...). 'film series' = tập hợp các phim liên quan = ?</div><div class="at" id="a2_8_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'a series of films' = một chuỗi phim. 'series' = tập hợp nhiều phần theo thứ tự = ?</div><div class="at" id="a3_8_0"></div></div>
+<div class="qi"><div class="qq">'TV series' = phim truyền hình nhiều tập. 'film series' = chuỗi phim nhiều phần. series = ?</div><div class="at" id="a3_8_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>series</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_8">loạt phim, series</div></div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">wizard</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈwɪzəd/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"He's a powerful <mark>wizard</mark>. He is a student at a school for wizards."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'He's a powerful WIZARD. He is a student at a school FOR WIZARDS.' — wizard học ở trường đặc biệt.</div><div class="at" id="a2_9_0"></div></div>
+<div class="qi"><div class="qq">'powerful' = mạnh mẽ. 'school for wizards' = trường dành riêng cho wizards. Đây là loại người gì?</div><div class="at" id="a2_9_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Harry Potter học cách dùng phép thuật. 'a school for wizards' = trường phù thủy. wizard = ?</div><div class="at" id="a3_9_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'wizard (n) = phù thủy'. Người có phép thuật trong truyện/phim giả tưởng = ?</div><div class="at" id="a3_9_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>wizard</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_9">phù thủy</div></div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">must-see</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈmʌst siː/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"People say it's a <mark>must-see</mark> for teens."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'MUST' + 'SEE'. 'must' = phải (bắt buộc). 'see' = xem. 'must-see' = ?</div><div class="at" id="a2_10_0"></div></div>
+<div class="qi"><div class="qq">'it's a must-see FOR TEENS' — đây là điều được KHUYẾN NGHỊ mạnh cho thanh thiếu niên. must-see = ?</div><div class="at" id="a2_10_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'must-see' = điều BẮT BUỘC phải xem. 'I agree... the story is gripping' → Mark xác nhận: phim rất hay.</div><div class="at" id="a3_10_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'must-see (n) = bộ phim hấp dẫn, cần xem'. Phim không nên bỏ qua = ?</div><div class="at" id="a3_10_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>must-see</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_10">bộ phim hấp dẫn, cần xem</div></div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">acting</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈæktɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"I agree because the story is gripping and the <mark>acting</mark> is excellent."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'the ACTING is excellent' — 'excellent' = xuất sắc. 'acting' là thứ gì của phim được đánh giá cao?</div><div class="at" id="a2_11_0"></div></div>
+<div class="qi"><div class="qq">'acting' liên quan đến 'actors' (diễn viên). 'acting is excellent' = diễn viên làm gì xuất sắc?</div><div class="at" id="a2_11_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'act' = diễn xuất. '-ing' = danh từ/tính từ. 'acting' = hoạt động/kỹ năng diễn xuất = ?</div><div class="at" id="a3_11_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'acting (n) = diễn xuất'. Kỹ năng/nghề của diễn viên = ?</div><div class="at" id="a3_11_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>acting</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_11">diễn xuất</div></div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">frightening</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfraɪtənɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Although Harry Potter is a little <mark>frightening</mark> at times, it is very interesting."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'a little FRIGHTENING at times' — 'a little' = một chút, đôi khi. 'frightening' = gây ra cảm giác gì?</div><div class="at" id="a2_12_0"></div></div>
+<div class="qi"><div class="qq">'although... frightening... it is very interesting' — 'although' = mặc dù. Phim có gây sợ nhưng vẫn hay = ?</div><div class="at" id="a2_12_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'fright' = sự sợ hãi đột ngột. '-ening' = tính từ (frighten → frightening). 'frightening' = ?</div><div class="at" id="a3_12_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'frightening (adj) = làm sợ hãi, rùng rợn'. Gây ra cảm giác sợ = ?</div><div class="at" id="a3_12_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>frightening</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_12">làm sợ hãi, rùng rợn</div></div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">confusing</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kənˈfjuːzɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The film was <mark>confusing</mark> because the story jumped between too many characters."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The film was CONFUSING because the story JUMPED between too many characters.' — 'because' giải thích. 'confusing' gây ra điều gì?</div><div class="at" id="a2_13_0"></div></div>
+<div class="qi"><div class="qq">Câu chuyện nhảy qua nhiều nhân vật → người xem không hiểu rõ → 'confusing' = gây ra điều gì?</div><div class="at" id="a2_13_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'confuse' = làm rối. '-ing' = tính từ (interest→interesting). 'confusing' = làm người ta rối/bối rối = ?</div><div class="at" id="a3_13_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'confusing (adj) = khó hiểu, gây bối rối'. Làm người ta không hiểu = ?</div><div class="at" id="a3_13_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>confusing</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_13">khó hiểu, gây bối rối</div></div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">director</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dɪˈrektə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Mark]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Its <mark>director</mark> is Chris Columbus."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Its DIRECTOR is Chris Columbus' — đây là tên người. 'director' là vai trò của Chris Columbus trong phim.</div><div class="at" id="a2_14_0"></div></div>
+<div class="qi"><div class="qq">'direct' = chỉ đạo, điều hành. '-or' = người làm điều đó (act→actor). 'director' = người chỉ đạo gì?</div><div class="at" id="a2_14_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">Director chỉ đạo diễn viên và quyết định cách quay phim. 'director' = người đứng đầu sản xuất phim = ?</div><div class="at" id="a3_14_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'director (n) = người đạo diễn'. Người chỉ đạo toàn bộ bộ phim = ?</div><div class="at" id="a3_14_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>director</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_14">người đạo diễn</div></div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">dull</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dʌl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The film was <mark>dull</mark> and I almost fell asleep watching it."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The film was DULL and I almost FELL ASLEEP watching it.' — 'fell asleep' = ngủ gật. Phim làm người xem buồn ngủ = ?</div><div class="at" id="a2_15_0"></div></div>
+<div class="qi"><div class="qq">'almost fell asleep' → đây là phim KHÔNG hay, KHÔNG thú vị. 'dull' = mô tả phim như thế nào?</div><div class="at" id="a2_15_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Ngược với 'interesting' (thú vị) hay 'gripping' (hấp dẫn). 'dull' = tính chất đối lập = ?</div><div class="at" id="a3_15_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'dull (adj) = buồn chán, nhạt nhẽo'. Không thú vị, nhàm chán = ?</div><div class="at" id="a3_15_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>dull</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_15">buồn chán, nhạt nhẽo</div></div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">enjoyable</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ɪnˈdʒɔɪəbl/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It was an <mark>enjoyable</mark> film. Everyone in the cinema was laughing."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'an ENJOYABLE film. Everyone was LAUGHING.' — mọi người cười → phim gây ra cảm giác gì?</div><div class="at" id="a2_16_0"></div></div>
+<div class="qi"><div class="qq">'enjoy' = thích thú, tận hưởng (từ quen). '-able' = có thể làm được. 'enjoyable' = có thể enjoy = ?</div><div class="at" id="a2_16_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">Tương tự: 'comfort' → 'comfortable'. 'enjoy' → 'enjoyable'. 'enjoyable' = mang lại cảm giác gì?</div><div class="at" id="a3_16_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'enjoyable (adj) = thú vị, thích thú'. Mang lại niềm vui = ?</div><div class="at" id="a3_16_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>enjoyable</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_16">thú vị, thích thú</div></div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">scary</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈskeəri/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"That's too <mark>scary</mark> for me."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'That's too SCARY for me' — Mi nói sau khi nghe về 'horror film'. 'too ___' = quá mức chịu đựng.</div><div class="at" id="a2_17_0"></div></div>
+<div class="qi"><div class="qq">'too scary' → Mi không muốn xem. 'scary' mô tả cảm giác gì khi xem horror film?</div><div class="at" id="a2_17_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'scare' = làm sợ. '-y' = tính từ (scare→scary). 'scary' = gây ra cảm giác gì?</div><div class="at" id="a3_17_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'scary (adj) = sợ hãi, rùng rợn'. Làm người xem cảm thấy sợ = ?</div><div class="at" id="a3_17_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>scary</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_17">sợ hãi, rùng rợn</div></div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">poster</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈpəʊstə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>poster</mark> for the new superhero film looks amazing."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The POSTER for the new superhero film looks AMAZING.' — 'looks amazing' = trông tuyệt vời. 'poster' = thứ nhìn vào được.</div><div class="at" id="a2_18_0"></div></div>
+<div class="qi"><div class="qq">'poster for a film' = quảng cáo phim. Đây là thứ NHÌN vào được = hình ảnh/áp phích = ?</div><div class="at" id="a2_18_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'poster (n) = áp phích quảng cáo'. Tờ giấy lớn có hình ảnh quảng cáo = ?</div><div class="at" id="a3_18_0"></div></div>
+<div class="qi"><div class="qq">Film posters thường được dán ở rạp chiếu phim. 'poster' = ?</div><div class="at" id="a3_18_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>poster</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_18">áp phích quảng cáo</div></div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="19">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 19</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">moving</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈmuːvɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The film was so <mark>moving</mark> that many people cried at the end."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'so MOVING that many people CRIED' — 'so...that' = quá...đến nỗi. Khóc → 'moving' gây ra cảm xúc gì?</div><div class="at" id="a2_19_0"></div></div>
+<div class="qi"><div class="qq">'people CRIED' → phim chạm đến CẢM XÚC sâu sắc. 'moving' = loại phim gây ra điều gì?</div><div class="at" id="a2_19_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'move' = lay động, xúc động (cảm xúc). '-ing' = tính từ. 'moving' = làm người ta xúc động = ?</div><div class="at" id="a3_19_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'moving (adj) = cảm động'. Làm người xem rơi nước mắt vì xúc cảm = ?</div><div class="at" id="a3_19_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>moving</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_19" onclick="revAll(19)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_19">cảm động</div></div>
+</div>
+<div class="rn" id="rn_19" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="20">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 20</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">shocking</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈʃɒkɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It was a <mark>shocking</mark> film — nobody expected that ending."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'a SHOCKING film — nobody EXPECTED that ending' — không ai đoán trước được. 'shocking' = gây ra gì?</div><div class="at" id="a2_20_0"></div></div>
+<div class="qi"><div class="qq">'shock' = cú sốc (bất ngờ). '-ing' = tính từ. 'shocking' = gây ra cú sốc = làm người ta cảm thấy gì?</div><div class="at" id="a2_20_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'nobody expected' = không ai ngờ → phim gây BẤT NGỜ. 'shocking' = quá bất ngờ đến mức = ?</div><div class="at" id="a3_20_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 8: 'shocking (adj) = làm sững sốt'. Gây bất ngờ, kinh ngạc = ?</div><div class="at" id="a3_20_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>shocking</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_20" onclick="revAll(20)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_20">làm sững sốt</div></div>
+</div>
+<div class="rn" id="rn_20" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+<div class="st">
+<div style="font-size:52px;margin-bottom:12px">🎉</div>
+<div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 8!</div>
+<div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 20 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+</div>
+<div class="sb2">
+<div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+<div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+<div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px"><span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span><span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span><span style="color:#C62828;font-weight:700">✗ Sai = 0</span></div>
+<table class="sct"><tr><th>#</th><th>Từ</th><th>IPA</th><th>Nghĩa</th><th>Kết quả</th></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">1</td><td><strong>acting (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈæktɪŋ/</td><td style="color:#546E7A;font-size:13px">diễn xuất</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">2</td><td><strong>comedy (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈkɒmədi/</td><td style="color:#546E7A;font-size:13px">phim hài</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">3</td><td><strong>confusing (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/kənˈfjuːzɪŋ/</td><td style="color:#546E7A;font-size:13px">khó hiểu, gây bối rối</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">4</td><td><strong>director (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/dɪˈrektə/</td><td style="color:#546E7A;font-size:13px">người đạo diễn (phim, kịch...)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">5</td><td><strong>documentary (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˌdɒkjəˈmentri/</td><td style="color:#546E7A;font-size:13px">phim tài liệu</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">6</td><td><strong>dull (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/dʌl/</td><td style="color:#546E7A;font-size:13px">buồn chán, nhạt nhẽo</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">7</td><td><strong>enjoyable (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ɪnˈdʒɔɪəbl/</td><td style="color:#546E7A;font-size:13px">thú vị, thích thú</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">8</td><td><strong>fantasy (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈfæntəsi/</td><td style="color:#546E7A;font-size:13px">phim giả tưởng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">9</td><td><strong>frightening (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈfraɪtənɪŋ/</td><td style="color:#546E7A;font-size:13px">làm sợ hãi, rùng rợn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">10</td><td><strong>gripping (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈɡrɪpɪŋ/</td><td style="color:#546E7A;font-size:13px">hấp dẫn, thú vị</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">11</td><td><strong>horror film (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈhɒrə fɪlm/</td><td style="color:#546E7A;font-size:13px">phim kinh dị</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">12</td><td><strong>moving (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈmuːvɪŋ/</td><td style="color:#546E7A;font-size:13px">cảm động</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">13</td><td><strong>must-see (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈmʌst siː/</td><td style="color:#546E7A;font-size:13px">bộ phim hấp dẫn, cần xem</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">14</td><td><strong>poster (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈpəʊstə/</td><td style="color:#546E7A;font-size:13px">áp phích quảng cáo</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">15</td><td><strong>review (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/rɪˈvjuː/</td><td style="color:#546E7A;font-size:13px">bài phê bình (về một bộ phim)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">16</td><td><strong>scary (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈskeəri/</td><td style="color:#546E7A;font-size:13px">sợ hãi, rùng rợn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">17</td><td><strong>science fiction (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈsaɪəns ˈfɪkʃən/</td><td style="color:#546E7A;font-size:13px">thể loại phim khoa học viễn tưởng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">18</td><td><strong>shocking (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈʃɒkɪŋ/</td><td style="color:#546E7A;font-size:13px">làm sững sốt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">19</td><td><strong>star (v)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/stɑː/</td><td style="color:#546E7A;font-size:13px">đóng vai chính</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">20</td><td><strong>survey (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈsɜːveɪ/</td><td style="color:#546E7A;font-size:13px">cuộc khảo sát</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(20,1,this)">✓</button><button class="scb" onclick="sw(20,0.5,this)">~</button><button class="scb" onclick="sw(20,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">21</td><td><strong>twin (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/twɪn/</td><td style="color:#546E7A;font-size:13px">đứa trẻ sinh đôi</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(21,1,this)">✓</button><button class="scb" onclick="sw(21,0.5,this)">~</button><button class="scb" onclick="sw(21,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">22</td><td><strong>violent (adj)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈvaɪələnt/</td><td style="color:#546E7A;font-size:13px">có nhiều cảnh bạo lực</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(22,1,this)">✓</button><button class="scb" onclick="sw(22,0.5,this)">~</button><button class="scb" onclick="sw(22,0,this)">✗</button></div></td></tr>
+<tr><td style="width:24px;color:#546E7A;font-size:12px">23</td><td><strong>wizard (n)</strong></td><td style="color:#546E7A;font-size:12px;font-style:italic">/ˈwɪzəd/</td><td style="color:#546E7A;font-size:13px">phù thuỷ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(23,1,this)">✓</button><button class="scb" onclick="sw(23,0.5,this)">~</button><button class="scb" onclick="sw(23,0,this)">✗</button></div></td></tr>
+</table>
+<div class="sdsp"><div class="sbig" id="sb">0</div><div style="font-size:16px;color:rgba(255,255,255,.8)">/ 23 từ</div><div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div><div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div></div>
+<div class="subs"><div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📋 Ghi nhớ kết quả</div><div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong> / 23</div><div id="sr"></div></div>
+<div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+</div>
+</div>
+</main>
+<nav class="nav-bar">
+<button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+<div class="dots" id="dots"></div>
+<button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=20;const TS=23;let cur=1;const sc={};
+const ANS={"a2_2_0": "'horror film' là thể loại phim khiến Mi SỢ. 'too scary' = quá đáng sợ.", "a2_2_1": "Mi nói 'too scary' khi nghe về 'horror film' → horror film = phim làm người xem sợ hãi.", "a3_2_0": "'horror' liên quan đến 'horrible' (kinh khủng, kinh dị) → 'horror film' = phim kinh dị.", "a3_2_1": "'horror film' = phim kinh dị — phim làm người xem sợ hãi.", "a2_3_0": "'documentary' là thể loại phim. Mark thấy 'boring' = nhàm chán. Phim không hư cấu.", "a2_3_1": "Mark không thích vì 'boring' → documentaries = phim dựa trên sự thật, ít kịch tính.", "a3_3_0": "'document' = tài liệu thực. '-ary' = danh từ. 'documentary' = phim dựa trên tài liệu thực = phim tài liệu.", "a3_3_1": "'documentary' = phim tài liệu — phim về sự kiện, con người, địa điểm có thật.", "a2_4_0": "'Our Holiday' là comedy. 'funny and interesting' là tính chất của phim → comedy = phim hài hước.", "a2_4_1": "'funny' = buồn cười. Comedy là thể loại phim làm người xem cười.", "a3_4_0": "'comedian' = người hài. 'comedy' = thể loại phim hài hước = phim hài.", "a3_4_1": "'comedy' = phim hài — thể loại phim làm người xem cười vui.", "a2_5_0": "'Who STARS in it?' = hỏi về diễn viên chính. 'stars' = đóng vai chính trong phim.", "a2_5_1": "'stars' = những diễn viên nổi tiếng đóng vai chính trong phim.", "a3_5_0": "'star' (n) = ngôi sao điện ảnh. 'star' (v) = đóng vai chính. 'who stars in it?' = ai đóng chính?", "a3_5_1": "'star' (v) = đóng vai chính. 'Kate Harrison stars in the film' = Kate Harrison đóng vai chính.", "a2_6_0": "'What are the REVIEWS like?' = hỏi về reviews. Mi muốn biết đánh giá của người khác về phim.", "a2_6_1": "'good reviews' = đánh giá tốt về phim → reviews = bài viết đánh giá, nhận xét phim.", "a3_6_0": "'review' = xem lại và đánh giá. 'film review' = bài viết nhận xét về phim.", "a3_6_1": "'review' = bài phê bình — bài viết đánh giá một bộ phim sau khi xem.", "a2_7_0": "Harry Potter có phép thuật, phù thủy → 'fantasy' = thể loại phim có yếu tố kỳ ảo.", "a2_7_1": "Mi dùng 'fantasy' để đoán thể loại → fantasy = phim có ma thuật, thế giới tưởng tượng.", "a3_7_0": "'fantasy' = tưởng tượng, ảo mộng → 'fantasy film' = phim về thế giới không có thật.", "a3_7_1": "'fantasy' = phim giả tưởng — có ma thuật, phù thủy, sinh vật huyền bí.", "a2_8_0": "'the first of the... SERIES' = phần đầu tiên → 'series' có nhiều phần.", "a2_8_1": "Harry Potter có 8 phần phim liên tiếp = 'film series' = chuỗi phim nhiều phần.", "a3_8_0": "'series' = chuỗi nhiều phần liên tiếp theo thứ tự.", "a3_8_1": "'TV series' = phim nhiều tập. 'film series' = chuỗi phim nhiều phần.", "a2_9_0": "Harry là wizard học ở trường phù thủy → wizard = người có phép thuật.", "a2_9_1": "'school for wizards' = trường dành cho người có phép thuật → wizard = phù thủy.", "a3_9_0": "'school for wizards' + 'powerful' → wizard = người có khả năng phép thuật đặc biệt.", "a3_9_1": "'wizard' = phù thủy — người có phép thuật trong truyện/phim giả tưởng.", "a2_10_0": "'must' = phải. 'see' = xem. 'must-see' = điều BẮT BUỘC phải xem.", "a2_10_1": "'a must-see for teens' = phim mà thanh thiếu niên KHÔNG NÊN BỎ QUA.", "a3_10_0": "'must-see' = bộ phim nhất định phải xem vì rất hay.", "a3_10_1": "'must-see' = phim hấp dẫn, cần xem — không nên bỏ qua.", "a2_11_0": "'acting is excellent' = kỹ năng diễn xuất xuất sắc. 'acting' = thứ gì của diễn viên?", "a2_11_1": "'actors' diễn xuất → 'acting' = hoạt động/kỹ năng của diễn viên.", "a3_11_0": "'act' = diễn. '-ing' = danh từ hành động. 'acting' = kỹ năng/hoạt động diễn xuất.", "a3_11_1": "'acting' = diễn xuất — nghề/kỹ năng của diễn viên.", "a2_12_0": "'a little frightening' = đôi khi gây sợ. 'frightening' = làm người xem cảm thấy sợ.", "a2_12_1": "'although frightening... very interesting' → frightening = gây sợ nhưng vẫn thú vị.", "a3_12_0": "'fright' = sợ hãi đột ngột. 'frighten' = làm sợ. '-ing' → tính từ. 'frightening' = làm sợ.", "a3_12_1": "'frightening' = làm sợ hãi, rùng rợn — gây ra cảm giác sợ.", "a2_13_0": "'CONFUSING because the story JUMPED between too many characters' — nhiều nhân vật → không hiểu được.", "a2_13_1": "Câu chuyện phức tạp → người xem không theo kịp → 'confusing' = làm rối, khó hiểu.", "a3_13_0": "'confuse' = làm rối. '-ing' = tính từ. 'confusing' = làm người ta bị rối.", "a3_13_1": "'confusing' = khó hiểu, gây bối rối — làm người xem không hiểu rõ.", "a2_14_0": "Chris Columbus = tên người. 'director' = vai trò của ông ấy = người đạo diễn phim.", "a2_14_1": "'direct' = chỉ đạo. '-or' = người làm (act→actor). 'director' = người chỉ đạo phim.", "a3_14_0": "Director = người chỉ đạo diễn viên và toàn bộ quá trình làm phim.", "a3_14_1": "'director' = người đạo diễn — người chỉ đạo toàn bộ bộ phim.", "a2_15_0": "'fell asleep' = ngủ gật khi xem → phim nhàm chán. 'dull' = nhàm chán.", "a2_15_1": "Phim làm người xem buồn ngủ = không thú vị = 'dull' = buồn chán, nhạt nhẽo.", "a3_15_0": "'dull' = ngược với 'interesting', 'gripping'. Phim không hấp dẫn, nhàm chán.", "a3_15_1": "'dull' = buồn chán, nhạt nhẽo — phim không thú vị, không cuốn hút.", "a2_16_0": "Mọi người cười → phim thú vị, vui vẻ. 'enjoyable' = mang lại niềm vui.", "a2_16_1": "'enjoy' = thích thú. '-able' = có thể. 'enjoyable' = có thể enjoy được = thú vị.", "a3_16_0": "'enjoy' → 'enjoyable'. Tương tự: 'comfort' → 'comfortable'. 'enjoyable' = mang lại sự thích thú.", "a3_16_1": "'enjoyable' = thú vị, thích thú — mang lại niềm vui và sự thích thú.", "a2_17_0": "Mi không muốn xem horror film vì 'too scary'. 'scary' = gây sợ hãi.", "a2_17_1": "'too scary' → quá đáng sợ → 'scary' = làm người xem cảm thấy sợ.", "a3_17_0": "'scare' = làm sợ. '-y' = tính từ. 'scary' = gây ra cảm giác sợ.", "a3_17_1": "'scary' = sợ hãi, rùng rợn — làm người xem cảm thấy sợ.", "a2_18_0": "'poster for a film looks amazing' — 'looks' = nhìn vào. Poster là thứ nhìn vào được.", "a2_18_1": "Poster = hình ảnh/áp phích quảng cáo phim dán ở rạp hoặc nơi công cộng.", "a3_18_0": "'poster' = áp phích quảng cáo — tờ giấy lớn có hình ảnh quảng cáo.", "a3_18_1": "Film poster thường được dán ở rạp chiếu phim để quảng cáo.", "a2_19_0": "'so moving that people CRIED' — khóc = xúc động sâu sắc. 'moving' = gây xúc động.", "a2_19_1": "Phim chạm đến cảm xúc → người xem khóc → 'moving' = cảm động.", "a3_19_0": "'move' (cảm xúc) = lay động, xúc động. '-ing' → tính từ. 'moving' = làm xúc động.", "a3_19_1": "'moving' = cảm động — làm người xem rơi nước mắt vì xúc cảm.", "a2_20_0": "'nobody EXPECTED that ending' = không ai ngờ → cú sốc bất ngờ. 'shocking' = gây sốc.", "a2_20_1": "'shock' = cú sốc bất ngờ. '-ing' = tính từ. 'shocking' = gây ra cú sốc.", "a3_20_0": "'shocking' = quá bất ngờ, không ai đoán được = làm sững sốt.", "a3_20_1": "'shocking' = làm sững sốt — gây bất ngờ, kinh ngạc vì không ngờ đến."};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(el=>{const k=el.id;if(ANS[k]){el.textContent='→ '+ANS[k];}el.classList.add('sh');});const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/TS*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điểm: <strong>'+ts+'/23</strong></div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body>
+</html>

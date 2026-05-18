@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 3 – Community Service | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:200px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="ht"><div class="htl">Tiếng Anh 7 – Unit 3 • Community Service</div><div class="wc" id="wc">Từ 1 / 24</div></div>
+  <div class="pb"><div class="pf" id="pf" style="width:4.2%"></div></div>
+</header>
+<main class="main">
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">homeless</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'həʊmləs/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span></div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"We donate books to <mark>homeless</mark> children."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'We DONATE books TO homeless children' — 'donate' = tặng/cho. Đây là ai nhận sách?</div>
+<div class="ea">'donate books to ___' = tặng sách cho [người cần giúp đỡ] → nhóm người thiệt thòi.</div>
+</div>
+<div class="qi"><div class="qq">'homeless CHILDREN' — 'children' = trẻ em. 'homeless' mô tả trẻ em đó thế nào?</div>
+<div class="ea">'homeless children' → trẻ em đang ở tình trạng KHÓ KHĂN.</div>
+</div>
+<div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Trẻ em trong tình trạng khó khăn — còn mơ hồ.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố trong bản thân từ lạ</div></div>
+<div class="qi"><div class="qq">Tách: 'HOME'  +  '-LESS'</div>
+<div class="ea">'home' = ngôi nhà  /  '-less' = không có.</div>
+</div>
+<div class="qi"><div class="qq">'-less' = không có (hopeless = không hy vọng). 'home-less' = không có ___?</div>
+<div class="ea">homeless = không có nhà / vô gia cư ✓</div>
+</div>
+<div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Không có nhà — home + -less.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>homeless</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<div style="font-size:16px;font-weight:700;color:#1B5E20">vô gia cư, không có gia đình</div>
+</div>
+<div class="wn">Tiền tố '-less': homeless, hopeless, useless, careless → thêm 'không có' vào nghĩa gốc.</div>
+</div>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">board game</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'bɔːd geɪm/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"I bought you a <mark>board game</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'BOARD'  +  'GAME'</div>
+<div class="at" id="a2_2_0"></div>
+</div>
+<div class="qi"><div class="qq">'game' = trò chơi. 'board' = tấm bảng, mặt phẳng. Ghép lại = ?</div>
+<div class="at" id="a2_2_1"></div>
+</div>
+<div class="qi"><div class="qq">'I BOUGHT you a board game' → mua để tặng → đây là loại quà/đồ chơi gì?</div>
+<div class="at" id="a2_2_2"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'Can we MEET UP this Sunday?' → đây là thứ để làm gì khi gặp nhau?</div>
+<div class="at" id="a3_2_0"></div>
+</div>
+<div class="qi"><div class="qq">Trò chơi trên mặt bảng phẳng như cờ vua, cờ tướng → board game = ?</div>
+<div class="at" id="a3_2_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>board game</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_2">trò chơi trên bàn cờ</div>
+</div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">community</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kə'mjuːnəti/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Our Green School Club will have some <mark>community</mark> activities on that morning."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'COMMUNITY activities' — từ quen: 'activities' = hoạt động. 'community ___' = hoạt động như thế nào?</div>
+<div class="at" id="a2_3_0"></div>
+</div>
+<div class="qi"><div class="qq">Green School Club làm 'community activities' → hoạt động dành cho bản thân hay mọi người xung quanh?</div>
+<div class="at" id="a2_3_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">Các hoạt động: pick up litter, plant vegetables, donate to nursing home → giúp ai?</div>
+<div class="at" id="a3_3_0"></div>
+</div>
+<div class="qi"><div class="qq">Tất cả đều giúp NHIỀU NGƯỜI XUNG QUANH → 'community' = ?</div>
+<div class="at" id="a3_3_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>community</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_3">cộng đồng</div>
+</div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">plant</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/plɑːnt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We pick up litter around our school and <mark>plant</mark> vegetables in our school garden."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'___ vegetables IN OUR SCHOOL GARDEN' — làm gì với rau trong vườn?</div>
+<div class="at" id="a2_4_0"></div>
+</div>
+<div class="qi"><div class="qq">'pick up litter AND plant vegetables' — 'pick up' = nhặt. '___ vegetables' = ?</div>
+<div class="at" id="a2_4_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'We DONATE the vegetables to a nursing home' → rau đã được làm gì rồi mới donate?</div>
+<div class="at" id="a3_4_0"></div>
+</div>
+<div class="qi"><div class="qq">Muốn donate rau, trước tiên phải làm gì với rau? → 'plant vegetables' = ?</div>
+<div class="at" id="a3_4_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>plant</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_4">trồng (cây)</div>
+</div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">donate</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'dəʊneɪt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We <mark>donate</mark> the vegetables to a nursing home."</p><p>"Students grow vegetables and donate them to local schools."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'___ vegetables TO a nursing home' — 'to' = chuyển đến. Làm gì với rau rồi chuyển đến?</div>
+<div class="at" id="a2_5_0"></div>
+</div>
+<div class="qi"><div class="qq">'donate vegetables' và 'donate books to homeless children' — lấy thứ gì đó và ___ cho người khác.</div>
+<div class="at" id="a2_5_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'donate books to HOMELESS children' — hành động tích cực, giúp người thiệt thòi.</div>
+<div class="at" id="a3_5_0"></div>
+</div>
+<div class="qi"><div class="qq">'donate' = tự nguyện cho đi thứ gì đó để giúp đỡ = ?</div>
+<div class="at" id="a3_5_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>donate</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_5">cho, tặng (tự nguyện)</div>
+</div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">nursing home</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'nɜːsɪŋ həʊm/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We donate the vegetables to a <mark>nursing home</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'NURSING'  +  'HOME'</div>
+<div class="at" id="a2_6_0"></div>
+</div>
+<div class="qi"><div class="qq">'home' = nơi ở. 'nursing' = chăm sóc, điều dưỡng. Ghép lại = ?</div>
+<div class="at" id="a2_6_1"></div>
+</div>
+<div class="qi"><div class="qq">'nursing home' = nơi ở + chăm sóc = ?</div>
+<div class="at" id="a2_6_2"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">Bài đọc: 'Students visit a nursing home and read books to the ELDERLY' → người trong đó là ai?</div>
+<div class="at" id="a3_6_0"></div>
+</div>
+<div class="qi"><div class="qq">Nursing home = nơi ở dành cho người già yếu cần được chăm sóc = ?</div>
+<div class="at" id="a3_6_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>nursing home</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_6">viện dưỡng lão</div>
+</div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div><div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">community service</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kə,mjuːnəti 'sɜːvɪs/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The school believes that a good way for students to develop themselves is through <mark>community service</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'COMMUNITY'  +  'SERVICE'</div>
+<div class="at" id="a2_7_0"></div>
+</div>
+<div class="qi"><div class="qq">'community' = cộng đồng (Từ 3). 'service' = phục vụ. Ghép lại = ?</div>
+<div class="at" id="a2_7_1"></div>
+</div>
+<div class="qi"><div class="qq">'through community service' → hoạt động PHỤC VỤ ai?</div>
+<div class="at" id="a2_7_2"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">Sau đó: 5 dự án (tutoring, gardening, donating...) → đây là ví dụ của community service.</div>
+<div class="at" id="a3_7_0"></div>
+</div>
+<div class="qi"><div class="qq">Tất cả đều GIÚP ĐỠ NGƯỜI KHÁC → community service = ?</div>
+<div class="at" id="a3_7_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>community service</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_7">dịch vụ cộng đồng</div>
+</div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">develop</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dɪ'veləp/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"A good way for students to <mark>develop</mark> themselves is through community service."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'a good way to ___ themselves' — 'themselves' = bản thân. Đây là hành động gì với bản thân?</div>
+<div class="at" id="a2_8_0"></div>
+</div>
+<div class="qi"><div class="qq">'a GOOD way' → kết quả tích cực. Bản thân trở nên thế nào?</div>
+<div class="at" id="a2_8_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'Students learn that they can HELP PEOPLE' → học được điều gì qua community service?</div>
+<div class="at" id="a3_8_0"></div>
+</div>
+<div class="qi"><div class="qq">Volunteer giúp học sinh ___ bản thân (tốt hơn, giỏi hơn) → develop = ?</div>
+<div class="at" id="a3_8_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>develop</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_8">phát triển</div>
+</div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">elderly</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'eldəli/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Students visit a nursing home monthly and read books to the <mark>elderly</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'read books to the ELDERLY' — 'the' + tính từ = nhóm người đó (the poor = người nghèo).</div>
+<div class="at" id="a2_9_0"></div>
+</div>
+<div class="qi"><div class="qq">'visit a NURSING HOME' → nursing home là nơi dành cho ai (đã học ở Từ 6)?</div>
+<div class="at" id="a2_9_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ trong bản thân từ lạ</div></div>
+<div class="qi"><div class="qq">'ELDER' = người lớn tuổi hơn. '-ly' là đuôi tính từ.</div>
+<div class="at" id="a3_9_0"></div>
+</div>
+<div class="qi"><div class="qq">'elderly' = có đặc tính của 'elder' → chỉ người như thế nào?</div>
+<div class="at" id="a3_9_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>elderly</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_9">lớn tuổi, cao tuổi</div>
+</div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">tutor</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'tjuːtə/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Upper grade students <mark>tutor</mark> lower grade students."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'UPPER grade students ___ LOWER GRADE students' — học sinh lớp cao làm GÌ cho lớp thấp?</div>
+<div class="at" id="a2_10_0"></div>
+</div>
+<div class="qi"><div class="qq">'upper grade' → biết nhiều hơn → người biết nhiều dạy người biết ít = hành động gì?</div>
+<div class="at" id="a2_10_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Hội thoại: 'Last summer, we TAUGHT English to 30 kids' → 'taught' = dạy.</div>
+<div class="at" id="a3_10_0"></div>
+</div>
+<div class="qi"><div class="qq">'tutor' cũng là hoạt động của người biết nhiều hơn → tutor = ?</div>
+<div class="at" id="a3_10_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>tutor</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_10">phụ đạo, dạy học</div>
+</div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">collect</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kə'lekt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Students <mark>collect</mark> paper and exchange it for plants."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'___ paper AND exchange it' — muốn exchange phải làm gì với paper trước?</div>
+<div class="at" id="a2_11_0"></div>
+</div>
+<div class="qi"><div class="qq">Hội thoại: 'We PICK UP litter' → nhặt rác. collect paper = nhặt/gom giấy.</div>
+<div class="at" id="a2_11_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">Sau collect paper → exchange it for plants → 'collect' = bước chuẩn bị trước khi trao đổi.</div>
+<div class="at" id="a3_11_0"></div>
+</div>
+<div class="qi"><div class="qq">'collect' = thu thập, gom lại nhiều thứ → collect paper = ?</div>
+<div class="at" id="a3_11_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>collect</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_11">thu thập, sưu tầm</div>
+</div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">exchange</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ɪks'tʃeɪndʒ/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Students collect paper and <mark>exchange</mark> it for plants."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'___ paper FOR plants' — 'for' = đổi lấy. Đưa paper đi để nhận plants về → hành động gì?</div>
+<div class="at" id="a2_12_0"></div>
+</div>
+<div class="qi"><div class="qq">Gom giấy → ___ giấy lấy cây. Hai bên cho nhau thứ gì đó?</div>
+<div class="at" id="a2_12_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'They then look after the PLANTS in their school garden' → plants ở đâu đến?</div>
+<div class="at" id="a3_12_0"></div>
+</div>
+<div class="qi"><div class="qq">Paper đổi lấy plants → hai bên trao cho nhau thứ gì đó → exchange = ?</div>
+<div class="at" id="a3_12_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>exchange</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_12">trao đổi</div>
+</div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">proud</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/praʊd/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Bài đọc]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"They feel useful and <mark>proud</mark> because they do good things."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'feel useful AND proud' — 'and' nối 2 cảm xúc. 'useful' = hữu ích (tốt). 'proud' = ?</div>
+<div class="at" id="a2_13_0"></div>
+</div>
+<div class="qi"><div class="qq">'because they do GOOD THINGS' → nguyên nhân gây ra cảm giác 'proud' là làm điều tốt.</div>
+<div class="at" id="a2_13_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'Students learn that they can HELP PEOPLE' → khi giúp được người khác, cảm thấy thế nào?</div>
+<div class="at" id="a3_13_0"></div>
+</div>
+<div class="qi"><div class="qq">Cảm giác tốt khi làm được điều có ý nghĩa = 'proud' = ?</div>
+<div class="at" id="a3_13_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>proud</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_13">tự hào</div>
+</div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div><div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">clean-up activity</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'kliːn ʌp/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Every Saturday, students do a <mark>clean-up activity</mark> in their neighbourhood. They pick up litter and sweep the streets."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'CLEAN-UP'  +  'ACTIVITY'</div>
+<div class="at" id="a2_14_0"></div>
+</div>
+<div class="qi"><div class="qq">'activity' = hoạt động. 'clean-up' = 'clean' (sạch) + 'up' (hoàn toàn) = làm sạch. Ghép lại = ?</div>
+<div class="at" id="a2_14_1"></div>
+</div>
+<div class="qi"><div class="qq">'clean-up activity' = hoạt động làm gì?</div>
+<div class="at" id="a2_14_2"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'They PICK UP LITTER and SWEEP the streets' → đây là những việc học sinh làm.</div>
+<div class="at" id="a3_14_0"></div>
+</div>
+<div class="qi"><div class="qq">Pick up litter + sweep streets = hoạt động làm GÌ cho đường phố?</div>
+<div class="at" id="a3_14_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>clean-up activity</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_14">hoạt động dọn rửa</div>
+</div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">flooded</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'flʌvɪd/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"After heavy rain, many houses in the village were <mark>flooded</mark>. Volunteers came to help the families clean their homes."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'After HEAVY RAIN' + 'were FLOODED' — mưa to gây ra tình trạng gì cho các ngôi nhà?</div>
+<div class="at" id="a2_15_0"></div>
+</div>
+<div class="qi"><div class="qq">'were ___' = ở trạng thái bị. Nhà bị tình trạng gì sau mưa lớn?</div>
+<div class="at" id="a2_15_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'Volunteers came to help the families CLEAN THEIR HOMES' → phải dọn nhà → vì sao?</div>
+<div class="at" id="a3_15_0"></div>
+</div>
+<div class="qi"><div class="qq">'FLOOD' (n) = lũ lụt. 'flooded' = đã bị lũ → flooded houses = nhà bị ___?</div>
+<div class="at" id="a3_15_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>flooded</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_15">bị lũ lụt</div>
+</div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">mountainous</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'maʊntənəs/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Life in <mark>mountainous</mark> areas is very hard. Schools and hospitals are far away from many villages there."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'MOUNTAIN'  +  '-OUS'</div>
+<div class="at" id="a2_16_0"></div>
+</div>
+<div class="qi"><div class="qq">'mountain' = ngọn núi. '-ous' = đuôi tính từ (danger→dangerous). 'mountainous' = có nhiều ___?</div>
+<div class="at" id="a2_16_1"></div>
+</div>
+<div class="qi"><div class="qq">'mountainous AREAS' = khu vực như thế nào?</div>
+<div class="at" id="a2_16_2"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'Schools and hospitals are FAR AWAY from many villages' → đặc điểm của vùng nào?</div>
+<div class="at" id="a3_16_0"></div>
+</div>
+<div class="qi"><div class="qq">Vùng có nhiều núi, hẻo lánh, xa xôi → mountainous area = ?</div>
+<div class="at" id="a3_16_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>mountainous</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_16">vùng núi (có nhiều núi)</div>
+</div>
+<div class="wn">Gốc từ: mountain + -ous. Tương tự: danger→dangerous, fame→famous.</div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">nursing</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'nɜːsɪŋ/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Lan wants to study <mark>nursing</mark> because she loves taking care of sick people."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'study NURSING' — 'nursing' là thứ có thể 'study'. Đây là ngành học gì?</div>
+<div class="at" id="a2_17_0"></div>
+</div>
+<div class="qi"><div class="qq">'because she loves TAKING CARE OF SICK PEOPLE' → ngành học liên quan đến việc gì?</div>
+<div class="at" id="a2_17_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ trong bản thân từ lạ</div></div>
+<div class="qi"><div class="qq">'NURSE' = y tá (người chăm sóc bệnh nhân). '-ing' = ngành về ___.</div>
+<div class="at" id="a3_17_0"></div>
+</div>
+<div class="qi"><div class="qq">'nursing' = ngành/công việc của nurse = ?</div>
+<div class="at" id="a3_17_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>nursing</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_17">chăm sóc, điều dưỡng</div>
+</div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">orphanage</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'ɔːfənɪdʒ/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The volunteers visited an <mark>orphanage</mark> every month. They played games and read books to the children there."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'visited an ORPHANAGE' — 'the CHILDREN THERE' → đây là nơi có trẻ em cần được thăm.</div>
+<div class="at" id="a2_18_0"></div>
+</div>
+<div class="qi"><div class="qq">'played games and read books TO THE CHILDREN' → trẻ em ở đây cần giúp đỡ → hoàn cảnh gì?</div>
+<div class="at" id="a2_18_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Hội thoại: 'donate books to HOMELESS children' → trẻ em không có nhà cần giúp đỡ.</div>
+<div class="at" id="a3_18_0"></div>
+</div>
+<div class="qi"><div class="qq">Orphanage = nơi trẻ em không có cha mẹ sinh sống → loại tổ chức gì?</div>
+<div class="at" id="a3_18_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>orphanage</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_18">trại trẻ mồ côi</div>
+</div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="19">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 19</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">protect</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/prə'tekt/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We plant trees to <mark>protect</mark> the environment. Trees keep the air clean and prevent flooding."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'plant trees TO ___ the environment' — 'to' = mục đích. Trồng cây để làm gì với môi trường?</div>
+<div class="at" id="a2_19_0"></div>
+</div>
+<div class="qi"><div class="qq">Trồng cây → làm điều tốt hay xấu cho môi trường?</div>
+<div class="at" id="a2_19_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'Trees KEEP the air clean and PREVENT flooding' → cây làm môi trường tốt hơn.</div>
+<div class="at" id="a3_19_0"></div>
+</div>
+<div class="qi"><div class="qq">'prevent' = ngăn ngừa. 'protect' = giữ cho không bị hại → protect = ?</div>
+<div class="at" id="a3_19_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>protect</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_19" onclick="revAll(19)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_19">bảo vệ</div>
+</div>
+</div>
+<div class="rn" id="rn_19" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="20">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 20</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">provide</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/prə'vaɪd/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The charity <mark>provides</mark> food and clothes to homeless people. Many families in the area need this help."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'___ food and clothes TO homeless people' — làm gì với food/clothes rồi chuyển đến?</div>
+<div class="at" id="a2_20_0"></div>
+</div>
+<div class="qi"><div class="qq">'donate' (Từ 5) = cho/tặng. 'provide' cũng có nghĩa gần giống: cung cấp thứ người ta cần.</div>
+<div class="at" id="a2_20_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'Many families NEED THIS HELP' → đây là thứ các gia đình đang THIẾU và cần.</div>
+<div class="at" id="a3_20_0"></div>
+</div>
+<div class="qi"><div class="qq">'provide food and clothes' = đưa những thứ cần thiết đến → provide = ?</div>
+<div class="at" id="a3_20_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>provide</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_20" onclick="revAll(20)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_20">cung cấp</div>
+</div>
+</div>
+<div class="rn" id="rn_20" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="21">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 21</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">rural area</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'rʊərəl 'eəriə/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"People in <mark>rural areas</mark> often have fewer opportunities than city people. Schools and hospitals are far away."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'RURAL areas' vs 'CITY people' — câu so sánh rural với city. Rural = ngược với city?</div>
+<div class="at" id="a2_21_0"></div>
+</div>
+<div class="qi"><div class="qq">'FEWER OPPORTUNITIES than city people' → người ở rural areas có ÍT CƠ HỘI hơn.</div>
+<div class="at" id="a2_21_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu sau xác nhận</div></div>
+<div class="qi"><div class="qq">'Schools and hospitals are FAR AWAY' → đặc điểm của nơi hẻo lánh, xa trung tâm.</div>
+<div class="at" id="a3_21_0"></div>
+</div>
+<div class="qi"><div class="qq">Ngược với 'city' (thành phố) → rural area = ?</div>
+<div class="at" id="a3_21_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>rural area</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_21" onclick="revAll(21)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_21">vùng nông thôn</div>
+</div>
+</div>
+<div class="rn" id="rn_21" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="22">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 22</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">teenager</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/'tiːneɪdʒə/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Many <mark>teenagers</mark> in this school volunteer to help elderly people at the nursing home every weekend."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'many TEENAGERS in this SCHOOL' — nhóm người trong trường. Lứa tuổi nào đi học?</div>
+<div class="at" id="a2_22_0"></div>
+</div>
+<div class="qi"><div class="qq">'volunteer to help ELDERLY people' → họ còn đủ trẻ để đi tình nguyện → người trẻ hay già?</div>
+<div class="at" id="a2_22_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ trong bản thân từ lạ</div></div>
+<div class="qi"><div class="qq">'TEEN' = chỉ các số 13–19 (thirteen, fourteen...nineteen). '-ager' = người ở độ tuổi.</div>
+<div class="at" id="a3_22_0"></div>
+</div>
+<div class="qi"><div class="qq">'teenager' = người ở độ tuổi 'teen' = ?</div>
+<div class="at" id="a3_22_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>teenager</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_22" onclick="revAll(22)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_22">thanh thiếu niên (13–19 tuổi)</div>
+</div>
+<div class="wn">'teen' trong: thirteen→nineteen → teenager = người 13–19 tuổi.</div>
+</div>
+<div class="rn" id="rn_22" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="23">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 23</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">skill</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/skɪl/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Volunteering helps teenagers develop many useful <mark>skills</mark>, such as teamwork and communication."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'develop many useful SKILLS' — 'useful' = hữu ích. Skills là thứ 'useful' cần 'develop'.</div>
+<div class="at" id="a2_23_0"></div>
+</div>
+<div class="qi"><div class="qq">'such as teamwork and communication' → đây là ví dụ của skills. 'teamwork' là gì?</div>
+<div class="at" id="a2_23_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'a good way for students to DEVELOP THEMSELVES' → skills giúp học sinh phát triển bản thân.</div>
+<div class="at" id="a3_23_0"></div>
+</div>
+<div class="qi"><div class="qq">'teamwork', 'communication' là những kỹ năng cụ thể → skill = ?</div>
+<div class="at" id="a3_23_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>skill</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_23" onclick="revAll(23)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_23">kĩ năng</div>
+</div>
+</div>
+<div class="rn" id="rn_23" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="24">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 24</div><div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">volunteer</div><div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌvɒlən'tɪə/</div><span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span></div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Tom <mark>volunteers</mark> at an orphanage every weekend. He teaches the children how to read."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Tom VOLUNTEERS at an orphanage' — Tom làm gì ở trại trẻ mồ côi mỗi cuối tuần?</div>
+<div class="at" id="a2_24_0"></div>
+</div>
+<div class="qi"><div class="qq">'every WEEKEND' + 'teaches the children' → Tom làm điều này có được trả tiền hay tự nguyện?</div>
+<div class="at" id="a2_24_1"></div>
+</div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'Volunteers came to HELP the families' (Từ 15) → volunteer = người đến giúp không bắt buộc.</div>
+<div class="at" id="a3_24_0"></div>
+</div>
+<div class="qi"><div class="qq">'volunteer' = tự nguyện làm gì đó để giúp đỡ mà không nhận thù lao = ?</div>
+<div class="at" id="a3_24_1"></div>
+</div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>volunteer</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+<textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_24" onclick="revAll(24)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_24">tình nguyện / người tình nguyện</div>
+</div>
+</div>
+<div class="rn" id="rn_24" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+  <div class="st">
+    <div style="font-size:52px;margin-bottom:12px">🎉</div>
+    <div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 3!</div>
+    <div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 24 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+  </div>
+  <div class="sb2">
+    <div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+    <div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+    <div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px">
+      <span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span>
+      <span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span>
+      <span style="color:#C62828;font-weight:700">✗ Sai = 0</span>
+    </div>
+    <table class="sct"><tr><th>#</th><th>Từ</th><th>Nghĩa</th><th>Kết quả</th></tr><tr><td style="width:28px;color:#546E7A;font-size:12px">1</td><td><strong>homeless</strong></td><td style="color:#546E7A;font-size:13px">vô gia cư, không có gia đình</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">2</td><td><strong>board game</strong></td><td style="color:#546E7A;font-size:13px">trò chơi trên bàn cờ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">3</td><td><strong>community</strong></td><td style="color:#546E7A;font-size:13px">cộng đồng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">4</td><td><strong>plant</strong></td><td style="color:#546E7A;font-size:13px">trồng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">5</td><td><strong>donate</strong></td><td style="color:#546E7A;font-size:13px">cho, tặng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">6</td><td><strong>nursing home</strong></td><td style="color:#546E7A;font-size:13px">viện dưỡng lão</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">7</td><td><strong>community service</strong></td><td style="color:#546E7A;font-size:13px">dịch vụ cộng đồng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">8</td><td><strong>develop</strong></td><td style="color:#546E7A;font-size:13px">phát triển</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">9</td><td><strong>elderly</strong></td><td style="color:#546E7A;font-size:13px">lớn tuổi, cao tuổi</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">10</td><td><strong>tutor</strong></td><td style="color:#546E7A;font-size:13px">phụ đạo, dạy học</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">11</td><td><strong>collect</strong></td><td style="color:#546E7A;font-size:13px">thu thập, sưu tầm</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">12</td><td><strong>exchange</strong></td><td style="color:#546E7A;font-size:13px">trao đổi</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">13</td><td><strong>proud</strong></td><td style="color:#546E7A;font-size:13px">tự hào</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">14</td><td><strong>clean-up activity</strong></td><td style="color:#546E7A;font-size:13px">hoạt động dọn rửa</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">15</td><td><strong>flooded</strong></td><td style="color:#546E7A;font-size:13px">bị lũ lụt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">16</td><td><strong>mountainous</strong></td><td style="color:#546E7A;font-size:13px">vùng núi</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">17</td><td><strong>nursing</strong></td><td style="color:#546E7A;font-size:13px">chăm sóc, điều dưỡng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">18</td><td><strong>orphanage</strong></td><td style="color:#546E7A;font-size:13px">trại trẻ mồ côi</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">19</td><td><strong>protect</strong></td><td style="color:#546E7A;font-size:13px">bảo vệ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">20</td><td><strong>provide</strong></td><td style="color:#546E7A;font-size:13px">cung cấp</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(20,1,this)">✓</button><button class="scb" onclick="sw(20,0.5,this)">~</button><button class="scb" onclick="sw(20,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">21</td><td><strong>rural area</strong></td><td style="color:#546E7A;font-size:13px">vùng nông thôn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(21,1,this)">✓</button><button class="scb" onclick="sw(21,0.5,this)">~</button><button class="scb" onclick="sw(21,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">22</td><td><strong>teenager</strong></td><td style="color:#546E7A;font-size:13px">thanh thiếu niên</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(22,1,this)">✓</button><button class="scb" onclick="sw(22,0.5,this)">~</button><button class="scb" onclick="sw(22,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">23</td><td><strong>skill</strong></td><td style="color:#546E7A;font-size:13px">kĩ năng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(23,1,this)">✓</button><button class="scb" onclick="sw(23,0.5,this)">~</button><button class="scb" onclick="sw(23,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">24</td><td><strong>volunteer</strong></td><td style="color:#546E7A;font-size:13px">tình nguyện / người tình nguyện</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(24,1,this)">✓</button><button class="scb" onclick="sw(24,0.5,this)">~</button><button class="scb" onclick="sw(24,0,this)">✗</button></div></td></tr>
+</table>
+    <div class="sdsp">
+      <div class="sbig" id="sb">0</div>
+      <div style="font-size:16px;color:rgba(255,255,255,.8)">/ 24 từ</div>
+      <div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div>
+      <div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div>
+    </div>
+    <div class="subs">
+      <div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📤 Gửi kết quả cho giáo viên</div>
+      <div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong></div>
+      <div id="sr"></div>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdE98x_FWlCRQ0rybmr5ev_W8_xtkGROXJ758G1QHAvxAbh3g/viewform?embedded=true" width="100%" height="520" frameborder="0" style="border-radius:12px;margin-top:12px;display:block">Đang tải...</iframe>
+    </div>
+    <div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+  </div>
+</div>
+</main>
+<nav class="nav-bar">
+  <button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+  <div class="dots" id="dots"></div>
+  <button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=24;let cur=1;const sc={};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(e=>e.classList.add('sh'));const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/T*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts+' / '+T;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điền đúng <strong>'+ts+'/24</strong> vào ô Điểm trong form bên dưới</div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body></html>

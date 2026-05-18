@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 5 – Food and Drink | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:220px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+<div class="ht"><div class="htl">Tiếng Anh 7 – Unit 5 • Food and Drink</div><div class="wc" id="wc">Từ 1 / 19</div></div>
+<div class="pb"><div class="pf" id="pf" style="width:5.3%"></div></div>
+</header>
+<main class="main">
+
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fried</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fraɪd/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span>
+</div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"could we also have an order of roast chicken and <mark>fried</mark> vegetables?"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'ROAST chicken and FRIED vegetables' — 'roast' = nướng (từ quen). 'fried' đứng cùng nhóm với 'roast'.</div><div class="ea">'roast' và 'fried' đều là cách CHẾ BIẾN thức ăn.</div></div>
+<div class="qi"><div class="qq">'fried VEGETABLES' = cách làm rau. Nướng? Luộc? Hay chiên/xào? Ngữ cảnh nhà hàng gợi ý gì?</div><div class="ea">Cùng nhóm 'roast' + dùng dầu/mỡ → 'fried' = phương pháp nấu bằng dầu/mỡ.</div></div>
+<div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Cách nấu dùng dầu/mỡ — còn mơ hồ.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Mark gọi: 'fried tofu and spring rolls' — đây là các món dùng dầu. 'fried' = cách nấu nào?</div><div class="ea">'fried' = đã được chiên / rán / xào (qua dầu) ✓</div></div>
+<div class="qi"><div class="qq">'deep-fried' = chiên ngập dầu. 'stir-fried' = xào. 'fry' (v) = chiên, rán. Vậy 'fried' = ?</div><div class="ea">Fried = chiên, rán, xào — đã qua dầu ✓</div></div>
+<div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Được chiên / rán / xào — qua dầu/mỡ.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>fried</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><div style="font-size:16px;font-weight:700;color:#1B5E20">được chiên / rán / xào</div></div>
+<div class="wn">'deep-fried' = chiên ngập dầu. 'stir-fried' = xào. 'fry' (v) → 'fried' = đã chiên/rán.</div>
+</div>
+</div>
+</div>
+
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">pork</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pɔːk/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We'd like rice with some <mark>pork</mark> cooked in fish sauce."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'rice with some PORK cooked in fish sauce' — đây là thứ ĂN ĐƯỢC nấu với nước mắm. Loại thực phẩm gì?</div><div class="at" id="a2_2_0"></div></div>
+<div class="qi"><div class="qq">'fish sauce' = nước mắm. Người ta thường nấu với loại THỊT gì ở Việt Nam?</div><div class="at" id="a2_2_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'beef' = thịt bò, 'chicken' = thịt gà (từ quen). 'pork' cùng nhóm thịt với chúng = ?</div><div class="at" id="a3_2_0"></div></div>
+<div class="qi"><div class="qq">Tương tự: 'beef burger', 'chicken soup', 'pork ribs' — 'pork' = loại thịt gì?</div><div class="at" id="a3_2_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>pork</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_2">thịt lợn</div></div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">roast</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/rəʊst/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"could we also have an order of <mark>roast</mark> chicken and fried vegetables?"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'ROAST chicken' — 'chicken' = thịt gà. 'roast ___' là cách CHẾ BIẾN gà. Chiên, luộc, hay nướng?</div><div class="at" id="a2_3_0"></div></div>
+<div class="qi"><div class="qq">'roast chicken' thường thấy ở nhà hàng phương Tây — đây là món gà chế biến theo cách nào?</div><div class="at" id="a2_3_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'fried vegetables' đứng cùng nhóm. 'fried' = chiên/xào. 'roast' = phương pháp khác = ?</div><div class="at" id="a3_3_0"></div></div>
+<div class="qi"><div class="qq">'Roast chicken' = gà quay. 'roast' = phương pháp nấu bằng lò hoặc lửa trực tiếp = ?</div><div class="at" id="a3_3_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>roast</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_3">(được) quay, nướng</div></div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">spring rolls</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/sprɪŋ rəʊlz/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"And I'd like some fried tofu and <mark>spring rolls</mark> too."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'fried tofu and SPRING ROLLS' — Mark gọi 2 món. 'spring rolls' là loại thức ăn gì?</div><div class="at" id="a2_4_0"></div></div>
+<div class="qi"><div class="qq">'fried' = chiên. 'spring rolls' thường được chiên hoặc cuốn. Ở Việt Nam gọi là gì?</div><div class="at" id="a2_4_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'SPRING' + 'ROLLS'. 'roll' = cuộn lại. 'spring rolls' = thứ được cuộn lại = ?</div><div class="at" id="a3_4_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'spring rolls (n) = nem rán'. Món ăn phổ biến ở Việt Nam = ?</div><div class="at" id="a3_4_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>spring rolls</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_4">nem rán, chả giò</div></div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">soup</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/suːp/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"It's a kind of Vietnamese <mark>soup</mark>. We often have it with rice."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'It's a kind of Vietnamese SOUP' — waiter giải thích 'canh'. 'soup' = loại thức ăn/uống gì?</div><div class="at" id="a2_5_0"></div></div>
+<div class="qi"><div class="qq">'We often have it with rice' → 'canh' ăn kèm cơm. 'Soup' là món có dạng đặc hay lỏng?</div><div class="at" id="a2_5_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'With shrimp or fish?' → canh/soup có thể có tôm hoặc cá. Đây là loại món lỏng = ?</div><div class="at" id="a3_5_0"></div></div>
+<div class="qi"><div class="qq">'broth for pho is made by stewing bones' — nước dùng là phần lỏng của soup. soup = ?</div><div class="at" id="a3_5_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>soup</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_5">canh, súp</div></div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">shrimp</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ʃrɪmp/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"With <mark>shrimp</mark> or fish? — With <mark>shrimp</mark>, please."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'With SHRIMP or fish?' — 'fish' = cá (từ quen). 'shrimp' được đặt cùng nhóm với 'fish'.</div><div class="at" id="a2_6_0"></div></div>
+<div class="qi"><div class="qq">Shrimp và fish đều sống dưới nước. Đây là thực phẩm từ biển/sông = loại động vật gì?</div><div class="at" id="a2_6_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'canh with shrimp' = canh tôm. 'shrimp' là nguyên liệu nấu canh = loài nào?</div><div class="at" id="a3_6_0"></div></div>
+<div class="qi"><div class="qq">Ở Việt Nam, 'tôm' trong tiếng Anh = shrimp. 'shrimp' = ?</div><div class="at" id="a3_6_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>shrimp</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_6">con tôm</div></div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">juice</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/dʒuːs/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We have a lot of drinks: <mark>juice</mark>, lemonade, green tea, mineral water..."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'drinks: JUICE, lemonade, green tea, mineral water' — đây là danh sách ĐỒ UỐNG. 'juice' là một loại.</div><div class="at" id="a2_7_0"></div></div>
+<div class="qi"><div class="qq">'What kind of JUICE would you like?' + 'winter melon juice' → juice có nhiều loại. Đây là nước gì?</div><div class="at" id="a2_7_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'winter melon JUICE' = nước ép bí đao. '-juice' đi với tên loại quả/rau → juice = ?</div><div class="at" id="a3_7_0"></div></div>
+<div class="qi"><div class="qq">Mark's sister hỏi: 'winter melon JUICE?' → juice được ÉP từ loại thứ gì?</div><div class="at" id="a3_7_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>juice</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_7">nước ép (hoa quả, rau...)</div></div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">lemonade</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌleməˈneɪd/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We have a lot of drinks: juice, <mark>lemonade</mark>, green tea, mineral water..."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'LEMON' + '-ADE'. 'lemon' = quả chanh (từ quen). '-ade' là đuôi chỉ đồ uống.</div><div class="at" id="a2_8_0"></div></div>
+<div class="qi"><div class="qq">'juice, LEMONADE, green tea, mineral water' — tất cả đều là đồ uống. lemonade làm từ gì?</div><div class="at" id="a2_8_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">Tương tự: 'orange' → 'orangeade'. 'lemon' → 'lemonade'. '-ade' = đồ uống từ loại quả đó = ?</div><div class="at" id="a3_8_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'lemonade (n) = nước chanh'. Làm từ chanh, thêm đường và nước = ?</div><div class="at" id="a3_8_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>lemonade</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_8">nước chanh</div></div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div>
+<div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">mineral water</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈmɪnərəl ˈwɔːtə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"<mark>Mineral water</mark> for me, green tea for my husband, and juice for my children."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'MINERAL' + 'WATER'. 'water' = nước (từ quen). 'mineral' = thuộc về khoáng chất/thiên nhiên.</div><div class="at" id="a2_9_0"></div></div>
+<div class="qi"><div class="qq">Mark's mum chọn 'mineral water' — đây là loại nước uống. Khác với 'juice' hay 'lemonade' thế nào?</div><div class="at" id="a2_9_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">'mineral water' thường đựng trong chai, lấy từ nguồn tự nhiên. Đây là loại nước gì?</div><div class="at" id="a3_9_0"></div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'mineral water (n) = nước khoáng'. Nước tự nhiên có khoáng chất = ?</div><div class="at" id="a3_9_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>mineral water</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_9">nước khoáng</div></div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">ingredients</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ɪnˈɡriːdiənt/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Phong]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Its main <mark>ingredients</mark> are rice noodles and slices of beef or chicken."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Its main INGREDIENTS are rice noodles and slices of beef or chicken.' — đây là những thứ CÓ TRONG phở.</div><div class="at" id="a2_10_0"></div></div>
+<div class="qi"><div class="qq">'main ___' = những thứ CHÍNH. 'main ingredients' gồm mì và thịt → ingredients là thứ gì trong món ăn?</div><div class="at" id="a2_10_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">'in-' + 'gredi-' (đi vào). Những thứ đi vào món ăn để tạo nên nó = ?</div><div class="at" id="a3_10_0"></div></div>
+<div class="qi"><div class="qq">Ingredients của bánh: bột, trứng, đường. Ingredients của phở: mì, thịt, nước dùng. ingredients = ?</div><div class="at" id="a3_10_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>ingredients</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_10">nguyên liệu (để tạo món ăn)</div></div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">snack</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/snæk/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Phong]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"People enjoy pho even for a late night <mark>snack</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'even for a late night SNACK' — 'late night' = tối muộn. 'snack' là gì ăn vào ban đêm?</div><div class="at" id="a2_11_0"></div></div>
+<div class="qi"><div class="qq">'even for a late night ___' — 'even' nhấn mạnh điều bất thường. Ăn phở lúc tối muộn như ăn gì?</div><div class="at" id="a2_11_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ điển: 'snack = a small meal, usually eaten in a hurry.' — bữa ăn nhỏ, thường ăn vội = ?</div><div class="at" id="a3_11_0"></div></div>
+<div class="qi"><div class="qq">'late night snack' = ăn gì vào ban đêm trước khi ngủ? Bữa ăn nhỏ, ăn vặt = ?</div><div class="at" id="a3_11_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>snack</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_11">bữa ăn nhẹ, ăn vặt</div></div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">taste</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/teɪst/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Phong]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Pho has a very special <mark>taste</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Pho has a very special TASTE.' — phở có 'taste' đặc biệt. Đây là tính chất gì của thức ăn?</div><div class="at" id="a2_12_0"></div></div>
+<div class="qi"><div class="qq">'very special ___' — đây là điều đặc biệt của phở khi ĂN nó. Mùi, màu, hay vị?</div><div class="at" id="a2_12_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ điển: 'taste = the flavour of something.' — hương vị của một thứ gì đó = ?</div><div class="at" id="a3_12_0"></div></div>
+<div class="qi"><div class="qq">'How does it taste?' = hỏi về điều gì của thức ăn? 'taste' = ?</div><div class="at" id="a3_12_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>taste</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_12">hương vị, mùi vị</div></div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">broth</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/brɒθ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Phong]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The <mark>broth</mark> for pho is made by stewing beef or chicken bones for a long time."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'The BROTH for pho is made by stewing beef or chicken bones...' — đây là thứ GÌ của phở?</div><div class="at" id="a2_13_0"></div></div>
+<div class="qi"><div class="qq">'made by stewing bones for a long time in a pot' → đây là thứ nấu từ xương = dạng lỏng hay đặc?</div><div class="at" id="a2_13_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ điển: 'broth = soup made by boiling bones, meat, etc.' → nước nấu từ xương/thịt = ?</div><div class="at" id="a3_13_0"></div></div>
+<div class="qi"><div class="qq">'The BROTH for pho' = phần nước trong tô phở. Đây là phần quan trọng nhất của phở = ?</div><div class="at" id="a3_13_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>broth</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_13">nước dùng (nấu từ xương/thịt)</div></div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">stewing</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈstjuːɪŋ/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Phong]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The broth is made by <mark>stewing</mark> beef or chicken bones for a long time in a big pot."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'made by STEWING bones for a LONG TIME in a BIG POT' — đây là phương pháp nấu ăn.</div><div class="at" id="a2_14_0"></div></div>
+<div class="qi"><div class="qq">'for a long time' = trong thời gian dài. 'in a big pot' = trong nồi lớn. Nấu lâu trong nồi = cách nấu gì?</div><div class="at" id="a2_14_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ điển: 'stewing = cooking something slowly, often in water.' → nấu chậm, lâu = ?</div><div class="at" id="a3_14_0"></div></div>
+<div class="qi"><div class="qq">'stew' (n) = món hầm. 'stewing' = đang HẦM/ninh. Nấu phở cần ninh xương mấy tiếng = phương pháp gì?</div><div class="at" id="a3_14_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>stewing</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_14">hầm, ninh (nấu lâu)</div></div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">boneless</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈbəʊnləs/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#B3E5FC;padding:2px 8px;border-radius:10px">[Blog của Phong]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The meat served with pho is <mark>boneless</mark> and cut into thin slices."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">Tách: 'BONE' + '-LESS'. 'bone' = xương (từ quen). '-less' = không có. Ghép lại = ?</div><div class="at" id="a2_15_0"></div></div>
+<div class="qi"><div class="qq">Thịt phở được mô tả là 'BONELESS and cut into thin slices' — thịt này có xương không?</div><div class="at" id="a2_15_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+<div class="qi"><div class="qq">Từ điển: 'boneless = without bones.' → 'bone' + '-less' = không có xương = ?</div><div class="at" id="a3_15_0"></div></div>
+<div class="qi"><div class="qq">Tương tự: 'sugar' + '-less' = sugarless (không đường). 'bone' + '-less' = ?</div><div class="at" id="a3_15_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>boneless</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_15">không có xương</div></div>
+<div class="wn">'boneless' = bone + -less. Tương tự: hopeless, useless, careless → '-less' = không có.</div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">flour</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/flaʊə/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Mix <mark>flour</mark> and eggs together to make pancake batter."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'Mix FLOUR and eggs together to make pancake batter' — đây là nguyên liệu để làm bánh kếp.</div><div class="at" id="a2_16_0"></div></div>
+<div class="qi"><div class="qq">'batter' = hỗn hợp bột để làm bánh. Flour + eggs tạo nên batter → flour là dạng bột gì?</div><div class="at" id="a2_16_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'flour (n) = bột (mì, gạo...)'. Dùng để làm bánh mì, bánh kếp = ?</div><div class="at" id="a3_16_0"></div></div>
+<div class="qi"><div class="qq">'flour' thường trắng, mịn, làm từ nghiền lúa mì. Bột dùng để làm bánh = ?</div><div class="at" id="a3_16_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>flour</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_16">bột (mì, gạo...)</div></div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">recipe</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈresɪpi/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"She followed a traditional <mark>recipe</mark> to cook the dish for the family."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+<div class="qi"><div class="qq">'followed a traditional RECIPE to cook the dish' — đây là thứ người ta THEO để NẤU ĂN.</div><div class="at" id="a2_17_0"></div></div>
+<div class="qi"><div class="qq">'traditional recipe' = công thức truyền thống. Bạn 'follow' (làm theo) recipe để làm gì?</div><div class="at" id="a2_17_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'recipe (n) = công thức làm món ăn'. Hướng dẫn các bước nấu một món = ?</div><div class="at" id="a3_17_0"></div></div>
+<div class="qi"><div class="qq">'recipe book' = sách dạy nấu ăn. 'recipe for pho' = hướng dẫn nấu phở. recipe = ?</div><div class="at" id="a3_17_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>recipe</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_17">công thức làm món ăn</div></div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">tablespoon</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈteɪblspuːn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Add two <mark>tablespoons</mark> of fish sauce to the pot."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'TABLE' + 'SPOON'. 'spoon' = thìa/muỗng (từ quen). 'tablespoon' = loại thìa dùng ở đâu?</div><div class="at" id="a2_18_0"></div></div>
+<div class="qi"><div class="qq">'Add two TABLESPOONS of fish sauce' — đây là đơn vị đo lường trong nấu ăn. Lớn hay nhỏ?</div><div class="at" id="a2_18_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'tablespoon = muỗng canh (to)'. Dùng để múc canh, đong nguyên liệu = ?</div><div class="at" id="a3_18_0"></div></div>
+<div class="qi"><div class="qq">So sánh: 'tablespoon' (to) vs 'teaspoon' (nhỏ). 'table-' = bàn ăn → muỗng loại gì?</div><div class="at" id="a3_18_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>tablespoon</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_18">muỗng canh (to)</div></div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="word-card" data-num="19">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 19</div>
+<div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">teaspoon</div>
+<div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈtiːspuːn/</div>
+<span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Add a <mark>teaspoon</mark> of salt and half a <mark>teaspoon</mark> of pepper."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+<div class="qq">Em có biết từ này không?</div>
+<div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+<div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+<div class="qi"><div class="qq">Tách: 'TEA' + 'SPOON'. 'spoon' = thìa/muỗng. 'tea' = trà. 'teaspoon' = thìa dùng để làm gì với trà?</div><div class="at" id="a2_19_0"></div></div>
+<div class="qi"><div class="qq">'a teaspoon of SALT' + 'half a teaspoon of PEPPER' — đây là đơn vị đo gia vị. Nhiều hay ít?</div><div class="at" id="a2_19_1"></div></div>
+<div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+<div class="qi"><div class="qq">Từ vựng Unit 5: 'teaspoon = thìa cà phê (nhỏ, để khuấy trà)'. Nhỏ hơn tablespoon = ?</div><div class="at" id="a3_19_0"></div></div>
+<div class="qi"><div class="qq">'tea-spoon' = thìa khuấy trà (nhỏ). Trong nấu ăn dùng để đong gia vị ít = ?</div><div class="at" id="a3_19_1"></div></div>
+<div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block"><div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>teaspoon</strong> là:</div></div>
+<div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;"><textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+<button class="bb" id="rb_19" onclick="revAll(19)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+<div class="nr" id="nr_19">thìa cà phê (nhỏ)</div></div>
+</div>
+<div class="rn" id="rn_19" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+<div class="st">
+<div style="font-size:52px;margin-bottom:12px">🎉</div>
+<div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 5!</div>
+<div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 19 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+</div>
+<div class="sb2">
+<div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+<div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+<div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px"><span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span><span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span><span style="color:#C62828;font-weight:700">✗ Sai = 0</span></div>
+<table class="sct"><tr><th>#</th><th>Từ</th><th>Nghĩa</th><th>Kết quả</th></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">1</td><td><strong>fried</strong></td><td style="color:#546E7A;font-size:13px">được chiên / rán / xào</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">2</td><td><strong>pork</strong></td><td style="color:#546E7A;font-size:13px">thịt lợn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">3</td><td><strong>roast</strong></td><td style="color:#546E7A;font-size:13px">(được) quay, nướng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">4</td><td><strong>spring rolls</strong></td><td style="color:#546E7A;font-size:13px">nem rán, chả giò</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">5</td><td><strong>soup</strong></td><td style="color:#546E7A;font-size:13px">canh, súp</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">6</td><td><strong>shrimp</strong></td><td style="color:#546E7A;font-size:13px">con tôm</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">7</td><td><strong>juice</strong></td><td style="color:#546E7A;font-size:13px">nước ép (hoa quả, rau...)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">8</td><td><strong>lemonade</strong></td><td style="color:#546E7A;font-size:13px">nước chanh</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">9</td><td><strong>mineral water</strong></td><td style="color:#546E7A;font-size:13px">nước khoáng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">10</td><td><strong>ingredients</strong></td><td style="color:#546E7A;font-size:13px">nguyên liệu (để tạo món ăn)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">11</td><td><strong>snack</strong></td><td style="color:#546E7A;font-size:13px">bữa ăn nhẹ, ăn vặt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">12</td><td><strong>taste</strong></td><td style="color:#546E7A;font-size:13px">hương vị, mùi vị</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">13</td><td><strong>broth</strong></td><td style="color:#546E7A;font-size:13px">nước dùng (nấu từ xương/thịt)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">14</td><td><strong>stewing</strong></td><td style="color:#546E7A;font-size:13px">hầm, ninh (nấu lâu)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">15</td><td><strong>boneless</strong></td><td style="color:#546E7A;font-size:13px">không có xương</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">16</td><td><strong>flour</strong></td><td style="color:#546E7A;font-size:13px">bột (mì, gạo...)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">17</td><td><strong>recipe</strong></td><td style="color:#546E7A;font-size:13px">công thức làm món ăn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">18</td><td><strong>tablespoon</strong></td><td style="color:#546E7A;font-size:13px">muỗng canh (to)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">19</td><td><strong>teaspoon</strong></td><td style="color:#546E7A;font-size:13px">thìa cà phê (nhỏ)</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">20</td><td><strong>beef</strong></td><td style="color:#546E7A;font-size:13px">thịt bò</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(20,1,this)">✓</button><button class="scb" onclick="sw(20,0.5,this)">~</button><button class="scb" onclick="sw(20,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">21</td><td><strong>butter</strong></td><td style="color:#546E7A;font-size:13px">bơ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(21,1,this)">✓</button><button class="scb" onclick="sw(21,0.5,this)">~</button><button class="scb" onclick="sw(21,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">22</td><td><strong>dish</strong></td><td style="color:#546E7A;font-size:13px">món ăn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(22,1,this)">✓</button><button class="scb" onclick="sw(22,0.5,this)">~</button><button class="scb" onclick="sw(22,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">23</td><td><strong>noodles</strong></td><td style="color:#546E7A;font-size:13px">mì, sợi phở</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(23,1,this)">✓</button><button class="scb" onclick="sw(23,0.5,this)">~</button><button class="scb" onclick="sw(23,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">24</td><td><strong>omelette</strong></td><td style="color:#546E7A;font-size:13px">trứng tráng</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(24,1,this)">✓</button><button class="scb" onclick="sw(24,0.5,this)">~</button><button class="scb" onclick="sw(24,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">25</td><td><strong>pancake</strong></td><td style="color:#546E7A;font-size:13px">bánh kếp</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(25,1,this)">✓</button><button class="scb" onclick="sw(25,0.5,this)">~</button><button class="scb" onclick="sw(25,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">26</td><td><strong>sauce</strong></td><td style="color:#546E7A;font-size:13px">nước chấm, nước xốt</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(26,1,this)">✓</button><button class="scb" onclick="sw(26,0.5,this)">~</button><button class="scb" onclick="sw(26,0,this)">✗</button></div></td></tr>
+</table>
+<div class="sdsp"><div class="sbig" id="sb">0</div><div style="font-size:16px;color:rgba(255,255,255,.8)">/ 26 từ</div><div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div><div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div></div>
+<div class="subs"><div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📋 Ghi nhớ kết quả</div><div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong></div><div id="sr"></div></div>
+<div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+</div>
+</div>
+</main>
+<nav class="nav-bar">
+<button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+<div class="dots" id="dots"></div>
+<button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=19;const TS=26;let cur=1;const sc={};
+const ANS={"a2_2_0": "Thứ ĂN ĐƯỢC nấu với nước mắm = loại thịt. \"Pork cooked in fish sauce\" = thịt nấu nước mắm.", "a2_2_1": "Ở Việt Nam thường nấu thịt heo (lợn) với nước mắm → pork = loại thịt phổ biến ở Việt Nam.", "a3_2_0": "'beef' (bò), 'chicken' (gà), 'pork' (?) — đây là nhóm các loại thịt động vật.", "a3_2_1": "'pork ribs' = sườn heo. 'pork chop' = thịt heo thái. 'pork' = thịt lợn/heo.", "a2_3_0": "'roast chicken' = gà được nấu theo cách đặc biệt. Không phải luộc, không phải chiên → nướng/quay.", "a2_3_1": "'roast chicken' ở nhà hàng phương Tây = gà quay (nướng lò).", "a3_3_0": "'fried' = chiên/xào. 'roast' = phương pháp khác = nướng/quay bằng lửa hoặc lò.", "a3_3_1": "'roast chicken' = gà quay. 'roast beef' = thịt bò nướng. 'roast' = quay, nướng.", "a2_4_0": "'spring rolls' = loại thức ăn Mark gọi ở nhà hàng Việt Nam. Thường ăn như món khai vị.", "a2_4_1": "'spring rolls' thường được chiên giòn ở Việt Nam = nem rán / chả giò.", "a3_4_0": "'roll' = cuộn. 'spring rolls' = những thứ được cuộn lại (rau, thịt cuộn trong bánh tráng rồi chiên).", "a3_4_1": "'spring rolls' = nem rán / chả giò — món ăn truyền thống Việt Nam, cuốn lại rồi chiên giòn.", "a2_5_0": "'It's a kind of Vietnamese SOUP' — câu giải thích ngay: canh là loại soup Việt Nam.", "a2_5_1": "Canh ăn kèm với cơm → đây là món lỏng ăn trong bữa cơm hàng ngày.", "a3_5_0": "Canh có thể có tôm hoặc cá → là món nước lỏng, nấu với nguyên liệu = canh/súp.", "a3_5_1": "'broth' = nước dùng lỏng → là phần nước của soup. Soup = món ăn dạng lỏng.", "a2_6_0": "'fish' = cá (từ quen). 'shrimp' đứng cùng nhóm với fish = đều là động vật biển/sông.", "a2_6_1": "Shrimp và fish đều sống dưới nước và dùng làm thực phẩm = hải sản.", "a3_6_0": "'canh with shrimp' = canh tôm. 'shrimp' = nguyên liệu nấu canh = con tôm.", "a3_6_1": "'shrimp' = tôm — con tôm trong tiếng Anh.", "a2_7_0": "'juice' nằm trong danh sách ĐỒ UỐNG → juice = loại đồ uống.", "a2_7_1": "'winter melon juice' = nước ép bí đao → juice = nước ép từ trái cây/rau củ.", "a3_7_0": "'orange juice', 'apple juice' → '-juice' đi với tên loại quả = nước ép từ quả/rau đó.", "a3_7_1": "Juice = nước ép từ hoa quả hoặc rau củ (cam, táo, bí đao...).", "a2_8_0": "'lemon' = chanh → 'lemonade' làm từ chanh. '-ade' = đuôi chỉ đồ uống làm từ quả đó.", "a2_8_1": "'lemonade' nằm trong danh sách đồ uống, làm từ chanh → nước chanh.", "a3_8_0": "'orange' → 'orangeade'. 'lemon' → 'lemonade' = đồ uống làm từ chanh.", "a3_8_1": "'lemonade' = nước chanh — làm từ chanh, nước, đường.", "a2_9_0": "'mineral' = khoáng chất + 'water' = nước → mineral water = nước có khoáng chất.", "a2_9_1": "'mineral water' khác juice/lemonade — không có vị ngọt, là nước tự nhiên.", "a3_9_0": "'mineral water' đựng trong chai, lấy từ nguồn tự nhiên = nước khoáng.", "a3_9_1": "'mineral water' = nước khoáng — nước tự nhiên chứa khoáng chất.", "a2_10_0": "'Its main INGREDIENTS are rice noodles and slices of beef' — đây là các thứ TẠO NÊN món phở.", "a2_10_1": "'main ingredients' = những thứ chính trong món ăn → ingredients = nguyên liệu của món ăn.", "a3_10_0": "'in-' + 'gredi-' (đi vào) → những thứ đi vào món ăn để tạo nên nó = nguyên liệu.", "a3_10_1": "Bột + trứng + đường = ingredients của bánh. Mì + thịt + nước dùng = ingredients của phở.", "a2_11_0": "'late night snack' = thứ ăn vào tối muộn → snack = bữa ăn nhỏ vào ban đêm.", "a2_11_1": "'even for a late night ___' = thậm chí ăn như ăn vặt vào ban đêm → snack = ăn vặt.", "a3_11_0": "'snack = a small meal, usually eaten in a hurry' = bữa ăn nhỏ, ăn nhanh.", "a3_11_1": "'late night snack' = ăn vặt ban đêm. Snack = bữa ăn nhẹ, ăn vặt.", "a2_12_0": "'Pho has a very special TASTE' = phở có vị/mùi đặc biệt → taste = tính chất của thức ăn khi nếm.", "a2_12_1": "'very special ___' khi ĂN phở → đây là VỊ của thức ăn, không phải mùi hay màu.", "a3_12_0": "'taste = the flavour of something' = hương vị của thức ăn.", "a3_12_1": "'How does it taste?' = Nó có vị thế nào? → taste = hương vị, mùi vị.", "a2_13_0": "'The BROTH for pho' = thứ thuộc về phở, làm bằng cách ninh xương → phần nước của phở.", "a2_13_1": "Ninh xương trong nồi lớn → tạo ra phần nước lỏng = nước dùng/nước hầm.", "a3_13_0": "'broth = soup made by boiling bones, meat' = nước nấu từ xương/thịt = nước dùng.", "a3_13_1": "Broth = phần nước trong tô phở, quan trọng nhất → nước dùng.", "a2_14_0": "'stewing bones for a long time in a big pot' = cách nấu: lâu, trong nồi lớn = hầm/ninh.", "a2_14_1": "Nấu lâu + nồi lớn = phương pháp hầm/ninh = stewing.", "a3_14_0": "'stewing = cooking something slowly, often in water' = nấu chậm, lâu trong nước.", "a3_14_1": "'stew' = món hầm. 'stewing' = đang hầm/ninh. Nấu phở cần ninh xương nhiều giờ = stewing.", "a2_15_0": "'bone' = xương + '-less' = không có → 'boneless' = không có xương.", "a2_15_1": "'BONELESS and cut into thin slices' = thịt không có xương, thái mỏng.", "a3_15_0": "'boneless = without bones' → bone + -less = không xương.", "a3_15_1": "Tương tự: 'sugarless' = không đường, 'boneless' = không xương.", "a2_16_0": "Flour + eggs = nguyên liệu làm bánh kếp → flour là loại nguyên liệu bột.", "a2_16_1": "'batter' = hỗn hợp bột để làm bánh. Flour tạo nên batter → flour = bột.", "a3_16_0": "'flour' = bột để làm bánh mì, bánh kếp. Màu trắng, mịn.", "a3_16_1": "Flour = bột mì/gạo xay mịn, dùng để làm bánh và các món nướng.", "a2_17_0": "'followed a traditional RECIPE' = làm theo công thức truyền thống để nấu ăn.", "a2_17_1": "Bạn 'follow' (làm theo) recipe để NẤU ĂN → recipe = hướng dẫn nấu ăn.", "a3_17_0": "'recipe' = công thức làm món ăn, gồm nguyên liệu và các bước thực hiện.", "a3_17_1": "'recipe book' = sách dạy nấu ăn. 'recipe for pho' = công thức nấu phở.", "a2_18_0": "'table' = bàn ăn + 'spoon' = thìa → tablespoon = thìa dùng trên bàn ăn (loại to).", "a2_18_1": "'two tablespoons' = hai muỗng canh (đơn vị đo lường trong nấu ăn).", "a3_18_0": "'tablespoon' = muỗng canh to. Dùng để múc canh và đong nguyên liệu lượng lớn.", "a3_18_1": "'tablespoon' (to) vs 'teaspoon' (nhỏ). 'table-spoon' = thìa bàn ăn = muỗng canh.", "a2_19_0": "'tea' = trà + 'spoon' = thìa → teaspoon = thìa dùng để khuấy trà (nhỏ).", "a2_19_1": "'a teaspoon of salt/pepper' = lượng gia vị rất ít → teaspoon = thìa nhỏ.", "a3_19_0": "'teaspoon' = thìa cà phê nhỏ. Dùng để khuấy trà/cà phê và đong gia vị ít.", "a3_19_1": "'tea-spoon' = thìa khuấy trà = thìa cà phê nhỏ."};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(el=>{const k=el.id;if(ANS[k]){el.textContent='→ '+ANS[k];}el.classList.add('sh');});const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/TS*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điểm: <strong>'+ts+'/26</strong></div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body>
+</html>

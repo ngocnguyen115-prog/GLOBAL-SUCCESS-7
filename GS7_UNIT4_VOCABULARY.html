@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Unit 4 – Music and Arts | Tiếng Anh 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#E8EAF6;color:#1A1A2E;min-height:100vh;font-size:16px;line-height:1.6;}
+.app-header{background:#1565C0;padding:14px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(21,101,192,.3);}
+.ht{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.htl{font-size:13px;font-weight:600;color:#BBDEFB;letter-spacing:.5px;text-transform:uppercase;}
+.wc{font-size:13px;font-weight:700;color:#FFD54F;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:20px;}
+.pb{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.pf{height:100%;background:#FFD54F;border-radius:3px;transition:width .4s;}
+.main{max-width:680px;margin:0 auto;padding:16px 16px 120px;}
+.word-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);margin-bottom:14px;display:none;}
+.word-card.active{display:block;}
+.sb{background:#E8EAF6;border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;font-style:italic;font-size:15px;color:#37474F;line-height:1.6;}
+.sb p+p{margin-top:6px;}
+.sb mark{background:none;font-weight:700;color:#1565C0;font-style:normal;text-decoration:underline;text-decoration-color:rgba(21,101,192,.3);}
+.step-block{margin-bottom:14px;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:white;}
+.s1{background:#2E7D32;}.s2n{background:#1565C0;}.s3n{background:#E65100;}
+.sl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+.l1{color:#2E7D32;}.l2{color:#1565C0;}.l3{color:#E65100;}
+.rrow{display:flex;gap:8px;}
+.rb{flex:1;padding:10px 6px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;color:#546E7A;}
+.rb.ryes{border-color:#2E7D32;background:#E8F5E9;color:#2E7D32;}
+.rb.rmaybe{border-color:#F9A825;background:#FFF9C4;color:#7B5E00;}
+.rb.rno{border-color:#C62828;background:#FFEBEE;color:#C62828;}
+.skipb{background:#E8F5E9;border:2px solid #C8E6C9;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#1B5E20;margin-top:8px;}
+.qi{margin-bottom:10px;}
+.qq{font-size:15px;color:#37474F;margin-bottom:6px;padding-left:4px;line-height:1.5;}
+.at{display:none;padding:9px 12px;border-radius:8px;font-size:14.5px;font-weight:600;color:#1565C0;background:#E3F2FD;border:1.5px solid #90CAF9;margin-top:4px;}
+.at.sh{display:block;animation:fi .3s ease;}
+.ea{background:#E8F5E9;color:#1B5E20;font-weight:600;padding:10px 12px;border-radius:8px;font-size:14.5px;margin-top:4px;border:1.5px solid #C8E6C9;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.db{margin-top:10px;padding:10px 14px;border-radius:8px;}
+.db2{background:#E3F2FD;}.db3{background:#FFF3E0;}
+.dl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.db2 .dl{color:#1565C0;}.db3 .dl{color:#E65100;}
+.de{font-size:15px;font-weight:600;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:10px 12px;}
+.di{width:100%;padding:10px 12px;border:2px solid #E0E0E0;border-radius:8px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:#1A1A2E;background:white;resize:none;min-height:44px;outline:none;display:block;}
+.di:focus{border-color:#1565C0;}
+.div{height:1px;background:#EEE;margin:14px 0;}
+.wn{margin-top:14px;padding:10px 12px;background:#F3F4F6;border-radius:8px;font-size:13.5px;color:#546E7A;font-style:italic;border-left:3px solid #B0BEC5;}
+.wn::before{content:"💡 ";}
+.nr{display:none;font-size:16px;font-weight:700;color:#1B5E20;background:#E8F5E9;border:1.5px solid #C8E6C9;border-radius:8px;padding:12px 16px;margin-top:10px;}
+.nr.sh{display:block;animation:fi .3s ease;}
+.bb{width:100%;padding:16px;background:#1565C0;color:white;border:none;border-radius:14px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(21,101,192,.3);margin-top:10px;}
+.bb:hover{background:#0D47A1;transform:translateY(-1px);}
+.bb:disabled{opacity:.6;cursor:default;transform:none;}
+.rn{margin-top:12px;text-align:center;font-size:14px;font-weight:600;color:#2E7D32;padding:10px;background:#E8F5E9;border-radius:10px;border:1.5px solid #C8E6C9;}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #C5CAE9;padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 16px rgba(0,0,0,.08);z-index:100;}
+.nb{padding:12px 22px;border-radius:12px;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;transition:all .15s;min-width:90px;display:flex;align-items:center;justify-content:center;}
+.nb:disabled{opacity:.35;cursor:default;}
+.nbp{background:#ECEFF1;color:#546E7A;}
+.nbn{background:#1565C0;color:white;}
+.nbn:hover:not(:disabled){background:#0D47A1;}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:200px;}
+.nd{width:7px;height:7px;border-radius:50%;background:#C5CAE9;cursor:pointer;transition:all .15s;border:none;padding:0;}
+.nd.done{background:#2E7D32;}.nd.curr{background:#1565C0;transform:scale(1.5);}
+.summary-wrap{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(21,101,192,.1);display:none;}
+.summary-wrap.active{display:block;}
+.st{background:linear-gradient(135deg,#0D47A1,#1565C0);padding:28px 24px;text-align:center;}
+.sb2{padding:20px 24px 28px;}
+.sct{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.sct th{background:#1565C0;color:white;padding:8px 10px;text-align:left;font-weight:600;}
+.sct td{padding:8px 10px;border-bottom:1px solid #EEE;vertical-align:middle;}
+.sct tr:nth-child(even) td{background:#F5F5F5;}
+.scb{width:28px;height:28px;border-radius:7px;border:2px solid #E0E0E0;background:white;font-size:13px;font-weight:700;cursor:pointer;}
+.scb.sy{background:#E8F5E9;border-color:#2E7D32;color:#2E7D32;}
+.scb.sm{background:#FFF9C4;border-color:#F9A825;color:#7B5E00;}
+.scb.sno{background:#FFEBEE;border-color:#C62828;color:#C62828;}
+.sdsp{margin-top:20px;background:linear-gradient(135deg,#0D47A1,#1565C0);border-radius:16px;padding:20px;text-align:center;color:white;}
+.sbig{font-size:52px;font-weight:700;color:#FFD54F;line-height:1;margin-bottom:4px;}
+.sbarw{background:rgba(255,255,255,.2);border-radius:10px;height:10px;overflow:hidden;margin:8px 0;}
+.sbarf{height:100%;background:#FFD54F;border-radius:10px;transition:width .6s;}
+.subs{margin-top:24px;padding:20px;background:#E8EAF6;border-radius:14px;border:2px solid #C5CAE9;}
+.rsb{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:white;border:none;border-radius:12px;padding:13px 24px;font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;}
+@media(max-width:400px){.nb{padding:11px 14px;font-size:14px;min-width:72px;}.sbig{font-size:40px;}}
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="ht"><div class="htl">Tiếng Anh 7 – Unit 4 • Music and Arts</div><div class="wc" id="wc">Từ 1 / 19</div></div>
+  <div class="pb"><div class="pf" id="pf" style="width:5.3%"></div></div>
+</header>
+<main class="main">
+
+<!-- TỪ 1 -->
+<div class="word-card active" data-num="1">
+<div style="background:#1B5E20;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">VÍ DỤ</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">performed</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pəˈfɔːm/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span><span style="background:rgba(255,255,255,.2);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;text-transform:uppercase;margin-left:10px">Xem mẫu</span>
+</div></div>
+<div style="background:#E8F5E9;padding:16px 20px 20px;">
+<div class="sb"><p>"The artists <mark>performed</mark> the show in a pool."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="ea">→ ✗ Chưa biết. Không đoán mù — tìm từ quen xung quanh.</div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'The ARTISTS' = nghệ sĩ. Họ làm GÌ với buổi biểu diễn trước khán giả?</div>
+    <div class="ea">'artists' biểu diễn trước khán giả = họ TRÌNH DIỄN.</div></div>
+  <div class="qi"><div class="qq">'IN A POOL' = trong bể nước → đây là hành động trước công chúng = ?</div>
+    <div class="ea">'performed' = đã biểu diễn / trình diễn (trong một show).</div></div>
+  <div class="db db2"><div class="dl">Đoán lần đầu</div><div class="de">Biểu diễn trước khán giả — còn mơ hồ.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / từ liên quan</div></div>
+  <div class="qi"><div class="qq">'performance' (buổi biểu diễn) là danh từ từ 'perform'. Vậy 'perform' = ?</div>
+    <div class="ea">'performance' = buổi biểu diễn → 'perform' = động từ gốc.</div></div>
+  <div class="qi"><div class="qq">'perform' → 'performer' → 'performance'. 'perform' = ?</div>
+    <div class="ea">perform = biểu diễn, trình diễn ✓</div></div>
+  <div class="db db3"><div class="dl">Đoán tinh chỉnh</div><div class="de">Biểu diễn, trình diễn — perform + -ance = performance.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>performed</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <div style="font-size:16px;font-weight:700;color:#1B5E20">biểu diễn, trình diễn</div>
+  </div>
+  <div class="wn">'perform' → 'performer' (người biểu diễn) → 'performance' (buổi biểu diễn). Tương tự: 'inform' → 'information'.</div>
+</div>
+</div>
+</div>
+
+<!-- TỪ 2 -->
+<div class="word-card" data-num="2">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 2</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">festival</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfestɪvl/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The show was about rice farming and a <mark>festival</mark> in a village."</p><p>"I'd prefer to go to the music <mark>festival</mark> at my school."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'rice farming and a FESTIVAL in a village' — đây là sự kiện gì liên quan đến làng quê?</div>
+    <div class="at" id="a2_2_0"></div></div>
+  <div class="qi"><div class="qq">'in a village' → festival diễn ra ở đây. Đây là sự kiện thường xuyên hay đặc biệt?</div>
+    <div class="at" id="a2_2_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">Trang nói: 'I'd prefer to go to the music FESTIVAL at my school.' → festival tại trường = sự kiện âm nhạc đặc biệt.</div>
+    <div class="at" id="a3_2_0"></div></div>
+  <div class="qi"><div class="qq">'fest-' liên quan đến 'feast' (tiệc/lễ). 'festival' = loại sự kiện gì?</div>
+    <div class="at" id="a3_2_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>festival</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_2" onclick="revAll(2)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_2">lễ hội, sự kiện</div>
+  </div>
+</div>
+<div class="rn" id="rn_2" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 3 -->
+<div class="word-card" data-num="3">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 3</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">traditional</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/trəˈdɪʃənl/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Water puppetry is a special <mark>traditional</mark> art form."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'a special TRADITIONAL art form' — 'special' = đặc biệt. 'traditional' mô tả loại nghệ thuật gì?</div>
+    <div class="at" id="a2_3_0"></div></div>
+  <div class="qi"><div class="qq">'People love it, and most tourists love to see it' → đây là nghệ thuật lâu đời hay mới?</div>
+    <div class="at" id="a2_3_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ trong bản thân từ lạ</div></div>
+  <div class="qi"><div class="qq">'TRADITION' = truyền thống (từ quen). '-al' là đuôi tính từ. 'traditional' có nghĩa gì?</div>
+    <div class="at" id="a3_3_0"></div></div>
+  <div class="qi"><div class="qq">Múa rối nước được gọi là 'traditional art form' → tồn tại từ khi nào?</div>
+    <div class="at" id="a3_3_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>traditional</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_3" onclick="revAll(3)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_3">theo truyền thống</div>
+  </div>
+</div>
+<div class="rn" id="rn_3" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 4 -->
+<div class="word-card" data-num="4">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 4</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">fantastic</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fænˈtæstɪk/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The show was <mark>fantastic</mark>!"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'The show was FANTASTIC!' — dấu '!' cho thấy đây là cảm xúc gì: vui hay buồn?</div>
+    <div class="at" id="a2_4_0"></div></div>
+  <div class="qi"><div class="qq">'everything is perfect' → Mary cảm thấy thế nào? 'fantastic' cùng nhóm với 'perfect' = ?</div>
+    <div class="at" id="a2_4_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'fantas-' giống 'fantasy' (tuyệt vời/huyền ảo). 'fantastic' = mức độ tốt đến đâu?</div>
+    <div class="at" id="a3_4_0"></div></div>
+  <div class="qi"><div class="qq">Dấu '!' + ngữ cảnh tích cực → 'fantastic' = tính từ chỉ mức độ tốt như thế nào?</div>
+    <div class="at" id="a3_4_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>fantastic</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_4" onclick="revAll(4)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_4">tuyệt vời, xuất sắc</div>
+  </div>
+</div>
+<div class="rn" id="rn_4" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 5 -->
+<div class="word-card" data-num="5">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 5</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">gallery</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈɡæləri/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Maybe we should go to an art <mark>gallery</mark> next weekend?"</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'go to an art GALLERY' — đây là nơi có thể ĐI ĐẾN để xem gì liên quan đến nghệ thuật?</div>
+    <div class="at" id="a2_5_0"></div></div>
+  <div class="qi"><div class="qq">Trang thích 'painting' — vẽ tranh. Nick gợi ý đi 'art gallery'. Nơi này dùng để làm gì?</div>
+    <div class="at" id="a2_5_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'art gallery' = nơi trưng bày nghệ thuật. 'gallery' = không gian dành cho mục đích gì?</div>
+    <div class="at" id="a3_5_0"></div></div>
+  <div class="qi"><div class="qq">Trang chia sẻ tranh với bạn bè. Nick gợi ý xem tranh ở art gallery = nơi như thế nào?</div>
+    <div class="at" id="a3_5_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>gallery</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_5" onclick="revAll(5)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_5">phòng triển lãm tranh</div>
+  </div>
+</div>
+<div class="rn" id="rn_5" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 6 -->
+<div class="word-card" data-num="6">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 6</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">concert</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈkɒnsət/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"She went to a classical music <mark>concert</mark> at the city hall last weekend."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'a classical music CONCERT at the city hall' — đây là sự kiện âm nhạc. 'city hall' là nơi tổ chức sự kiện gì?</div>
+    <div class="at" id="a2_6_0"></div></div>
+  <div class="qi"><div class="qq">Nick thích 'classical music' và chơi piano. 'concert' là loại sự kiện gì về âm nhạc?</div>
+    <div class="at" id="a2_6_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'city hall' = hội trường lớn → concert là sự kiện âm nhạc quy mô như thế nào?</div>
+    <div class="at" id="a3_6_0"></div></div>
+  <div class="qi"><div class="qq">'concert' gốc Latin 'concertare' = cùng nhau. Nhiều nhạc sĩ cùng biểu diễn = ?</div>
+    <div class="at" id="a3_6_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>concert</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_6" onclick="revAll(6)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_6">buổi hoà nhạc</div>
+  </div>
+</div>
+<div class="rn" id="rn_6" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 7 -->
+<div class="word-card" data-num="7">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 7</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">compose</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kəmˈpəʊz/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"He <mark>composes</mark> music for films and theatre performances."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'He COMPOSES music for films' — đây là động từ mô tả việc làm gì với âm nhạc?</div>
+    <div class="at" id="a2_7_0"></div></div>
+  <div class="qi"><div class="qq">Khác với 'play' (chơi nhạc) hay 'perform' (biểu diễn). 'compose music' = tạo ra hay chơi lại âm nhạc?</div>
+    <div class="at" id="a2_7_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'com-' = cùng nhau, 'pose' = đặt. 'compose' = đặt các nốt nhạc lại = làm gì?</div>
+    <div class="at" id="a3_7_0"></div></div>
+  <div class="qi"><div class="qq">'composer' (nhà soạn nhạc) là người 'compose'. Beethoven, Mozart đều là composers = ?</div>
+    <div class="at" id="a3_7_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>compose</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_7" onclick="revAll(7)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_7">soạn, biên soạn</div>
+  </div>
+</div>
+<div class="rn" id="rn_7" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 8 -->
+<div class="word-card" data-num="8">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 8</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">composer</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kəmˈpəʊzə/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Mozart is a famous <mark>composer</mark>. He wrote over 600 musical works."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'famous COMPOSER' — đây là người nổi tiếng. 'compose' = soạn nhạc (Từ 7). Composer = ?</div>
+    <div class="at" id="a2_8_0"></div></div>
+  <div class="qi"><div class="qq">'He wrote over 600 musical works' → composer là người viết/tạo ra âm nhạc = ?</div>
+    <div class="at" id="a2_8_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">Tương tự: 'compose' (v) → 'composer' (n). '-er' = người làm việc đó. composer = ?</div>
+    <div class="at" id="a3_8_0"></div></div>
+  <div class="qi"><div class="qq">Mozart, Beethoven, Bach đều là famous composers. Họ có điểm chung gì?</div>
+    <div class="at" id="a3_8_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>composer</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_8" onclick="revAll(8)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_8">nhà soạn nhạc, nhạc sĩ</div>
+  </div>
+</div>
+<div class="rn" id="rn_8" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 9 -->
+<div class="word-card" data-num="9">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 9</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">exhibition</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˌeksɪˈbɪʃn/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"We visited an art <mark>exhibition</mark> at the national museum."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'an art EXHIBITION at the national museum' — đây là sự kiện gì tại bảo tàng?</div>
+    <div class="at" id="a2_9_0"></div></div>
+  <div class="qi"><div class="qq">'museum' là nơi trưng bày. 'exhibition' xảy ra ở museum/gallery. Đây là loại sự kiện gì?</div>
+    <div class="at" id="a2_9_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'exhibit' (v) = trưng bày. '-ion' = đuôi danh từ (discuss→discussion). 'exhibition' = ?</div>
+    <div class="at" id="a3_9_0"></div></div>
+  <div class="qi"><div class="qq">Tương tự 'art gallery', 'art exhibition' là sự kiện gì liên quan đến nghệ thuật?</div>
+    <div class="at" id="a3_9_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>exhibition</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_9" onclick="revAll(9)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_9">cuộc triển lãm</div>
+  </div>
+</div>
+<div class="rn" id="rn_9" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 10 -->
+<div class="word-card" data-num="10">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 10</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">folk music</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈfəʊk ˌmjuːzɪk/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"<mark>Folk music</mark> is traditional music that has been passed down through generations."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'FOLK music is traditional music' — 'traditional' = truyền thống. Folk music là nhạc như thế nào?</div>
+    <div class="at" id="a2_10_0"></div></div>
+  <div class="qi"><div class="qq">'passed down through generations' = từ đời này sang đời khác. Đây là nhạc lâu đời hay nhạc pop?</div>
+    <div class="at" id="a2_10_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'folk' = người dân thường. 'folk music' = nhạc của tầng lớp dân gian = loại nhạc gì ở Việt Nam?</div>
+    <div class="at" id="a3_10_0"></div></div>
+  <div class="qi"><div class="qq">Quan họ, hò, ví dặm là ví dụ về 'folk music'. Chúng có điểm chung gì?</div>
+    <div class="at" id="a3_10_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>folk music</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_10" onclick="revAll(10)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_10">nhạc dân gian, nhạc truyền thống</div>
+  </div>
+</div>
+<div class="rn" id="rn_10" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 11 -->
+<div class="word-card" data-num="11">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 11</div>
+  <div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">musical instrument</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈmjuːzɪkl ˈɪnstrəmənt/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Hội thoại]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"I can't play any <mark>instruments</mark>." (Trang)</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'I can't PLAY any INSTRUMENTS' — 'play' = chơi. 'instruments' là những thứ người ta 'chơi'?</div>
+    <div class="at" id="a2_11_0"></div></div>
+  <div class="qi"><div class="qq">Nick 'plays the piano' — piano là gì trong âm nhạc? Piano là một 'musical ___'?</div>
+    <div class="at" id="a2_11_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / từ ghép</div></div>
+  <div class="qi"><div class="qq">'musical' = liên quan đến âm nhạc. 'instrument' = công cụ/dụng cụ. Ghép lại = ?</div>
+    <div class="at" id="a3_11_0"></div></div>
+  <div class="qi"><div class="qq">Piano, guitar, violin — tất cả đều là 'musical instruments'. Chúng có điểm chung gì?</div>
+    <div class="at" id="a3_11_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>musical instrument</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_11" onclick="revAll(11)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_11">nhạc cụ</div>
+  </div>
+</div>
+<div class="rn" id="rn_11" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 12 -->
+<div class="word-card" data-num="12">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 12</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">originate</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/əˈrɪdʒɪneɪt/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Water puppetry <mark>originated</mark> in the Red River Delta of northern Vietnam."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'Water puppetry ORIGINATED in the Red River Delta' — đây là thông tin về lịch sử: bắt đầu ở đâu?</div>
+    <div class="at" id="a2_12_0"></div></div>
+  <div class="qi"><div class="qq">'in the Red River Delta' = ở đồng bằng sông Hồng. 'originated in' một nơi = hình thành ở đó = ?</div>
+    <div class="at" id="a2_12_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'origin' = nguồn gốc (từ quen). '-ate' = đuôi động từ (create, generate). 'originate' = ?</div>
+    <div class="at" id="a3_12_0"></div></div>
+  <div class="qi"><div class="qq">'Where did it originate?' = hỏi về điều gì của một nghệ thuật/văn hóa?</div>
+    <div class="at" id="a3_12_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>originate</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_12" onclick="revAll(12)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_12">bắt nguồn, xuất phát từ</div>
+  </div>
+</div>
+<div class="rn" id="rn_12" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 13 -->
+<div class="word-card" data-num="13">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 13</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">photography</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/fəˈtɒɡrəfi/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"<mark>Photography</mark> is one of Trang's favourite hobbies. She takes photos everywhere."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">Trang thích 'taking photos'. 'photography' là từ chính thức của hoạt động nào?</div>
+    <div class="at" id="a2_13_0"></div></div>
+  <div class="qi"><div class="qq">Nick hỏi: 'Taking photos? Is it fun?' → 'taking photos' = hoạt động gì?</div>
+    <div class="at" id="a2_13_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'photo' = ảnh (từ quen). '-graphy' = quá trình ghi lại (geography, biography). Ghép lại = ?</div>
+    <div class="at" id="a3_13_0"></div></div>
+  <div class="qi"><div class="qq">Trang nói chụp ảnh 'is fun but not as fun as painting' → photography = sở thích liên quan đến gì?</div>
+    <div class="at" id="a3_13_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>photography</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_13" onclick="revAll(13)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_13">nhiếp ảnh</div>
+  </div>
+</div>
+<div class="rn" id="rn_13" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 14 -->
+<div class="word-card" data-num="14">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 14</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">portrait</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈpɔːtrɪt/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The artist painted beautiful <mark>portraits</mark> of famous people."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'portraits of famous PEOPLE' — đây là loại tranh vẽ GÌ (người hay phong cảnh)?</div>
+    <div class="at" id="a2_14_0"></div></div>
+  <div class="qi"><div class="qq">Trang vẽ 'landscapes and animals'. Portrait khác landscape — portrait vẽ gì?</div>
+    <div class="at" id="a2_14_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'trait' = nét đặc trưng của một người. Portrait = bức tranh tập trung vào...?</div>
+    <div class="at" id="a3_14_0"></div></div>
+  <div class="qi"><div class="qq">Khác với 'landscape' (phong cảnh), 'portrait' tập trung vào đối tượng gì?</div>
+    <div class="at" id="a3_14_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>portrait</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_14" onclick="revAll(14)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_14">bức chân dung</div>
+  </div>
+</div>
+<div class="rn" id="rn_14" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 15 -->
+<div class="word-card" data-num="15">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 15</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">sculpture</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈskʌlptʃə/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The museum has a collection of ancient <mark>sculptures</mark> made of marble."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'ancient SCULPTURES made of marble' — marble = đá cẩm thạch. Sculptures làm từ đá = loại nghệ thuật gì?</div>
+    <div class="at" id="a2_15_0"></div></div>
+  <div class="qi"><div class="qq">'made of marble' — tạo ra từ vật liệu cứng. Đây là nghệ thuật 2D (phẳng) hay 3D (khối)?</div>
+    <div class="at" id="a2_15_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / tiền tố</div></div>
+  <div class="qi"><div class="qq">'sculpt' = đục, tạc. '-ure' = đuôi danh từ (fail→failure). 'sculpture' = ?</div>
+    <div class="at" id="a3_15_0"></div></div>
+  <div class="qi"><div class="qq">Tượng Nữ thần Tự do, tượng David là những 'sculptures' nổi tiếng. Chúng là loại tác phẩm gì?</div>
+    <div class="at" id="a3_15_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>sculpture</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_15" onclick="revAll(15)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_15">điêu khắc, tác phẩm điêu khắc</div>
+  </div>
+</div>
+<div class="rn" id="rn_15" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 16 -->
+<div class="word-card" data-num="16">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 16</div>
+  <div style="font-size:22px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">water puppetry</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈwɔːtə ˈpʌpɪtri/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"<mark>Water puppetry</mark> is a special traditional art form."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Gốc từ / từ ghép</div></div>
+  <div class="qi"><div class="qq">Tách: 'WATER' + 'PUPPETRY'. 'water' = nước. 'puppet' = con rối. Ghép lại = ?</div>
+    <div class="at" id="a2_16_0"></div></div>
+  <div class="qi"><div class="qq">'They used strings UNDER THE WATER to control the puppets.' → puppets điều khiển dưới nước = ?</div>
+    <div class="at" id="a2_16_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ / từ ghép</div></div>
+  <div class="qi"><div class="qq">'puppet' = con rối. '-ry' = đuôi danh từ chỉ nghệ thuật (chemistry, poetry). 'puppetry' = ?</div>
+    <div class="at" id="a3_16_0"></div></div>
+  <div class="qi"><div class="qq">'water puppetry' = nghệ thuật biểu diễn con rối trên mặt nước. Ở Việt Nam gọi là gì?</div>
+    <div class="at" id="a3_16_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>water puppetry</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_16" onclick="revAll(16)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_16">múa rối nước</div>
+  </div>
+</div>
+<div class="rn" id="rn_16" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 17 -->
+<div class="word-card" data-num="17">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 17</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">performance</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/pəˈfɔːməns/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"The artists <mark>performed</mark> the show." / "He composes music for theatre <mark>performances</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'theatre PERFORMANCES' — 'theatre' = nhà hát. 'performances' là thứ diễn ra trong nhà hát = ?</div>
+    <div class="at" id="a2_17_0"></div></div>
+  <div class="qi"><div class="qq">'perform' = biểu diễn (Từ VD). '-ance' là đuôi danh từ. 'performance' = ?</div>
+    <div class="at" id="a2_17_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'perform' (v) → 'performance' (n). Tương tự: 'inform' → 'information'. 'performance' = ?</div>
+    <div class="at" id="a3_17_0"></div></div>
+  <div class="qi"><div class="qq">Buổi biểu diễn kịch, nhạc ở nhà hát = 'performance'. Danh từ chỉ hành động biểu diễn = ?</div>
+    <div class="at" id="a3_17_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>performance</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_17" onclick="revAll(17)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_17">sự trình diễn, buổi biểu diễn</div>
+  </div>
+</div>
+<div class="rn" id="rn_17" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 18 -->
+<div class="word-card" data-num="18">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 18</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">control</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/kənˈtrəʊl/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD54F;padding:2px 8px;border-radius:10px">[Email]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"They used strings under the water to <mark>control</mark> the puppets."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'used strings TO ___ the puppets' — 'to' = mục đích. Dùng dây để làm GÌ với con rối?</div>
+    <div class="at" id="a2_18_0"></div></div>
+  <div class="qi"><div class="qq">'make them MOVE ON THE WATER' — điều khiển để con rối làm gì?</div>
+    <div class="at" id="a2_18_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Câu trước / câu sau</div></div>
+  <div class="qi"><div class="qq">'remote control' = điều khiển từ xa (từ quen). 'control the puppets' = điều khiển con rối = ?</div>
+    <div class="at" id="a3_18_0"></div></div>
+  <div class="qi"><div class="qq">Dùng dây → quyết định chuyển động của con rối → 'control' = ?</div>
+    <div class="at" id="a3_18_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>control</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_18" onclick="revAll(18)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_18">điều khiển</div>
+  </div>
+</div>
+<div class="rn" id="rn_18" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<!-- TỪ 19 -->
+<div class="word-card" data-num="19">
+<div style="background:#1565C0;padding:18px 20px 14px;display:flex;align-items:flex-start;gap:14px;"><div>
+  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Từ 19</div>
+  <div style="font-size:26px;font-weight:700;color:white;line-height:1.1;margin-bottom:4px">anthem</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:4px">/ˈænθəm/</div>
+  <span style="display:inline-block;font-size:11px;font-weight:600;background:rgba(255,255,255,.18);color:#FFD180;padding:2px 8px;border-radius:10px">[Câu bổ sung]</span>
+</div></div>
+<div style="background:white;padding:16px 20px 20px;">
+<div class="sb"><p>"Every morning, students stand and sing the national <mark>anthem</mark>."</p></div>
+<div class="step-block"><div class="sh"><div class="sn s1">1</div><div class="sl l1">Nhận diện</div></div>
+  <div class="qq">Em có biết từ này không?</div>
+  <div class="rrow"><button class="rb" onclick="selR(this,'yes')">✓ Biết</button><button class="rb" onclick="selR(this,'maybe')">? Mơ hồ</button><button class="rb" onclick="selR(this,'no')">✗ Chưa biết</button></div>
+  <div class="skipn" style="display:none"><div class="skipb">✓ Em đã biết từ này — bỏ qua Bước 2 và 3.<br>Điền trực tiếp nghĩa vào ô bên dưới.</div></div>
+</div>
+<div class="div"></div>
+<div class="step-block s2b"><div class="sh"><div class="sn s2n">2</div><div class="sl l2">Từ quen gần nhất</div></div>
+  <div class="qi"><div class="qq">'STAND and SING the national ANTHEM' — 'sing' = hát. 'anthem' là thứ người ta HÁT mỗi sáng.</div>
+    <div class="at" id="a2_19_0"></div></div>
+  <div class="qi"><div class="qq">'national' = quốc gia. 'stand and sing' = trang nghiêm. 'national anthem' = bài hát của ai?</div>
+    <div class="at" id="a2_19_1"></div></div>
+  <div class="db db2"><div class="dl">★ Đoán lần đầu của em:</div><textarea class="di" placeholder="Ghi đoán của em vào đây..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block s3b"><div class="sh"><div class="sn s3n">3</div><div class="sl l3">Gốc từ trong bản thân từ lạ</div></div>
+  <div class="qi"><div class="qq">Học sinh đứng nghiêm mỗi sáng để hát bài gì? Ở Việt Nam là bài 'Tiến quân ca'.</div>
+    <div class="at" id="a3_19_0"></div></div>
+  <div class="qi"><div class="qq">'national anthem' = bài hát đại diện cho quốc gia = ?</div>
+    <div class="at" id="a3_19_1"></div></div>
+  <div class="db db3"><div class="dl">★ Đoán tinh chỉnh của em:</div><textarea class="di" placeholder="Tinh chỉnh đoán sau Bước 3..." rows="2"></textarea></div>
+</div>
+<div class="div"></div>
+<div class="step-block">
+  <div class="sh"><div class="sn" style="background:#F9A825;color:#333">✓</div><div class="sl" style="color:#E65100;text-transform:none;font-size:15px">Nghĩa của <strong>anthem</strong> là:</div></div>
+  <div style="background:#FFF9C4;border:2px solid #F9A825;border-radius:10px;padding:14px 16px;margin-top:4px;">
+    <textarea class="di" placeholder="Nghĩa của từ này là..." rows="2" style="margin-bottom:12px"></textarea>
+    <button class="bb" id="rb_19" onclick="revAll(19)">👁&nbsp; Xem toàn bộ đáp án để đối chiếu</button>
+    <div class="nr" id="nr_19">bài quốc ca</div>
+  </div>
+</div>
+<div class="rn" id="rn_19" style="display:none">✓ Đã hiện đáp án — chuyển sang từ tiếp theo</div>
+</div>
+</div>
+
+<div class="summary-wrap" id="sum">
+  <div class="st">
+    <div style="font-size:52px;margin-bottom:12px">🎉</div>
+    <div style="font-size:22px;font-weight:700;color:white;margin-bottom:8px">Hoàn thành Unit 4!</div>
+    <div style="font-size:15px;color:#BBDEFB">Em đã luyện suy luận 19 từ vựng.<br>Bây giờ hãy tự chấm điểm bên dưới.</div>
+  </div>
+  <div class="sb2">
+    <div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:6px">Bảng tự chấm</div>
+    <div style="font-size:14px;color:#546E7A;margin-bottom:10px">Bấm ✓ đúng / ~ gần đúng / ✗ sai cho mỗi từ</div>
+    <div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px"><span style="color:#2E7D32;font-weight:700">✓ Đúng = 1 điểm</span><span style="color:#F57F17;font-weight:700">~ Gần đúng = 0.5</span><span style="color:#C62828;font-weight:700">✗ Sai = 0</span></div>
+    <table class="sct"><tr><th>#</th><th>Từ</th><th>Nghĩa</th><th>Kết quả</th></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">1</td><td><strong>perform</strong></td><td style="color:#546E7A;font-size:13px">biểu diễn, trình diễn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(1,1,this)">✓</button><button class="scb" onclick="sw(1,0.5,this)">~</button><button class="scb" onclick="sw(1,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">2</td><td><strong>festival</strong></td><td style="color:#546E7A;font-size:13px">lễ hội, sự kiện</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(2,1,this)">✓</button><button class="scb" onclick="sw(2,0.5,this)">~</button><button class="scb" onclick="sw(2,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">3</td><td><strong>traditional</strong></td><td style="color:#546E7A;font-size:13px">theo truyền thống</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(3,1,this)">✓</button><button class="scb" onclick="sw(3,0.5,this)">~</button><button class="scb" onclick="sw(3,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">4</td><td><strong>fantastic</strong></td><td style="color:#546E7A;font-size:13px">tuyệt vời, xuất sắc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(4,1,this)">✓</button><button class="scb" onclick="sw(4,0.5,this)">~</button><button class="scb" onclick="sw(4,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">5</td><td><strong>gallery</strong></td><td style="color:#546E7A;font-size:13px">phòng triển lãm tranh</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(5,1,this)">✓</button><button class="scb" onclick="sw(5,0.5,this)">~</button><button class="scb" onclick="sw(5,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">6</td><td><strong>concert</strong></td><td style="color:#546E7A;font-size:13px">buổi hoà nhạc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(6,1,this)">✓</button><button class="scb" onclick="sw(6,0.5,this)">~</button><button class="scb" onclick="sw(6,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">7</td><td><strong>compose</strong></td><td style="color:#546E7A;font-size:13px">soạn, biên soạn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(7,1,this)">✓</button><button class="scb" onclick="sw(7,0.5,this)">~</button><button class="scb" onclick="sw(7,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">8</td><td><strong>composer</strong></td><td style="color:#546E7A;font-size:13px">nhà soạn nhạc, nhạc sĩ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(8,1,this)">✓</button><button class="scb" onclick="sw(8,0.5,this)">~</button><button class="scb" onclick="sw(8,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">9</td><td><strong>exhibition</strong></td><td style="color:#546E7A;font-size:13px">cuộc triển lãm</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(9,1,this)">✓</button><button class="scb" onclick="sw(9,0.5,this)">~</button><button class="scb" onclick="sw(9,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">10</td><td><strong>folk music</strong></td><td style="color:#546E7A;font-size:13px">nhạc dân gian, nhạc truyền thống</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(10,1,this)">✓</button><button class="scb" onclick="sw(10,0.5,this)">~</button><button class="scb" onclick="sw(10,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">11</td><td><strong>musical instrument</strong></td><td style="color:#546E7A;font-size:13px">nhạc cụ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(11,1,this)">✓</button><button class="scb" onclick="sw(11,0.5,this)">~</button><button class="scb" onclick="sw(11,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">12</td><td><strong>originate</strong></td><td style="color:#546E7A;font-size:13px">bắt nguồn, xuất phát từ</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(12,1,this)">✓</button><button class="scb" onclick="sw(12,0.5,this)">~</button><button class="scb" onclick="sw(12,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">13</td><td><strong>photography</strong></td><td style="color:#546E7A;font-size:13px">nhiếp ảnh</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(13,1,this)">✓</button><button class="scb" onclick="sw(13,0.5,this)">~</button><button class="scb" onclick="sw(13,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">14</td><td><strong>portrait</strong></td><td style="color:#546E7A;font-size:13px">bức chân dung</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(14,1,this)">✓</button><button class="scb" onclick="sw(14,0.5,this)">~</button><button class="scb" onclick="sw(14,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">15</td><td><strong>sculpture</strong></td><td style="color:#546E7A;font-size:13px">điêu khắc, tác phẩm điêu khắc</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(15,1,this)">✓</button><button class="scb" onclick="sw(15,0.5,this)">~</button><button class="scb" onclick="sw(15,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">16</td><td><strong>water puppetry</strong></td><td style="color:#546E7A;font-size:13px">múa rối nước</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(16,1,this)">✓</button><button class="scb" onclick="sw(16,0.5,this)">~</button><button class="scb" onclick="sw(16,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">17</td><td><strong>performance</strong></td><td style="color:#546E7A;font-size:13px">sự trình diễn, buổi biểu diễn</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(17,1,this)">✓</button><button class="scb" onclick="sw(17,0.5,this)">~</button><button class="scb" onclick="sw(17,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">18</td><td><strong>control</strong></td><td style="color:#546E7A;font-size:13px">điều khiển</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(18,1,this)">✓</button><button class="scb" onclick="sw(18,0.5,this)">~</button><button class="scb" onclick="sw(18,0,this)">✗</button></div></td></tr>
+<tr><td style="width:28px;color:#546E7A;font-size:12px">19</td><td><strong>anthem</strong></td><td style="color:#546E7A;font-size:13px">bài quốc ca</td><td><div style="display:flex;gap:4px"><button class="scb" onclick="sw(19,1,this)">✓</button><button class="scb" onclick="sw(19,0.5,this)">~</button><button class="scb" onclick="sw(19,0,this)">✗</button></div></td></tr>
+    </table>
+    <div class="sdsp"><div class="sbig" id="sb">0</div><div style="font-size:16px;color:rgba(255,255,255,.8)">/ 19 từ</div><div class="sbarw"><div class="sbarf" id="sbar" style="width:0%"></div></div><div style="font-size:15px;font-weight:600;color:#FFD54F" id="sm2">Bấm ✓/~/✗ để tính điểm</div></div>
+    <div class="subs"><div style="font-size:17px;font-weight:700;color:#1565C0;margin-bottom:4px">📋 Ghi nhớ kết quả</div><div style="font-size:14px;color:#546E7A;margin-bottom:8px">Điểm của em: <strong id="sd" style="color:#1565C0;font-size:18px">Chưa chấm</strong> / 19</div><div id="sr"></div></div>
+    <div style="text-align:center"><button class="rsb" onclick="restart()">↺ Làm lại từ đầu</button></div>
+  </div>
+</div>
+</main>
+<nav class="nav-bar">
+  <button class="nb nbp" id="bp" onclick="go(cur-1)" disabled>← Trước</button>
+  <div class="dots" id="dots"></div>
+  <button class="nb nbn" id="bn" onclick="go(cur+1)">Tiếp →</button>
+</nav>
+<script>
+const T=19;let cur=1;const sc={};
+const ANS={
+'a2_2_0':'festival = sự kiện đặc biệt, người dân tụ họp vui chơi.','a2_2_1':'festival thường là sự kiện ĐẶC BIỆT, không diễn ra hàng ngày.',
+'a3_2_0':'Trang muốn đi "music festival" ở trường → festival = sự kiện âm nhạc đặc biệt.','a3_2_1':"'fest-' = tiệc, lễ → festival = lễ hội, sự kiện lớn có nhiều người tham gia.",
+'a2_3_0':"'traditional' mô tả nghệ thuật lâu đời, gắn liền với văn hóa dân tộc.",'a2_3_1':'Múa rối nước đã có từ rất lâu → đây là nghệ thuật lâu đời, truyền từ đời này sang đời khác.',
+'a3_3_0':"'tradition' = truyền thống → 'traditional' = theo truyền thống, gắn với văn hóa lâu đời.",'a3_3_1':"Múa rối nước tồn tại từ thế kỷ 11 → 'traditional' = thuộc về truyền thống.",
+'a2_4_0':"Dấu '!' = cảm xúc mạnh mẽ, VUI SƯỚNG → 'fantastic' = cảm xúc tích cực cao độ.",'a2_4_1':"'perfect' = hoàn hảo → 'fantastic' cũng là tính từ cực kỳ tốt.",
+'a3_4_0':"'fantas-' liên quan đến fantasy (tuyệt vời) → 'fantastic' = tuyệt vời đến mức kỳ diệu.",'a3_4_1':"'fantastic' = tuyệt vời, xuất sắc — dùng khi muốn khen ngợi điều gì đó rất tốt.",
+'a2_5_0':"'art gallery' = nơi để ĐI XEM nghệ thuật (tranh, điêu khắc...).",'a2_5_1':'Nơi trưng bày tranh/tác phẩm nghệ thuật để mọi người đến thưởng thức.',
+'a3_5_0':"'gallery' = không gian trưng bày tác phẩm nghệ thuật.",'a3_5_1':'Art gallery = nơi trưng bày tranh, tượng để công chúng xem = phòng triển lãm.',
+'a2_6_0':"'city hall' = nơi tổ chức sự kiện quan trọng, đông người dự.",'a2_6_1':"'concert' = buổi biểu diễn âm nhạc trực tiếp trước khán giả.",
+'a3_6_0':'Sự kiện quy mô lớn tại city hall → concert = buổi hoà nhạc có nhiều người biểu diễn.','a3_6_1':"'concertare' = cùng nhau → nhiều nhạc sĩ cùng biểu diễn = buổi hoà nhạc.",
+'a2_7_0':"'compose music' = TẠO RA âm nhạc mới (không phải chơi lại nhạc cũ).",'a2_7_1':"'compose music' = viết ra bản nhạc mới, sáng tác âm nhạc.",
+'a3_7_0':"'com-' (cùng nhau) + 'pose' (đặt) → đặt các nốt nhạc lại = sáng tác nhạc.",'a3_7_1':"Beethoven, Mozart đều 'compose' = soạn, sáng tác ra những bản nhạc nổi tiếng.",
+'a2_8_0':"'composer' = người soạn nhạc (đã học 'compose' ở Từ 7).",'a2_8_1':"Người 'wrote over 600 musical works' = người TẠO RA âm nhạc = nhạc sĩ/nhà soạn nhạc.",
+'a3_8_0':"'compose' (v) → 'composer' (n) = người thực hiện hành động đó.",'a3_8_1':'Mozart, Beethoven, Bach: đều sáng tác nhạc = đều là composers = nhà soạn nhạc.',
+'a2_9_0':"'art exhibition' = sự kiện trưng bày các tác phẩm nghệ thuật.",'a2_9_1':"'exhibition' = sự kiện trong đó nhiều tác phẩm được trưng bày để công chúng xem.",
+'a3_9_0':"'exhibit' = trưng bày → 'exhibition' = sự trưng bày, cuộc triển lãm.",'a3_9_1':'Art exhibition = sự kiện trưng bày tranh/tượng = cuộc triển lãm nghệ thuật.',
+'a2_10_0':"'folk music' = nhạc truyền thống, thuộc về tầng lớp dân gian.",'a2_10_1':"'passed down through generations' = truyền từ đời này sang đời khác = nhạc lâu đời.",
+'a3_10_0':"'folk' = dân gian → 'folk music' = nhạc của người dân, không phải nhạc cung đình.",'a3_10_1':"Quan họ, hò, ví dặm đều là âm nhạc dân gian, truyền thống → 'folk music'.",
+'a2_11_0':"'play instruments' = chơi nhạc cụ (piano, guitar, violin...).",'a2_11_1':"'plays the piano' → piano là một 'musical instrument' = nhạc cụ.",
+'a3_11_0':"'musical' (âm nhạc) + 'instrument' (công cụ) = công cụ để chơi nhạc.",'a3_11_1':'Piano, guitar, violin: đều là dụng cụ dùng để tạo ra âm nhạc = nhạc cụ.',
+'a2_12_0':"'originated in the Red River Delta' = bắt đầu, hình thành ở đồng bằng sông Hồng.",'a2_12_1':"'originate in' = hình thành/xuất phát từ một nơi cụ thể.",
+'a3_12_0':"'origin' = nguồn gốc → 'originate' = có nguồn gốc từ, bắt đầu từ.",'a3_12_1':"'Where did it originate?' = Nó bắt nguồn/xuất phát từ đâu?",
+'a2_13_0':"'photography' = từ chuyên môn chỉ hoạt động chụp ảnh.",'a2_13_1':"'taking photos' = chụp ảnh → photography = ngành/nghề chụp ảnh.",
+'a3_13_0':"'photo' + '-graphy' (ghi lại) = nghệ thuật/kỹ thuật chụp và ghi lại hình ảnh.",'a3_13_1':"Trang chụp ảnh khắp nơi = Trang đam mê 'photography' = nhiếp ảnh.",
+'a2_14_0':"'portraits of famous PEOPLE' = tranh vẽ CON NGƯỜI (không phải phong cảnh).",'a2_14_1':"Trang vẽ 'landscapes' (phong cảnh) — còn 'portraits' = tranh vẽ gương mặt/con người.",
+'a3_14_0':"'trait' = nét đặc trưng → portrait = bức tranh nắm bắt nét đặc trưng của người.",'a3_14_1':"'Portrait' = bức tranh/ảnh tập trung vào khuôn mặt/dáng vẻ của một người.",
+'a2_15_0':'Nghệ thuật tạo hình từ đá cẩm thạch = điêu khắc, tạc tượng.','a2_15_1':'Làm từ đá cứng, có hình khối 3 chiều → đây là nghệ thuật 3D = điêu khắc.',
+'a3_15_0':"'sculpt' (đục tạc) + '-ure' (danh từ) = tác phẩm được tạo ra bằng cách đục/tạc.",'a3_15_1':'Tượng Nữ thần Tự do, tượng David = các sculptures nổi tiếng = tác phẩm điêu khắc.',
+'a2_16_0':"'water' (nước) + 'puppet' (con rối) + '-ry' (nghệ thuật) = nghệ thuật rối nước.",'a2_16_1':'Con rối được điều khiển dưới nước = múa rối nước.',
+'a3_16_0':"'puppetry' = nghệ thuật biểu diễn rối. 'water puppetry' = biểu diễn rối trên nước.",'a3_16_1':'Nghệ thuật múa rối nước = đặc sản văn hóa Việt Nam từ thế kỷ 11.',
+'a2_17_0':"'theatre performances' = các buổi diễn kịch/âm nhạc ở nhà hát.",'a2_17_1':"'perform' + '-ance' = danh từ chỉ hành động biểu diễn.",
+'a3_17_0':"'perform' (v) → 'performance' (n) = buổi/sự biểu diễn.",'a3_17_1':"'Performance' = một lần biểu diễn hoàn chỉnh trước khán giả.",
+'a2_18_0':'Dùng dây để điều khiển chuyển động của con rối.','a2_18_1':'Dây làm con rối chuyển động = nghệ nhân điều khiển (control) con rối.',
+'a3_18_0':"'remote control' = điều khiển từ xa → 'control' = điều khiển, kiểm soát.",'a3_18_1':'Quyết định mọi chuyển động = control = điều khiển, kiểm soát.',
+'a2_19_0':'Học sinh hát mỗi sáng = bài hát lễ nghi quan trọng.','a2_19_1':"'national anthem' = bài hát đại diện cho quốc gia = bài quốc ca.",
+'a3_19_0':"Ở Việt Nam: 'Tiến quân ca' = national anthem = bài quốc ca.",'a3_19_1':"'national anthem' = bài quốc ca — bài hát chính thức của mỗi quốc gia."
+};
+function init(){const d=document.getElementById('dots');for(let i=1;i<=T;i++){const b=document.createElement('button');b.className='nd'+(i===1?' curr':'');b.onclick=(n=>()=>go(n))(i);d.appendChild(b);}}
+function go(n){document.querySelector('.word-card.active')?.classList.remove('active');document.getElementById('sum').classList.remove('active');cur=n;if(n>T){document.getElementById('sum').classList.add('active');document.getElementById('wc').textContent='Hoàn thành!';document.getElementById('pf').style.width='100%';document.getElementById('bn').disabled=true;document.getElementById('bp').disabled=false;upd(n);window.scrollTo({top:0,behavior:'smooth'});return;}document.querySelector('[data-num="'+n+'"]')?.classList.add('active');document.getElementById('wc').textContent='Từ '+n+' / '+T;document.getElementById('pf').style.width=(n/T*100)+'%';document.getElementById('bp').disabled=n<=1;document.getElementById('bn').disabled=false;document.getElementById('bn').textContent=n===T?'Xem tóm tắt →':'Tiếp →';upd(n);window.scrollTo({top:0,behavior:'smooth'});}
+function upd(n){document.querySelectorAll('.nd').forEach((d,i)=>{d.className='nd';if(i+1<n)d.classList.add('done');else if(i+1===n)d.classList.add('curr');});}
+function selR(btn,type){const row=btn.closest('.rrow');row.querySelectorAll('.rb').forEach(b=>b.className='rb');btn.className='rb r'+type;const card=btn.closest('.word-card');const s2=card.querySelector('.s2b');const s3=card.querySelector('.s3b');const divs=card.querySelectorAll('.div');if(type==='yes'){if(s2)s2.style.display='none';if(s3)s3.style.display='none';divs.forEach((d,i)=>{if(i<=1)d.style.display='none';});const note=card.querySelector('.skipn');if(note)note.style.display='block';}else{if(s2)s2.style.display='';if(s3)s3.style.display='';divs.forEach(d=>d.style.display='');const note=card.querySelector('.skipn');if(note)note.style.display='none';}}
+function revAll(n){const card=document.querySelector('[data-num="'+n+'"]');card.querySelectorAll('.at').forEach(el=>{const k=el.id;if(ANS[k]){el.textContent='→ '+ANS[k];}el.classList.add('sh');});const nr=document.getElementById('nr_'+n);if(nr)nr.classList.add('sh');const btn=document.getElementById('rb_'+n);if(btn){btn.disabled=true;btn.innerHTML='✓&nbsp; Đã hiện đáp án';}const rn=document.getElementById('rn_'+n);if(rn)rn.style.display='block';}
+function sw(num,val,btn){btn.closest('div').querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));btn.classList.add(val===1?'sy':val===0.5?'sm':'sno');sc[num]=val;calcScore();}
+function calcScore(){const total=Object.values(sc).reduce((a,b)=>a+b,0);const pct=Math.round(total/T*100);const ts=total%1===0?total:total.toFixed(1);document.getElementById('sb').textContent=ts;document.getElementById('sbar').style.width=pct+'%';const sd=document.getElementById('sd');if(sd)sd.textContent=ts;const sr=document.getElementById('sr');if(sr)sr.innerHTML='<div style="background:#E3F2FD;border:1.5px solid #90CAF9;border-radius:8px;padding:10px 14px;font-size:14px;color:#1565C0;font-weight:600;">💡 Điểm của em: <strong>'+ts+'/19</strong></div>';const msgs=['Cố gắng hơn nhé! 💪','Tiếp tục luyện tập! 📚','Khá tốt! 👍','Tốt lắm! ⭐','Xuất sắc! 🏆'];document.getElementById('sm2').textContent=msgs[pct<40?0:pct<60?1:pct<75?2:pct<90?3:4];}
+function restart(){document.querySelectorAll('.at.sh,.nr.sh').forEach(e=>e.classList.remove('sh'));document.querySelectorAll('.bb').forEach(b=>{b.disabled=false;b.innerHTML='👁&nbsp; Xem toàn bộ đáp án để đối chiếu';});document.querySelectorAll('[id^="rn_"]').forEach(e=>e.style.display='none');document.querySelectorAll('.di').forEach(e=>e.value='');document.querySelectorAll('.rb').forEach(b=>b.className='rb');document.querySelectorAll('.s2b,.s3b,.div').forEach(e=>e.style.display='');document.querySelectorAll('.skipn').forEach(e=>e.style.display='none');document.querySelectorAll('.scb').forEach(b=>b.classList.remove('sy','sm','sno'));Object.keys(sc).forEach(k=>delete sc[k]);calcScore();document.getElementById('sd').textContent='Chưa chấm';go(1);}
+init();
+</script>
+</body>
+</html>
