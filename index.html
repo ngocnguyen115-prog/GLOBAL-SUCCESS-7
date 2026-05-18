@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tiếng Anh 7 – Global Success | Phiếu Từ Vựng</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#1565C0;--blue-dark:#0D47A1;--gold:#FFD54F;--bg:#EEF2F7;--text:#1A1A2E;--grey:#546E7A;
+}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+.hero{
+  background:linear-gradient(135deg,#0D47A1 0%,#1565C0 50%,#1976D2 100%);
+  padding:48px 24px 56px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.07) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(255,213,79,.08) 0%,transparent 50%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-block;background:rgba(255,213,79,.2);border:1.5px solid rgba(255,213,79,.5);
+  color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;margin-bottom:20px;
+}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;}
+.hero h1 span{color:var(--gold);}
+.hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 28px;}
+.hero-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;}
+.stat-n{font-size:22px;font-weight:800;color:var(--gold);display:block;}
+.stat-l{font-size:11px;opacity:.8;letter-spacing:.5px;}
+
+.strip{
+  background:#fff;border-bottom:1px solid #E0E0E0;padding:14px 24px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:13px;color:var(--grey);
+}
+.strip strong{color:var(--blue);}
+
+.container{max-width:960px;margin:0 auto;padding:32px 20px 60px;}
+
+.section-label{
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--grey);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.section-label::after{content:'';flex:1;height:1px;background:#D0D7E0;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+
+.card{
+  background:#fff;border-radius:16px;overflow:hidden;
+  box-shadow:0 2px 8px rgba(21,101,192,.08);
+  text-decoration:none;color:inherit;display:block;
+  transition:transform .2s,box-shadow .2s;border:1.5px solid transparent;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(21,101,192,.16);border-color:var(--blue);}
+.card.locked{opacity:.65;cursor:not-allowed;pointer-events:none;}
+.card.locked:hover{transform:none;box-shadow:0 2px 8px rgba(21,101,192,.08);}
+
+.card-top{padding:18px 20px 14px;display:flex;align-items:flex-start;justify-content:space-between;}
+.unit-badge{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(255,255,255,.18);padding:3px 9px;border-radius:8px;}
+.lock-badge{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(0,0,0,.2);padding:3px 9px;border-radius:8px;}
+.card-num{font-size:32px;font-weight:900;color:rgba(255,255,255,.2);line-height:1;}
+.card-title{font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;line-height:1.3;}
+.card-sub{font-size:12px;color:rgba(255,255,255,.7);}
+
+.card-footer{background:rgba(255,255,255,.95);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
+.word-count{font-size:12px;font-weight:600;color:var(--grey);}
+.word-count span{color:var(--blue);font-weight:800;font-size:16px;margin-right:3px;}
+.go-btn{background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;letter-spacing:.3px;}
+.soon-btn{background:#B0BEC5;color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;}
+
+/* Unit colours */
+.u1{background:linear-gradient(135deg,#4527A0,#311B92);}
+.u2{background:linear-gradient(135deg,#00695C,#004D40);}
+.u3{background:linear-gradient(135deg,#558B2F,#1B5E20);}
+.u4{background:linear-gradient(135deg,#1565C0,#283593);}
+.u5{background:linear-gradient(135deg,#00838F,#006064);}
+.u6{background:linear-gradient(135deg,#6A1B9A,#4A148C);}
+.u7{background:linear-gradient(135deg,#C62828,#B71C1C);}
+.u8{background:linear-gradient(135deg,#E65100,#BF360C);}
+.u9{background:linear-gradient(135deg,#F9A825,#F57F17);}
+.u10{background:linear-gradient(135deg,#1B5E20,#0D47A1);}
+.u11{background:linear-gradient(135deg,#006064,#00838F);}
+.u12{background:linear-gradient(135deg,#880E4F,#4A148C);}
+.u9 .card-title,.u9 .card-sub,.u9 .unit-badge{color:rgba(0,0,0,.7);}
+.u9 .card-num{color:rgba(0,0,0,.15);}
+
+.how{
+  margin-top:40px;background:#fff;border-radius:16px;
+  padding:24px 28px;border-left:4px solid var(--blue);
+}
+.how h3{font-size:15px;font-weight:800;color:var(--blue);margin-bottom:14px;}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
+.step{display:flex;gap:10px;align-items:flex-start;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step p{font-size:13px;color:var(--grey);line-height:1.5;}
+
+footer{text-align:center;padding:24px;font-size:12px;color:#90A4AE;}
+
+@media(max-width:480px){
+  .hero{padding:36px 16px 44px;}
+  .grid{grid-template-columns:1fr;}
+  .card-top{padding:14px 16px 10px;}
+  .card-footer{padding:10px 16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Tiếng Anh 7 – Global Success</div>
+  <h1>Phiếu Luyện<br><span>Từ Vựng Suy Luận</span></h1>
+  <p>Học từ vựng qua ngữ cảnh — không học vẹt. Mỗi từ có 3 bước suy luận giúp em tự tìm ra nghĩa.</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n">12</span><span class="stat-l">Units</span></div>
+    <div class="stat"><span class="stat-n">200+</span><span class="stat-l">Từ vựng</span></div>
+    <div class="stat"><span class="stat-n">3</span><span class="stat-l">Bước / từ</span></div>
+  </div>
+</div>
+
+<div class="strip">
+  Nhấn vào unit → học từng từ → bấm <strong>👁 Xem đáp án</strong> → tự chấm điểm ✓/~/✗
+</div>
+
+<div class="container">
+  <div class="section-label">Chọn Unit để bắt đầu</div>
+
+  <div class="grid">
+
+    <a class="card" href="Unit1_Vocabulary.html">
+      <div class="card-top u1">
+        <div><div class="unit-badge">Unit 1</div><div class="card-title">Hobbies</div><div class="card-sub">Sở thích</div></div>
+        <div class="card-num">1</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>21</span>từ luyện · 21 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT2_VOCABULARY.html">
+      <div class="card-top u2">
+        <div><div class="unit-badge">Unit 2</div><div class="card-title">Health</div><div class="card-sub">Sức khỏe</div></div>
+        <div class="card-num">2</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>18</span>từ luyện · 22 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT3_VOCABULARY.html">
+      <div class="card-top u3">
+        <div><div class="unit-badge">Unit 3</div><div class="card-title">Community Service</div><div class="card-sub">Hoạt động cộng đồng</div></div>
+        <div class="card-num">3</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>18</span>từ luyện · 24 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT4_VOCABULARY.html">
+      <div class="card-top u4">
+        <div><div class="unit-badge">Unit 4</div><div class="card-title">Music and Arts</div><div class="card-sub">Âm nhạc và Nghệ thuật</div></div>
+        <div class="card-num">4</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>19</span>từ luyện · 19 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT5_VOCABULARY.html">
+      <div class="card-top u5">
+        <div><div class="unit-badge">Unit 5</div><div class="card-title">Food and Drink</div><div class="card-sub">Ăn uống</div></div>
+        <div class="card-num">5</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>19</span>từ luyện · 26 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT6_VOCABULARY.html">
+      <div class="card-top u6">
+        <div><div class="unit-badge">Unit 6</div><div class="card-title">Schools Around the World</div><div class="card-sub">Trường học thế giới</div></div>
+        <div class="card-num">6</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>19</span>từ luyện · 19 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT7_VOCABULARY.html">
+      <div class="card-top u7">
+        <div><div class="unit-badge">Unit 7</div><div class="card-title">Traffic</div><div class="card-sub">Giao thông</div></div>
+        <div class="card-num">7</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>18</span>từ luyện · 20 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT8_VOCABULARY.html">
+      <div class="card-top u8">
+        <div><div class="unit-badge">Unit 8</div><div class="card-title">Films</div><div class="card-sub">Phim ảnh</div></div>
+        <div class="card-num">8</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>20</span>từ luyện · 23 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT9_VOCABULARY.html">
+      <div class="card-top u9">
+        <div><div class="unit-badge">Unit 9</div><div class="card-title">Festivals Around the World</div><div class="card-sub">Lễ hội thế giới</div></div>
+        <div class="card-num">9</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>19</span>từ luyện · 22 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT10_VOCABULARY.html">
+      <div class="card-top u10">
+        <div><div class="unit-badge">Unit 10</div><div class="card-title">Energy Sources</div><div class="card-sub">Nguồn năng lượng</div></div>
+        <div class="card-num">10</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>18</span>từ luyện · 20 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT11_VOCABULARY.html">
+      <div class="card-top u11">
+        <div><div class="unit-badge">Unit 11</div><div class="card-title">Future Transport</div><div class="card-sub">Phương tiện tương lai</div></div>
+        <div class="card-num">11</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>18</span>từ luyện · 22 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+    <a class="card" href="GS7_UNIT12_VOCABULARY.html">
+      <div class="card-top u12">
+        <div><div class="unit-badge">Unit 12</div><div class="card-title">A Vacation Abroad</div><div class="card-sub">Kỳ nghỉ ở nước ngoài</div></div>
+        <div class="card-num">12</div>
+      </div>
+      <div class="card-footer">
+        <div class="word-count"><span>18</span>từ luyện · 25 từ đối chiếu</div>
+        <div class="go-btn">Bắt đầu →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="how">
+    <h3>📖 Cách sử dụng</h3>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><p><strong>Đọc câu ngữ cảnh</strong> chứa từ được gạch chân</p></div>
+      <div class="step"><div class="step-n">2</div><p><strong>Chọn mức độ</strong> biết: ✓ Biết / ? Mơ hồ / ✗ Chưa biết</p></div>
+      <div class="step"><div class="step-n">3</div><p><strong>Trả lời từng câu hỏi</strong> gợi ý suy luận (Bước 2 & 3)</p></div>
+      <div class="step"><div class="step-n">4</div><p><strong>Ghi đoán của em</strong> vào ô trước khi xem đáp án</p></div>
+      <div class="step"><div class="step-n">5</div><p><strong>Bấm 👁 Xem đáp án</strong> để đối chiếu và tự chấm</p></div>
+      <div class="step"><div class="step-n">6</div><p><strong>Tự chấm ✓/~/✗</strong> ở bảng cuối để biết điểm</p></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Tiếng Anh 7 – Global Success • Phiếu Luyện Từ Vựng Suy Luận</footer>
+
+</body>
+</html>
