@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Khảo sát học thử – Kami English Mindshift</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#1565C0;--blue-dk:#0D47A1;--blue-lt:#E3F2FD;
+  --green:#2E7D32;--green-lt:#E8F5E9;
+  --gold:#F9A825;--gold-lt:#FFF9C4;
+  --red:#C62828;--red-lt:#FFEBEE;
+  --purple:#5C3D8F;--purple-lt:#EDE7F6;
+  --text:#1A1A2E;--grey:#546E7A;--bg:#EEF2F7;
+}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:0 0 60px;}
+
+.hero{background:linear-gradient(135deg,#0D47A1,#1565C0,#1976D2);padding:32px 20px 36px;text-align:center;}
+.brand{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,213,79,.9);margin-bottom:10px;}
+.hero h1{font-size:21px;font-weight:900;color:#fff;margin-bottom:6px;line-height:1.3;}
+.hero p{font-size:13px;color:rgba(255,255,255,.75);max-width:420px;margin:0 auto;}
+
+.wrap{max-width:600px;margin:0 auto;padding:24px 16px;}
+
+.prog-wrap{background:white;border-radius:12px;padding:14px 18px;margin-bottom:20px;box-shadow:0 2px 8px rgba(21,101,192,.08);}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.prog-lbl{font-size:12px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.5px;}
+.prog-num{font-size:13px;font-weight:700;color:var(--blue);}
+.prog-bar{height:6px;background:#E0E0E0;border-radius:4px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,#1565C0,#42A5F5);border-radius:4px;transition:width .4s ease;}
+
+.q-card{background:white;border-radius:16px;padding:22px 20px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(21,101,192,.08);display:none;animation:slideIn .3s ease;}
+.q-card.active{display:block;}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* section tag */
+.section-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:12px;}
+.tag-memory{background:#E8F5E9;color:#2E7D32;}
+.tag-method{background:#E3F2FD;color:#1565C0;}
+.tag-motivation{background:#FFF9C4;color:#7B5E00;}
+.tag-open{background:#EDE7F6;color:#5C3D8F;}
+
+.q-text{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.5;}
+.q-context{font-size:13px;color:var(--grey);margin-bottom:16px;line-height:1.6;background:#F8FAFF;border-left:3px solid #90CAF9;padding:10px 12px;border-radius:0 8px 8px 0;font-style:italic;}
+
+/* Scenario choices — mô tả tình huống thật */
+.choices{display:flex;flex-direction:column;gap:9px;}
+.choice{padding:13px 16px;border:2px solid #E0E0E0;border-radius:12px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:13.5px;font-weight:600;color:var(--grey);cursor:pointer;text-align:left;transition:all .15s;display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.choice:hover{border-color:var(--blue);background:var(--blue-lt);color:var(--blue);}
+.choice.selected{border-color:var(--blue);background:var(--blue-lt);color:var(--blue);}
+.choice-dot{width:18px;height:18px;border-radius:50%;border:2px solid currentColor;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;}
+.choice.selected .choice-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--blue);display:block;}
+
+/* Scale 1-5 */
+.scale-row{display:flex;gap:6px;justify-content:stretch;}
+.scale-btn{flex:1;padding:12px 4px;border:2px solid #E0E0E0;border-radius:10px;background:white;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;cursor:pointer;text-align:center;color:var(--grey);transition:all .15s;}
+.scale-btn:hover,.scale-btn.selected{border-color:var(--blue);background:var(--blue-lt);color:var(--blue);}
+.scale-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--grey);margin-top:6px;}
+
+/* Free text */
+.free-text{width:100%;padding:12px 14px;border:2px solid #E0E0E0;border-radius:10px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;color:var(--text);resize:none;outline:none;transition:border-color .15s;min-height:80px;}
+.free-text:focus{border-color:var(--blue);}
+
+/* Name input */
+.name-input{width:100%;padding:12px 14px;border:2px solid #E0E0E0;border-radius:10px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .15s;margin-bottom:4px;}
+.name-input:focus{border-color:var(--blue);}
+
+.nav-row{display:flex;gap:10px;margin-top:18px;}
+.btn-back{flex:1;padding:13px;background:#ECEFF1;color:var(--grey);border:none;border-radius:12px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;cursor:pointer;}
+.btn-back:hover{background:#CFD8DC;}
+.btn-next{flex:2;padding:13px;background:var(--blue);color:white;border:none;border-radius:12px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(21,101,192,.25);transition:all .2s;}
+.btn-next:hover{background:var(--blue-dk);transform:translateY(-1px);}
+.btn-next:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none;}
+
+/* RESULT */
+.thankyou{background:white;border-radius:16px;padding:32px 20px;text-align:center;box-shadow:0 2px 10px rgba(21,101,192,.08);display:none;}
+.thankyou.show{display:block;animation:slideIn .4s ease;}
+.ty-icon{font-size:52px;margin-bottom:14px;}
+.ty-title{font-size:21px;font-weight:800;color:var(--blue);margin-bottom:8px;}
+.ty-sub{font-size:14px;color:var(--grey);line-height:1.6;max-width:360px;margin:0 auto 22px;}
+
+.score-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px;}
+.score-item{background:var(--bg);border-radius:12px;padding:14px 8px;text-align:center;}
+.score-icon{font-size:22px;margin-bottom:4px;}
+.score-val{font-size:20px;font-weight:800;color:var(--blue);}
+.score-lbl{font-size:11px;color:var(--grey);margin-top:2px;font-weight:600;}
+
+.insight-box{background:var(--blue-lt);border:1.5px solid #90CAF9;border-radius:12px;padding:14px 16px;margin-bottom:16px;text-align:left;}
+.insight-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);margin-bottom:6px;}
+.insight-text{font-size:13.5px;color:var(--text);line-height:1.6;}
+
+.copy-btn{background:var(--blue);color:white;border:none;border-radius:10px;padding:11px 20px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-top:4px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="brand">🌿 Kami English Mindshift</div>
+  <h1>Phiếu phản hồi sau buổi học thử</h1>
+  <p>Không có câu trả lời đúng hay sai — thầy/cô cần ý kiến thật của em để cải thiện. 💙</p>
+</div>
+
+<div class="wrap">
+  <div class="prog-wrap">
+    <div class="prog-top">
+      <span class="prog-lbl">Tiến độ</span>
+      <span class="prog-num" id="progNum">Câu 1 / 7</span>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:12.5%"></div></div>
+  </div>
+
+  <!-- Q0: Tên -->
+  <div class="q-card active" id="q0">
+    <div class="section-tag tag-open">👤 Thông tin</div>
+    <div class="q-text">Em tên là gì?</div>
+    <div class="q-context">Không bắt buộc — em có thể để trống nếu muốn giữ ẩn danh.</div>
+    <input class="name-input" id="ans0" type="text" placeholder="Họ và tên...">
+    <div class="nav-row">
+      <button class="btn-next" onclick="go(1)">Bắt đầu →</button>
+    </div>
+  </div>
+
+  <!-- Q1: GHI NHỚ — buộc em nhớ lại thực sự -->
+  <div class="q-card" id="q1">
+    <div class="section-tag tag-memory">🧠 Ghi nhớ</div>
+    <div class="q-text">Nếu ngay lúc này thầy/cô hỏi em nghĩa của 5 từ bất kỳ trong Unit 1 — em nghĩ em trả lời được bao nhiêu từ?</div>
+    <div class="q-context">Đừng đoán — hãy thật sự thử nghĩ lại xem em nhớ được từ nào. Rồi mới chọn.</div>
+    <div class="choices" id="choices1">
+      <button class="choice" onclick="setChoice(1,this,'Dưới 2 từ — em gần như không nhớ gì')"><span class="choice-dot"></span>😬 Dưới 2 từ — em gần như không nhớ gì</button>
+      <button class="choice" onclick="setChoice(1,this,'2-3 từ — nhớ một ít, còn mờ nhạt')"><span class="choice-dot"></span>🙂 2–3 từ — nhớ một ít, còn mờ nhạt</button>
+      <button class="choice" onclick="setChoice(1,this,'4 từ — nhớ khá tốt')"><span class="choice-dot"></span>😊 4 từ — nhớ khá tốt</button>
+      <button class="choice" onclick="setChoice(1,this,'Cả 5 từ — em nhớ rõ hết')"><span class="choice-dot"></span>🤩 Cả 5 từ — em nhớ rõ hết</button>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="go(0)">← Trước</button>
+      <button class="btn-next" id="btn1" onclick="go(2)" disabled>Tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Q2: GHI NHỚ — so sánh với cách học cũ -->
+  <div class="q-card" id="q2">
+    <div class="section-tag tag-memory">🧠 Ghi nhớ</div>
+    <div class="q-text">Hãy nghĩ lại lần gần nhất em học từ vựng theo cách cũ (tra nghĩa, học thuộc). Sau buổi đó, em nhớ được bao nhiêu?</div>
+    <div class="q-context">So sánh cảm giác nhớ sau buổi hôm nay với buổi học từ vựng kiểu cũ — cái nào em cảm thấy nhớ chắc hơn?</div>
+    <div class="choices" id="choices2">
+      <button class="choice" onclick="setChoice(2,this,'Học kiểu cũ nhớ chắc hơn')"><span class="choice-dot"></span>📖 Học kiểu cũ nhớ chắc hơn</button>
+      <button class="choice" onclick="setChoice(2,this,'Hai cách nhớ được như nhau')"><span class="choice-dot"></span>⚖️ Hai cách nhớ được như nhau</button>
+      <button class="choice" onclick="setChoice(2,this,'Hôm nay nhớ chắc hơn một chút')"><span class="choice-dot"></span>📈 Hôm nay nhớ chắc hơn một chút</button>
+      <button class="choice" onclick="setChoice(2,this,'Hôm nay nhớ chắc hơn rõ rệt')"><span class="choice-dot"></span>🚀 Hôm nay nhớ chắc hơn rõ rệt</button>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="go(1)">← Trước</button>
+      <button class="btn-next" id="btn2" onclick="go(3)" disabled>Tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Q3: PHƯƠNG PHÁP — em có thực sự suy luận không? -->
+  <div class="q-card" id="q3">
+    <div class="section-tag tag-method">💡 Phương pháp</div>
+    <div class="q-text">Khi làm bài, em thường làm theo cách nào?</div>
+    <div class="q-context">Hãy chọn cái mô tả đúng nhất những gì em thực sự làm — không phải những gì em nghĩ thầy/cô muốn nghe.</div>
+    <div class="choices" id="choices3">
+      <button class="choice" onclick="setChoice(3,this,'Em đọc câu gợi ý, suy nghĩ thật sự rồi mới đoán')"><span class="choice-dot"></span>🤔 Em đọc câu gợi ý, suy nghĩ thật sự rồi mới đoán</button>
+      <button class="choice" onclick="setChoice(3,this,'Em đọc lướt gợi ý rồi đoán đại cho xong')"><span class="choice-dot"></span>😅 Em đọc lướt gợi ý rồi đoán đại cho xong</button>
+      <button class="choice" onclick="setChoice(3,this,'Em bấm xem đáp án luôn, không cần đoán')"><span class="choice-dot"></span>👀 Em bấm xem đáp án luôn, không cần đoán</button>
+      <button class="choice" onclick="setChoice(3,this,'Tùy từ — từ khó thì xem đáp án, từ dễ thì tự đoán')"><span class="choice-dot"></span>🔀 Tùy từ — từ khó xem đáp án, từ dễ tự đoán</button>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="go(2)">← Trước</button>
+      <button class="btn-next" id="btn3" onclick="go(4)" disabled>Tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Q4: PHƯƠNG PHÁP — câu gợi ý có thực sự hữu ích không? -->
+  <div class="q-card" id="q4">
+    <div class="section-tag tag-method">💡 Phương pháp</div>
+    <div class="q-text">Nghĩ lại một từ em không biết trước đó. Câu gợi ý trong bài có giúp em tự tìm ra nghĩa không?</div>
+    <div class="q-context">Ví dụ: từ "cardboard" — câu gợi ý "CARD + BOARD... card = tấm mỏng, board = tấm cứng" có giúp em nghĩ ra không, hay em vẫn phải xem đáp án?</div>
+    <div class="choices" id="choices4">
+      <button class="choice" onclick="setChoice(4,this,'Có — em tự đoán được trước khi xem đáp án')"><span class="choice-dot"></span>✅ Có — em tự đoán được trước khi xem đáp án</button>
+      <button class="choice" onclick="setChoice(4,this,'Một phần — gợi ý giúp em thu hẹp được nhưng chưa đủ')"><span class="choice-dot"></span>🔍 Một phần — gợi ý thu hẹp được nhưng chưa đủ</button>
+      <button class="choice" onclick="setChoice(4,this,'Không nhiều — em vẫn cần xem đáp án')"><span class="choice-dot"></span>🤷 Không nhiều — em vẫn cần xem đáp án</button>
+      <button class="choice" onclick="setChoice(4,this,'Câu gợi ý còn khó hiểu hơn cả từ gốc')"><span class="choice-dot"></span>😵 Câu gợi ý còn khó hiểu hơn cả từ gốc</button>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="go(3)">← Trước</button>
+      <button class="btn-next" id="btn4" onclick="go(5)" disabled>Tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Q5: HỨNG THÚ — có muốn làm tiếp không? -->
+  <div class="q-card" id="q5">
+    <div class="section-tag tag-motivation">🔥 Hứng thú</div>
+    <div class="q-text">Nếu thầy/cô không bắt buộc, em có tự mở trang này ra học tiếp Unit 2 không?</div>
+    <div class="q-context">Câu hỏi này không có câu trả lời "đúng" — thầy/cô cần biết thật để cải thiện trang học.</div>
+    <div class="choices" id="choices5">
+      <button class="choice" onclick="setChoice(5,this,'Có — em muốn học tiếp ngay bây giờ')"><span class="choice-dot"></span>🔥 Có — em muốn học tiếp ngay bây giờ</button>
+      <button class="choice" onclick="setChoice(5,this,'Có thể — nếu em nhớ ra và có thời gian')"><span class="choice-dot"></span>🙂 Có thể — nếu em nhớ ra và có thời gian</button>
+      <button class="choice" onclick="setChoice(5,this,'Không chắc — em cần thầy/cô nhắc mới làm')"><span class="choice-dot"></span>😐 Không chắc — cần thầy/cô nhắc mới làm</button>
+      <button class="choice" onclick="setChoice(5,this,'Không — em không thấy hứng thú lắm')"><span class="choice-dot"></span>😶 Không — em không thấy hứng thú lắm</button>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="go(4)">← Trước</button>
+      <button class="btn-next" id="btn5" onclick="go(6)" disabled>Tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Q6: MỞ — điều thật sự khó chịu -->
+  <div class="q-card" id="q6">
+    <div class="section-tag tag-open">✍️ Góp ý thật</div>
+    <div class="q-text">Có điều gì trong buổi học hôm nay khiến em thấy khó chịu, bực bội, hoặc muốn bỏ cuộc không?</div>
+    <div class="q-context">Đây là câu quan trọng nhất. Thầy/cô không cần lời khen — thầy/cô cần biết điều gì đang cản em học.</div>
+    <textarea class="free-text" id="ans6" placeholder="Ví dụ: câu hỏi quá dài / chữ quá nhỏ / không hiểu tại sao phải làm 3 bước / ...&#10;&#10;Hoặc ghi 'Không có gì' nếu thật sự không có."></textarea>
+    <div class="nav-row">
+      <button class="btn-back" onclick="go(5)">← Trước</button>
+      <button class="btn-next" onclick="submit()">Gửi phản hồi 🚀</button>
+    </div>
+  </div>
+
+  <!-- THANK YOU + INSIGHT -->
+  <div class="thankyou" id="thankyou">
+    <div class="ty-icon">💙</div>
+    <div class="ty-title">Cảm ơn em!</div>
+    <div class="ty-sub">Thầy/cô đã nhận được phản hồi của em. Đây là tóm tắt những gì em chia sẻ:</div>
+
+    <div class="score-grid">
+      <div class="score-item">
+        <div class="score-icon">🧠</div>
+        <div class="score-val" id="tyMemory">–</div>
+        <div class="score-lbl">Ghi nhớ</div>
+      </div>
+      <div class="score-item">
+        <div class="score-icon">💡</div>
+        <div class="score-val" id="tyMethod">–</div>
+        <div class="score-lbl">Suy luận</div>
+      </div>
+      <div class="score-item">
+        <div class="score-icon">🔥</div>
+        <div class="score-val" id="tyMotiv">–</div>
+        <div class="score-lbl">Hứng thú</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">📋 Phản hồi của em</div>
+      <div class="insight-text" id="tyInsight"></div>
+    </div>
+
+    <p style="font-size:13px;color:var(--grey);margin-bottom:12px;">🌿 Kami English Mindshift &nbsp;|&nbsp; 📞 0939 191 309</p>
+  </div>
+
+</div>
+
+<script>
+const TOTAL = 7;
+let cur = 0;
+const answers = {};
+
+function updateProgress(n){
+  const pct = n===0 ? 12.5 : ((n)/TOTAL*100).toFixed(0);
+  document.getElementById('progFill').style.width = pct+'%';
+  document.getElementById('progNum').textContent = n===0 ? 'Bắt đầu' : `Câu ${n} / ${TOTAL-1}`;
+}
+
+function go(n){
+  document.querySelector('.q-card.active')?.classList.remove('active');
+  const card = document.getElementById('q'+n);
+  if(card){ card.classList.add('active'); cur=n; updateProgress(n); window.scrollTo({top:0,behavior:'smooth'}); }
+}
+
+function setChoice(q, btn, val){
+  document.querySelectorAll('#choices'+q+' .choice').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[q] = val;
+  const nextBtn = document.getElementById('btn'+q);
+  if(nextBtn) nextBtn.disabled = false;
+}
+
+// Score mapping
+function memScore(v){
+  if(!v) return '?';
+  if(v.includes('Dưới 2')) return '1/5';
+  if(v.includes('2-3') || v.includes('2–3')) return '3/5';
+  if(v.includes('4 từ')) return '4/5';
+  if(v.includes('Cả 5')) return '5/5';
+  return '?';
+}
+function methodScore(v){
+  if(!v) return '?';
+  if(v.includes('suy nghĩ thật')) return '✓✓';
+  if(v.includes('lướt')) return '~';
+  if(v.includes('bấm xem')) return '✗';
+  if(v.includes('Tùy từ')) return '~✓';
+  return '?';
+}
+function motivScore(v){
+  if(!v) return '?';
+  if(v.includes('ngay bây giờ')) return 'Cao';
+  if(v.includes('có thời gian')) return 'Vừa';
+  if(v.includes('nhắc')) return 'Thấp';
+  if(v.includes('không thấy')) return 'Rất thấp';
+  return '?';
+}
+
+function submit(){
+  answers[0] = document.getElementById('ans0').value || 'Ẩn danh';
+  answers[6] = document.getElementById('ans6').value || '(Không có)';
+
+  const mem = memScore(answers[1]);
+  const met = methodScore(answers[3]);
+  const mot = motivScore(answers[5]);
+
+  document.getElementById('tyMemory').textContent = mem;
+  document.getElementById('tyMethod').textContent = met;
+  document.getElementById('tyMotiv').textContent = mot;
+
+  const lines = [
+    `<strong>Tên:</strong> ${answers[0]}`,
+    `<strong>Ghi nhớ sau bài:</strong> ${answers[1]||'–'}`,
+    `<strong>So với học cũ:</strong> ${answers[2]||'–'}`,
+    `<strong>Cách làm bài:</strong> ${answers[3]||'–'}`,
+    `<strong>Câu gợi ý có giúp không:</strong> ${answers[4]||'–'}`,
+    `<strong>Muốn học tiếp không:</strong> ${answers[5]||'–'}`,
+    `<strong>Điều khó chịu:</strong> ${answers[6]}`,
+  ];
+  document.getElementById('tyInsight').innerHTML = lines.join('<br>');
+
+  document.querySelectorAll('.q-card').forEach(c=>c.style.display='none');
+  document.querySelector('.prog-wrap').style.display='none';
+  document.getElementById('thankyou').classList.add('show');
+
+  console.log('=== KHẢO SÁT KAMI ===');
+  lines.forEach(l=>console.log(l.replace(/<[^>]+>/g,'')));
+}
+
+updateProgress(0);
+</script>
+</body>
+</html>
